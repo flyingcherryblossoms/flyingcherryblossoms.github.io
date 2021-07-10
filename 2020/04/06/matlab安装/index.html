@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="">
+  
+  <title>Matlab安装 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Matlab安装">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-06 10:17" pubdate>
+        April 6, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      27
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Matlab安装</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：July 10, 2021 pm
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>MATLAB是matrix&amp;laboratory两个词的组合，意为矩阵工厂（矩阵实验室）。是由美国mathworks公司发布的主要面对科学计算、可视化以及交互式程序设计的高科技计算环境。它将数值分析、矩阵计算、科学数据可视化以及非线性动态系统的建模和仿真等诸多强大功能集成在一个易于使用的视窗环境中，为科学研究、工程设计以及必须进行有效数值计算的众多科学领域提供了一种全面的解决方案，并在很大程度上摆脱了传统非交互式程序设计语言（如C、Fortran）的编辑模式，代表了当今国际科学计算软件的先进水平。 MATLAB和Mathematica、Maple并称为三大数学软件。它在数学类科技应用软件中在数值计算方面首屈一指。MATLAB可以进行矩阵运算、绘制函数和数据、实现算法、创建用户界面、连接其他编程语言的程序等，主要应用于工程计算、控制设计、信号处理与通讯、图像处理、信号检测、金融建模设计与分析等领域。 MATLAB的基本数据单位是矩阵，它的指令表达式与数学、工程中常用的形式十分相似，故用MATLAB来解算问题要比用C，FORTRAN等语言完成相同的事情简捷得多，并且MATLAB也吸收了像Maple等软件的优点，使MATLAB成为一个强大的数学软件。在新的版本中也加入了对C，FORTRAN，C++，JAVA的支持。 数百万工程师和科学家信赖 MATLAB:MATLAB 将适合迭代分析和设计过程的桌面环境与直接表达矩阵和数组运算的编程语言相结合。专业开发:MATLAB 工具箱经过专业开发、严格测试并拥有完善的帮助文档。包含交互式应用程序:MATLAB 应用程序让您看到不同的算法如何处理您的数据。在您获得所需结果之前反复迭代，然后自动生成 MATLAB 程序，以便对您的工作进行重现或自动处理。以及扩展能力:只需更改少量代码就能扩展您的分析在群集、GPU 和云上运行。无需重写代码或学习大数据编程和内存溢出技术。 <img src="https://img2.macxin.com/images/2019/09/21/4fdba006ly1g1dxeh9o38j21rw104n9z.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h4 id="Mac文件损坏处理"><a href="#Mac文件损坏处理" class="headerlink" title="Mac文件损坏处理"></a>Mac文件损坏处理</h4><p><strong>注意:Mac Os 10.15系统属于重大升级,众多软件都还不能兼容此系统,请谨慎升级!</strong> Macos系统在10.12以上打开提示损坏,需要打开任何来源才能使用. 打开方法<a target="_blank" rel="noopener" href="https://www.macxin.com/archives/52.html">https://www.macxin.com/archives/52.html</a> Macos系统10.14以及以上系统如果闪退,需要同时打开任何来源,关闭SIP系统保护和执行TNT签名问题才能使用; 1关闭SIP方法:<a target="_blank" rel="noopener" href="https://www.macxin.com/archives/6016.html">https://www.macxin.com/archives/6016</a></p>
+<h4 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h4><p><strong>目前已经激活的有Windows版本和Linux版本;Mac版本的激活有bug,无解</strong></p>
+<h4 id="Win安装"><a href="#Win安装" class="headerlink" title="Win安装"></a>Win安装</h4><p>windows 7系统需要下载虚拟光驱软件加载ISO镜像，如果你是windows10系统的话，可以直接右键加载。<a target="_blank" rel="noopener" href="https://www.macxin.com/archives/447.html">虚拟光驱软件传送门</a> 我本身系统是Win10，以下安装教程都以Win10为例； 1.下载好安装包，不需要解压，直接右击装载到虚拟光驱中；这个时候会自动弹出虚拟光驱目录，双击Setup.exe进行安装。（ <img src="https://qiniu.macxin.com/wp-content/uploads/2019/04/4fdba006ly1g1dxn0pomtj20v20bxmy6.jpg?imageView2/1/w/2236/h/858/interlace/1/q/75watermark/1/image/aHR0cHM6Ly9xaW5pdS5tYWN4aW4uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE4LzAxL25ld2xvZ28ucG5n/dissolve/100/gravity/SouthEast/dx/10/dy/10#" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://qiniu.macxin.com/wp-content/uploads/2019/04/4fdba006ly1g1dxoljo4vg20xy0m7agu.gif?imageView2/1/w/2444/h/1598/interlace/1/q/75watermark/1/image/aHR0cHM6Ly9xaW5pdS5tYWN4aW4uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE4LzAxL25ld2xvZ28ucG5n/dissolve/100/gravity/SouthEast/dx/10/dy/10#" srcset="/img/loading.gif" lazyload alt="img"> 2.推荐断网！！在弹出的对话框选择使用文件安装密钥，点击下一步；同意许可协议，再点击下一步； <img src="https://img2.macxin.com/images/2019/08/04/mstsc_Ye2wU52afI.png" srcset="/img/loading.gif" lazyload alt="img"> 3.输入安装密钥</p>
+<p>1</p>
+<p>09806-07443-53955-64350-21751-41297</p>
+<p><img src="https://img2.macxin.com/images/2019/08/04/mstsc_BkkhofvOYQ.png" srcset="/img/loading.gif" lazyload alt="img"> 点击下一步之后，可以选择安装目录，此软件安装占用29G左右的空间！ 4.勾掉第一项；<strong>（勾掉后可以选择是否自动创建软件桌面快捷方式）</strong> 安装过程很慢，固态硬盘十分钟，机械硬盘半小时到一个小时; <img src="https://img2.macxin.com/images/2019/08/04/mstsc_URoDaOtt3v.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/04/mstsc_PKUro8XXEl.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/04/mstsc_4601907gJH.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/04/mstsc_bb6SqhueLv.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/04/mstsc_itl3SayZfu.png" srcset="/img/loading.gif" lazyload alt="img"> 5.安装完毕，桌面只自动创建了一个快捷方式<code>Polyspace R2019a</code> 我们手动把Matlab也发送到桌面会计方式；（下动图） 默认Matlab所在路径 X<code>:\Program Files\Polyspace\R2019a\bin</code> X指的是你的安装磁盘 <img src="https://img2.macxin.com/images/2019/08/04/mstsc_e1Py0glOik.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/04/VqjKNVFgeI.gif" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h4 id="软件激活"><a href="#软件激活" class="headerlink" title="软件激活"></a>软件激活</h4><p>1、解压下载好的crack文件，把破解文件netapi32.dll 在bin/win64文件夹；复制到</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">X:<span class="hljs-symbol">\P</span>rogram Files<span class="hljs-symbol">\P</span>olyspace<span class="hljs-symbol">\R</span>2019a<span class="hljs-symbol">\b</span>in<span class="hljs-symbol">\w</span>in64<br></code></pre></td></tr></table></figure>
+
+<p>（X是你安装指定的路径）注:这个文件是激活的核心部分,如果不复制文件到这个目录,就会提示许可证错误!（这里是最多人容易出错的地方，切记要看清教程，别偷懒！） <strong>安装许可证lic：直接运行软件，弹出激活窗口，选择在不使用internet的情况下手动激活 点击下一步</strong> <img src="https://qiniu.macxin.com/wp-content/uploads/2017/10/2017b6.png?imageView2/1/w/1384/h/410/interlace/1/q/75watermark/1/image/aHR0cHM6Ly9xaW5pdS5tYWN4aW4uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE4LzAxL25ld2xvZ28ucG5n/dissolve/100/gravity/SouthEast/dx/10/dy/10#" srcset="/img/loading.gif" lazyload alt="2017b6"> <strong>2、选择第一个，选择浏览到你解压好的Crack文件夹里的license文件license_standalone.lic，选定点击下一步激活即可；然后就可以用了。</strong> <img src="https://qiniu.macxin.com/wp-content/uploads/2017/10/2017b7.png?imageView2/1/w/1384/h/536/interlace/1/q/75watermark/1/image/aHR0cHM6Ly9xaW5pdS5tYWN4aW4uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE4LzAxL25ld2xvZ28ucG5n/dissolve/100/gravity/SouthEast/dx/10/dy/10#" srcset="/img/loading.gif" lazyload alt="2017b7"> <img src="https://qiniu.macxin.com/wp-content/uploads/2017/10/2017b8.png?imageView2/1/w/1384/h/824/interlace/1/q/75watermark/1/image/aHR0cHM6Ly9xaW5pdS5tYWN4aW4uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE4LzAxL25ld2xvZ28ucG5n/dissolve/100/gravity/SouthEast/dx/10/dy/10#" srcset="/img/loading.gif" lazyload alt="2017b8"> 3.激活成功OK了；</p>
+<h4 id="重新激活"><a href="#重新激活" class="headerlink" title="重新激活"></a>重新激活</h4><p>各个版本的Matlab软件许可证路径</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs taggerscript">X:<span class="hljs-symbol">\P</span>rogram Files<span class="hljs-symbol">\P</span>olyspace<span class="hljs-symbol">\R</span>2019a<span class="hljs-symbol">\l</span>icenses<br></code></pre></td></tr></table></figure>
+
+<p>删除里面的lic文件即可按照步骤2进行重新激活（X是你安装指定的路径）</p>
+<h4 id="Mac版本安装"><a href="#Mac版本安装" class="headerlink" title="Mac版本安装"></a>Mac版本安装</h4><p>断网是必须的!文件必须完整的下载,下载好文件后请对比MD5校验码!校验码不一致肯定会提示损坏; 1.双击加载安装包,运行里面的安装程序,开始安装**(请断网!)** <img src="https://img2.macxin.com/images/2019/08/24/vmware_5IVHcePqwS.png" srcset="/img/loading.gif" lazyload alt="img"> 2.选择安装方法,选择第二项,使用文件密钥,不需要Internet链接(一定要断网)点击下一步 <img src="https://img2.macxin.com/images/2019/08/24/vmware_7r786TN7Fd.png" srcset="/img/loading.gif" lazyload alt="img"> 3.输入下面的密钥;点击下一步</p>
+<p>1</p>
+<p>09806-07443-53955-64350-21751-41297</p>
+<p><img src="https://img2.macxin.com/images/2019/08/24/vmware_P487Kg2jlH.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/24/PiwxvKCRbm.gif" srcset="/img/loading.gif" lazyload alt="img"> 4.选择安装组件,根据自己的需要选择,一般Server不需要安装,我这里勾掉了;之后,下一步 <img src="https://img2.macxin.com/images/2019/08/24/vmware_MiS1Y13qQb.png" srcset="/img/loading.gif" lazyload alt="img"> 5.勾掉帮助改进选项(如图 <img src="https://img2.macxin.com/images/2019/08/24/vmware_wbGPSH4UoX.png" srcset="/img/loading.gif" lazyload alt="img"> 6.安装信息确认,需要25G左右空间,点击安装开始,安装过程大概半小时左右(如图 <img src="https://img2.macxin.com/images/2019/08/24/vmware_tGrqdlMinq.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/24/vmware_gchPfmWosr.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/25/vmware_ZZPZVV1WKn.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/25/vmware_3odyIWbtEF.png" srcset="/img/loading.gif" lazyload alt="img"> 7.进入激活流程，打开Crack文件夹，复制替换补丁即<code>libmwlmgrimpl.dylib</code>文件到软件安装目录 <code>/applications/Polyspace/r2019a/bin/maci64/matlab_startup_plugins/lmgrimpl/</code> (此目录是软件的默认安装目录,如果完全按照教程安装的话,这个路径就是完全正确的路径!(具体进入此目录方法见下动图; <img src="https://img2.macxin.com/images/2019/08/25/vmware_cgN7pcMByA.png" srcset="/img/loading.gif" lazyload alt="img"> 拷贝上面的路径右击Finder(访达)选择前往文件夹,粘贴此路径即可进入 <img src="https://img2.macxin.com/images/2019/08/25/FljjhvkOuQ.gif" srcset="/img/loading.gif" lazyload alt="img"> 替换文件,拷贝Crack中的同名文件替换,(如图 <img src="https://img2.macxin.com/images/2019/08/25/8wUA324mVF.gif" srcset="/img/loading.gif" lazyload alt="img"> 8.在程序列表选择Polyspace运行激活程序,激活软件;注意:操作全部在断网状态下进行!(如图 <img src="https://img2.macxin.com/images/2019/08/25/vmware_AiNpDUkaCX.png" srcset="/img/loading.gif" lazyload alt="img"> 选择第二项,在不使用Internet的情况下手动激活!(断网!!!!)选择license_standalone.lic文件路径,然后点击激活即可 <img src="https://img2.macxin.com/images/2019/08/25/tIVQViUXCm.gif" srcset="/img/loading.gif" lazyload alt="img"> 9.启动软件,测试一下,这个时候我们发现软件没有启动程序!和Windows版本差不多,好像启动程序没有自动创建,我们进入文件夹自己创建一个替身就行了;所在目录<code>/applications/Polyspace/r2019a/bin/maci64/</code>(如图)别关页面,下面还有! <img src="https://img2.macxin.com/images/2019/08/25/peTjUWfAF3.gif" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/25/vmware_gVL0RrJ802.png" srcset="/img/loading.gif" lazyload alt="img"> 10.软件升级,在软件激活能运行之后,你可以联网了.直接点击菜单栏—&gt;帮助—&gt;检查更新 (教程完全根据实际安装包进行测试,如果安装失败请仔细看教程! <img src="https://img2.macxin.com/images/2019/08/25/vmware_rdBxQK1Dkx.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h4 id="Linux安装教程"><a href="#Linux安装教程" class="headerlink" title="Linux安装教程"></a>Linux安装教程</h4><p>断网是必须的!文件必须完整的下载,下载好文件后请对比MD5校验码!校验码不一致肯定会提示损坏;Linux以Ubuntu 18系统为例 <img src="https://img2.macxin.com/images/2019/08/25/vmware_CAbHiJ2ud8.png" srcset="/img/loading.gif" lazyload alt="img"> 1.加载安装包开始安装. <img src="https://img2.macxin.com/images/2019/08/25/vmware_tbDONTbXGA.png" srcset="/img/loading.gif" lazyload alt="img"> 启动终端命令行输入<code>sudo mkdir /media/cdimage</code>建立一个挂载点;之后输入命令<code>sudo mount -o loop &lt;手动拖进Iso文件自动读取路径&gt; /media/cdimage</code>回车后输入密码,挂载成功(如图 <img src="https://img2.macxin.com/images/2019/08/25/vmware_WFnhMEcNV2.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/25/nncARZhNo5.gif" srcset="/img/loading.gif" lazyload alt="img"> 2.继续在终端中,输入sudo命令,把光驱里的Install文件拖进来,自动补全路径,完整命令<code>sudo install路径</code>回车运行安装程序(如图 <img src="https://img2.macxin.com/images/2019/08/25/bpikV4G1pi.gif" srcset="/img/loading.gif" lazyload alt="img"> 3.开始了图形的安装过程,这个时候你应该处于断网环境,选择第二项;之后点击下一步 <img src="https://img2.macxin.com/images/2019/08/25/vmware_9nE4XDXAda.png" srcset="/img/loading.gif" lazyload alt="img"> 4.输入密钥<code>09806-07443-53955-64350-21751-41297</code>点击下一步 <img src="https://img2.macxin.com/images/2019/08/25/vmware_LWIFMBfUuK.png" srcset="/img/loading.gif" lazyload alt="img"> 5.选择安装目录,系统会自动选择,直接下一步 <img src="https://img2.macxin.com/images/2019/08/25/vmware_QWKC01e5CG.png" srcset="/img/loading.gif" lazyload alt="img"> 6.选择安装的组件,默认不需要server勾掉,(我为了安装速度勾去了很多.) <img src="https://img2.macxin.com/images/2019/08/25/vmware_toRn9io9bp.png" srcset="/img/loading.gif" lazyload alt="img"> 7.勾掉第二项,点击下一步,如图 <img src="https://img2.macxin.com/images/2019/08/25/vmware_t48x7Pg8ir.png" srcset="/img/loading.gif" lazyload alt="img"> 8.开始安装(如果你安装的是全部安装包,大概占用25G左右,需耗时半小时左右 <img src="https://img2.macxin.com/images/2019/08/25/vmware_w57cleoYeq.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/25/vmware_UIhjuyRSlx.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/25/vmware_lhLQKfvkjE.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/25/vmware_TiIknKpmlx.png" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/25/vmware_DtUb9YTFpR.png" srcset="/img/loading.gif" lazyload alt="img"> 9.开始进行激活,添加许可证,打开crack文件夹，进入/FilesForR2019a/licenses文件夹，右击打开终端。运行下面的命令（当然也可以cd进这个目录</p>
+<p>1</p>
+<p>sudo cp license.lic /usr/local/Polyspace/R2019a/licenses</p>
+<p><img src="https://img2.macxin.com/images/2019/08/26/7FceCfK2TF.gif" srcset="/img/loading.gif" lazyload alt="img"> 10.替换文件,在crack文件夹,进入FilesForR2019a/bin/glnxa64/matlab_startup_plugins/lmgrimpl文件夹，右击打开终端。运行下面的命令（当然也可以cd进这个目录</p>
+<p>1</p>
+<p>sudo cp libmwlmgrimpl.so /usr/local/Polyspace/R2019a/bin/glnxa64/matlab_startup_plugins/lmgrimpl</p>
+<p><img src="https://img2.macxin.com/images/2019/08/26/bcVlY9Iy8I.gif" srcset="/img/loading.gif" lazyload alt="img"> 11.在进行完以上操作后,软件就已经激活了,终端cd进程序目录,运行即可;至此Linux 安装教程完毕!</p>
+<p>12</p>
+<p>cd /usr/local/Polyspace/R2019a/bin./matlab</p>
+<p><img src="https://img2.macxin.com/images/2019/08/26/Xsg5c5erXq.gif" srcset="/img/loading.gif" lazyload alt="img"> <img src="https://img2.macxin.com/images/2019/08/26/vmware_tVESx13CA0.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h4 id="文件MD5"><a href="#文件MD5" class="headerlink" title="文件MD5"></a>文件MD5</h4><p>1234567891011121314151617181920</p>
+<p>Mac安装文件: matlab_R2019a_maci64.dmg大小: 16855945817 字节修改时间: 2019年3月22日, 5:19:11MD5: 707BC986342830EB49FC2AB8E0CBA35BSHA1: 92FDDB6C097BB537B159D276315D9E34423BB7E8CRC32: 5C0D207F Windows安装文件: R2019a_Windows.iso大小: 20277436416 字节修改时间: 2019年3月21日, 22:11:28MD5: E3B7F5914D9478AB3094D82C9B488662SHA1: EECD3F14C1451DAF67DFCB47E732191F737ECBF6CRC32: 22C10DFB Linux安装文件R2019a_glnxa64.iso大小: 16457379840 字节修改时间: 2019年8月9日, 18:18:32MD5: 714B98747CBB58D150FA9238F7C0A223SHA1: 09FDBE5B6C4BCD4F9DEC3A8DD98892796D23CB9ACRC32: D599653E</p>
+<p>Windows系统Md5校验工具下载 <a target="_blank" rel="noopener" href="https://pan.macxin.com/systemtool/Tool">https://pan.macxin.com/systemtool/Tool</a> Mac系统和校验工具使用方法 <a target="_blank" rel="noopener" href="https://www.macxin.com/archives/8151.html">https://www.macxin.com/archives/8151.html</a> <img src="https://qiniu.macxin.com/wp-content/uploads/2019/04/4fdba006ly1fqtms71m2rg20oz0glx6p.gif?imageView2/1/w/1798/h/1194/interlace/1/q/75watermark/1/image/aHR0cHM6Ly9xaW5pdS5tYWN4aW4uY29tL3dwLWNvbnRlbnQvdXBsb2Fkcy8yMDE4LzAxL25ld2xvZ28ucG5n/dissolve/100/gravity/SouthEast/dx/10/dy/10#" srcset="/img/loading.gif" lazyload alt="img"></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/Matlab/">Matlab</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/04/06/matlab%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Matlab笔记（一）</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/06/json/">
+                        <span class="hidden-mobile">JSON</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        渝ICP备19011883号-1
+      </a>
+    </span>
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
