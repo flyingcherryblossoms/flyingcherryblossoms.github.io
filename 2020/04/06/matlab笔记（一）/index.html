@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -136,6 +136,18 @@
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
               </a>
             </li>
           
@@ -265,7 +277,7 @@
 <h3 id="（三）数学函数"><a href="#（三）数学函数" class="headerlink" title="（三）数学函数"></a>（三）数学函数</h3><p><img src="http://47.103.92.158/Articles/Matlab/%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0.png" srcset="/img/loading.gif" lazyload alt="1"></p>
 <h4 id="（四）M文件"><a href="#（四）M文件" class="headerlink" title="（四）M文件"></a>（四）M文件</h4><blockquote>
 <p>类似于c++的头文件，用于储存编写的函数，后缀为M的文件，这类文件的第一行必须是特殊字符 <code>function</code> 开始,格式为：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> 因变量名 = 函数名（自变量名）</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> 因变量名 = 函数名（自变量名）</span><br></code></pre></div></td></tr></table></figure>
 
 <p>函数值的获得必须通过具体的运算实现，并赋给因变量。 M文件建立方法： 1.在Matlab中，点:File-&gt;New-&gt;M-file 2.在编辑窗口中输入程序内容 3.点：File-&gt;Save，存盘，M文件必须与函数名一致 Matlab的应用程序也以M文件保存</p>
 </blockquote>
@@ -280,15 +292,15 @@
 </blockquote>
 <h4 id="（四）数组的运算"><a href="#（四）数组的运算" class="headerlink" title="（四）数组的运算"></a>（四）数组的运算</h4><h5 id="1-数组和标量运算"><a href="#1-数组和标量运算" class="headerlink" title="1. 数组和标量运算"></a>1. 数组和标量运算</h5><blockquote>
 <p>数组对标量的加、减、乘、除、乘方是数组的每个元素对该标量施加相应的加、减、乘、除、乘方运算。 设：a = [a1,a2,a3……,an], c = 标量 则：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs matlab">a+c = [a1+c, a2+c,……,an+c]<br><br>a.*=[a1\* c, a2\*c,……,an\*c]<br><br>a./c=[a1/ c, a2/c,……,an/c]<br><br>a.\c=[c/a1, /a2,……,c/an]<br><br>a.\^c=[a1\^ c, a2\^c,……,an\^c]<br><br>c.\^a=[c\^a1,c\^a2,……，c\^an]<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab">a+c = [a1+c, a2+c,……,an+c]<br><br>a.*=[a1\* c, a2\*c,……,an\*c]<br><br>a./c=[a1/ c, a2/c,……,an/c]<br><br>a.\c=[c/a1, /a2,……,c/an]<br><br>a.\^c=[a1\^ c, a2\^c,……,an\^c]<br><br>c.\^a=[c\^a1,c\^a2,……，c\^an]<br></code></pre></div></td></tr></table></figure>
 </blockquote>
 <h5 id="2-数组和数组运算"><a href="#2-数组和数组运算" class="headerlink" title="2.数组和数组运算"></a>2.数组和数组运算</h5><blockquote>
 <p>当两个数组有相同维数时，加、减、乘、除、乘方运算可按元素对元素方式进行，不同大小或维数的数组是不能进行运算的。 设：a=[a1,a2,……,an], b=[b1,b2,……,bn] 则：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs matlab">a+c = [a1+b1, a2+b2,……,an+bn]<br><br>a.*=[a1\* b1, a2\*b2,……,an\*bn]<br><br>a./c=[a1/ b1, a2/b2,……,an/bn]<br><br>a.\c=[b1/a1, b2/a2,……,bn/an]<br><br>a.\^c=[a1\^ b1, a2\^c2,……,an\^bn]<br><br>c.\^a=[b1\^a1,b2\^a2,……，b\^an]<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab">a+c = [a1+b1, a2+b2,……,an+bn]<br><br>a.*=[a1\* b1, a2\*b2,……,an\*bn]<br><br>a./c=[a1/ b1, a2/b2,……,an/bn]<br><br>a.\c=[b1/a1, b2/a2,……,bn/an]<br><br>a.\^c=[a1\^ b1, a2\^c2,……,an\^bn]<br><br>c.\^a=[b1\^a1,b2\^a2,……，b\^an]<br></code></pre></div></td></tr></table></figure>
 </blockquote>
 <h3 id="三、矩阵"><a href="#三、矩阵" class="headerlink" title="三、矩阵"></a>三、矩阵</h3><h4 id="（一）矩阵的建立"><a href="#（一）矩阵的建立" class="headerlink" title="（一）矩阵的建立"></a>（一）矩阵的建立</h4><blockquote>
 <p>都好或空格用于分隔某一行的元素，分号用于区分不同行。除了分号，在输入矩阵时，按Enter键也表示开始新的一行。输入矩阵时，严格要求所有行有相同的列。 例： p = [1 1 1 1; 2 2 2 2; 3 3 3 3] p = [1 1 1 1 ​ 2 2 2 2 ​ 3 3 3 3] 特殊矩阵的建立</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs matlab">a = []    <span class="hljs-comment">%生成空矩阵，当对一项操作无结果是，返回空矩阵，大小为零</span><br><br>a = <span class="hljs-built_in">zeros</span>(m, n)   <span class="hljs-comment">%生成m行，n列的零矩阵</span><br><br>a = <span class="hljs-built_in">ones</span>(m, n)    <span class="hljs-comment">%生成一个m行，n列的元素全为1的矩阵</span><br><br>a = <span class="hljs-built_in">eye</span>(m, n)     <span class="hljs-comment">%生成一个m行，n列的单位矩阵</span><br><br>a = <span class="hljs-built_in">rand</span>(m, n)    <span class="hljs-comment">%生成一个m行，n列的随机矩阵</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab">a = []    <span class="hljs-comment">%生成空矩阵，当对一项操作无结果是，返回空矩阵，大小为零</span><br><br>a = <span class="hljs-built_in">zeros</span>(m, n)   <span class="hljs-comment">%生成m行，n列的零矩阵</span><br><br>a = <span class="hljs-built_in">ones</span>(m, n)    <span class="hljs-comment">%生成一个m行，n列的元素全为1的矩阵</span><br><br>a = <span class="hljs-built_in">eye</span>(m, n)     <span class="hljs-comment">%生成一个m行，n列的单位矩阵</span><br><br>a = <span class="hljs-built_in">rand</span>(m, n)    <span class="hljs-comment">%生成一个m行，n列的随机矩阵</span><br></code></pre></div></td></tr></table></figure>
 </blockquote>
 <h4 id="（二）矩阵中元素的操作"><a href="#（二）矩阵中元素的操作" class="headerlink" title="（二）矩阵中元素的操作"></a>（二）矩阵中元素的操作</h4><blockquote>
 <ol>
@@ -331,34 +343,34 @@
 <p>这些结构经常包含大量的MATLAB命令，故经常出现在MATLAB程序中，而不知直接加在MATLAB提示符下。</p>
 <h4 id="（一）for循环"><a href="#（一）for循环" class="headerlink" title="（一）for循环"></a>（一）for循环</h4><blockquote>
 <p>允许一组命令以固定的和预定的次数重复</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> x=array<br>  &#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> x=array<br>  &#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></div></td></tr></table></figure>
 
 <p>在for和end语句之间的命令串<code>&#123;commands&#125;</code>按数组（array）中的每一列执行一次。在每次迭代中，x被指定为数组的下一列，即在第n次循环中，x=array(: , n)</p>
 </blockquote>
 <h4 id="（二）while循环"><a href="#（二）while循环" class="headerlink" title="（二）while循环"></a>（二）while循环</h4><blockquote>
 <p>允许一组命令以不定次数重复</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">while</span> expression<br>  &#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-keyword">while</span> expression<br>  &#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></div></td></tr></table></figure>
 
 <p>只要表达式里<code>express</code>的所有蒜素为真，就执行while和end语句之间的命令串<code>&#123;commands&#125;</code></p>
 </blockquote>
 <h4 id="（三）if-else-end结构"><a href="#（三）if-else-end结构" class="headerlink" title="（三）if-else-end结构"></a>（三）if-else-end结构</h4><blockquote>
 <ol>
-<li>有一个选择的一般形式是： <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span><br>&#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<li>有一个选择的一般形式是： <figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span><br>&#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></div></td></tr></table></figure>
  如果在表达式<code>express</code>里的所有元素为真就执行if和end语句之间的命令串<code>&#123;commands&#125;</code></li>
-<li>一般形式 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br> …………<br><span class="hljs-keyword">else</span><br>&#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<li>一般形式 <figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br> …………<br><span class="hljs-keyword">else</span><br>&#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></div></td></tr></table></figure>
 </li>
 </ol>
 </blockquote>
 <p><img src="http://47.103.92.158/Articles/Matlab/%E7%AC%AC%E4%B8%80%E8%AE%B2%E4%BD%9C%E4%B8%9A.png" srcset="/img/loading.gif" lazyload></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">y</span>=<span class="hljs-title">BubbleSort</span><span class="hljs-params">(x)</span></span><br>x_len=<span class="hljs-built_in">length</span>(x);<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:x_len<span class="hljs-number">-1</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span>=<span class="hljs-number">1</span>:x_len-<span class="hljs-built_in">i</span><br>        <span class="hljs-keyword">if</span>(x(<span class="hljs-built_in">j</span>)&gt;x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>))<br>            [x(<span class="hljs-built_in">j</span>),x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>)]=swap(x(<span class="hljs-built_in">j</span>),x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>));<br>        <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-built_in">disp</span>([num2str(<span class="hljs-built_in">i</span>),<span class="hljs-string">&#x27;.Sort:x=&#x27;</span>,num2str(x)]);<br><span class="hljs-keyword">end</span><br>y=x;<br><span class="hljs-keyword">end</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[a,b]</span>=<span class="hljs-title">swap</span><span class="hljs-params">(x,y)</span></span><br>a=y;<br>b=x;<br><span class="hljs-keyword">end</span><br><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">y</span>=<span class="hljs-title">BubbleSort</span><span class="hljs-params">(x)</span></span><br>x_len=<span class="hljs-built_in">length</span>(x);<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:x_len<span class="hljs-number">-1</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span>=<span class="hljs-number">1</span>:x_len-<span class="hljs-built_in">i</span><br>        <span class="hljs-keyword">if</span>(x(<span class="hljs-built_in">j</span>)&gt;x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>))<br>            [x(<span class="hljs-built_in">j</span>),x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>)]=swap(x(<span class="hljs-built_in">j</span>),x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>));<br>        <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-built_in">disp</span>([num2str(<span class="hljs-built_in">i</span>),<span class="hljs-string">&#x27;.Sort:x=&#x27;</span>,num2str(x)]);<br><span class="hljs-keyword">end</span><br>y=x;<br><span class="hljs-keyword">end</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[a,b]</span>=<span class="hljs-title">swap</span><span class="hljs-params">(x,y)</span></span><br>a=y;<br>b=x;<br><span class="hljs-keyword">end</span><br><br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">y</span> = <span class="hljs-title">fun1</span><span class="hljs-params">(x,y)</span></span><br>y = x*x + <span class="hljs-built_in">sin</span>(x*y) + <span class="hljs-number">2</span>*y;<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">y</span> = <span class="hljs-title">fun1</span><span class="hljs-params">(x,y)</span></span><br>y = x*x + <span class="hljs-built_in">sin</span>(x*y) + <span class="hljs-number">2</span>*y;<br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">highsum</span> = <span class="hljs-title">high</span><span class="hljs-params">()</span></span><br>h = <span class="hljs-number">100</span>;<br>summary = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:<span class="hljs-number">10</span><br>   summary = summary + h<br>   h = h/<span class="hljs-number">2</span><br><span class="hljs-keyword">end</span><br>highsum = summary;<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">highsum</span> = <span class="hljs-title">high</span><span class="hljs-params">()</span></span><br>h = <span class="hljs-number">100</span>;<br>summary = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:<span class="hljs-number">10</span><br>   summary = summary + h<br>   h = h/<span class="hljs-number">2</span><br><span class="hljs-keyword">end</span><br>highsum = summary;<br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">maxmatrix</span> = <span class="hljs-title">max_matrix</span><span class="hljs-params">(x)</span></span><br>x<br>[x,y] = <span class="hljs-built_in">find</span>(x==<span class="hljs-built_in">max</span>(<span class="hljs-built_in">max</span>(x)))<br>maxmatrix = <span class="hljs-built_in">max</span>(<span class="hljs-built_in">max</span>(x));<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">maxmatrix</span> = <span class="hljs-title">max_matrix</span><span class="hljs-params">(x)</span></span><br>x<br>[x,y] = <span class="hljs-built_in">find</span>(x==<span class="hljs-built_in">max</span>(<span class="hljs-built_in">max</span>(x)))<br>maxmatrix = <span class="hljs-built_in">max</span>(<span class="hljs-built_in">max</span>(x));<br></code></pre></div></td></tr></table></figure>
 
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span> = <span class="hljs-title">sum_factorial</span><span class="hljs-params">(x)</span></span><br>f = sum(<span class="hljs-built_in">factorial</span>(<span class="hljs-number">1</span>:x))<br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span> = <span class="hljs-title">sum_factorial</span><span class="hljs-params">(x)</span></span><br>f = sum(<span class="hljs-built_in">factorial</span>(<span class="hljs-number">1</span>:x))<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -469,6 +481,30 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
   <!-- 备案信息 -->
@@ -538,6 +574,8 @@
 
 
 
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 
@@ -568,6 +606,30 @@
   </script>
 
 
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
 

@@ -56,7 +56,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":1},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -136,6 +136,18 @@
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 About
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
               </a>
             </li>
           
@@ -239,7 +251,7 @@
 <p>转载自简书:<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/6a1f365617ad">原文链接</a></p>
 </blockquote>
 <p>电脑上的操作系统、应用程序和应用数据一般都需要保存在永久存储器中（通常就是硬盘），这样电脑断电后应用数据等就不会丢失。 为了更有效地组织磁盘上的数据信息，通常将磁盘预先划分成一个或多个磁盘分区，创建对应的文件系统，以方便计算机对各分区分别进行管理。 MacOS 系统自带一个图形化的磁盘管理工具（Disk Utility），同时还有一个命令行版本的 diskutil。通过该命令的使用，可以很快捷地对本地磁盘进行擦除数据、调整分区大小、格式化等操作。 一、verb diskutil 命令的格式为：diskutil 不带任何选项的 diskutil 命令会列出该命令支持的 verb 及其对应的介绍： ➜ ~ diskutil Disk Utility Tool Utility to manage local disks and volumes Usage: diskutil [quiet] , where is as follows:</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">list                 (List the partitions <span class="hljs-keyword">of</span> a disk)<br><span class="hljs-keyword">info</span>[rmation]        (<span class="hljs-keyword">Get</span> information <span class="hljs-keyword">on</span> a specific disk <span class="hljs-keyword">or</span> <span class="hljs-keyword">partition</span>)<br>listFilesystems      (List file systems available <span class="hljs-keyword">for</span> formatting)<br>activity             (Continuous <span class="hljs-keyword">log</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">system</span>-wide disk arbitration)<br><br>u[n]mount            (Unmount a single volume)<br>unmountDisk          (Unmount an entire disk (<span class="hljs-keyword">all</span> volumes))<br>eject                (Eject a disk)<br>mount                (Mount a single volume)<br>mountDisk            (Mount an entire disk (<span class="hljs-keyword">all</span> mountable volumes))<br><br><span class="hljs-keyword">rename</span>[Volume]       (<span class="hljs-keyword">Rename</span> a volume)<br><br>verifyVolume         (Verify the file <span class="hljs-keyword">system</span> data structures <span class="hljs-keyword">of</span> a volume)<br>repairVolume         (Repair the file <span class="hljs-keyword">system</span> data structures <span class="hljs-keyword">of</span> a volume)<br>verifyDisk           (Verify the components <span class="hljs-keyword">of</span> a <span class="hljs-keyword">partition</span> map <span class="hljs-keyword">of</span> a disk)<br>repairDisk           (Repair the components <span class="hljs-keyword">of</span> a <span class="hljs-keyword">partition</span> map <span class="hljs-keyword">of</span> a disk)<br><br>eraseDisk            (Erase an existing disk, removing <span class="hljs-keyword">all</span> volumes)<br>eraseVolume          (Erase an existing volume)<br>reformat             (Erase an existing volume <span class="hljs-keyword">with</span> same <span class="hljs-type">name</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">type</span>)<br>eraseOptical         (Erase optical media (CD/RW, DVD/RW, etc.))<br>zeroDisk             (Erase a disk, writing zeros <span class="hljs-keyword">to</span> the media)<br>randomDisk           (Erase a disk, writing random data <span class="hljs-keyword">to</span> the media)<br>secureErase          (Securely erase a disk <span class="hljs-keyword">or</span> freespace <span class="hljs-keyword">on</span> a volume)<br><br>partitionDisk        ((re)<span class="hljs-keyword">Partition</span> a disk, removing <span class="hljs-keyword">all</span> volumes)<br>resizeVolume         (Resize a volume, increasing <span class="hljs-keyword">or</span> decreasing its size)<br>splitPartition       (Split an existing <span class="hljs-keyword">partition</span> <span class="hljs-keyword">into</span> two <span class="hljs-keyword">or</span> more)<br>mergePartitions      (Combine two <span class="hljs-keyword">or</span> more existing partitions <span class="hljs-keyword">into</span> one)<br><br>appleRAID &lt;verb&gt;     (<span class="hljs-keyword">Perform</span> additional verbs related <span class="hljs-keyword">to</span> AppleRAID)<br>coreStorage &lt;verb&gt;   (<span class="hljs-keyword">Perform</span> additional verbs related <span class="hljs-keyword">to</span> CoreStorage)<br>apfs &lt;verb&gt;          (<span class="hljs-keyword">Perform</span> additional verbs related <span class="hljs-keyword">to</span> APFS)<br></code></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql">list                 (List the partitions <span class="hljs-keyword">of</span> a disk)<br><span class="hljs-keyword">info</span>[rmation]        (<span class="hljs-keyword">Get</span> information <span class="hljs-keyword">on</span> a specific disk <span class="hljs-keyword">or</span> <span class="hljs-keyword">partition</span>)<br>listFilesystems      (List file systems available <span class="hljs-keyword">for</span> formatting)<br>activity             (Continuous <span class="hljs-keyword">log</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">system</span>-wide disk arbitration)<br><br>u[n]mount            (Unmount a single volume)<br>unmountDisk          (Unmount an entire disk (<span class="hljs-keyword">all</span> volumes))<br>eject                (Eject a disk)<br>mount                (Mount a single volume)<br>mountDisk            (Mount an entire disk (<span class="hljs-keyword">all</span> mountable volumes))<br><br><span class="hljs-keyword">rename</span>[Volume]       (<span class="hljs-keyword">Rename</span> a volume)<br><br>verifyVolume         (Verify the file <span class="hljs-keyword">system</span> data structures <span class="hljs-keyword">of</span> a volume)<br>repairVolume         (Repair the file <span class="hljs-keyword">system</span> data structures <span class="hljs-keyword">of</span> a volume)<br>verifyDisk           (Verify the components <span class="hljs-keyword">of</span> a <span class="hljs-keyword">partition</span> map <span class="hljs-keyword">of</span> a disk)<br>repairDisk           (Repair the components <span class="hljs-keyword">of</span> a <span class="hljs-keyword">partition</span> map <span class="hljs-keyword">of</span> a disk)<br><br>eraseDisk            (Erase an existing disk, removing <span class="hljs-keyword">all</span> volumes)<br>eraseVolume          (Erase an existing volume)<br>reformat             (Erase an existing volume <span class="hljs-keyword">with</span> same <span class="hljs-type">name</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">type</span>)<br>eraseOptical         (Erase optical media (CD/RW, DVD/RW, etc.))<br>zeroDisk             (Erase a disk, writing zeros <span class="hljs-keyword">to</span> the media)<br>randomDisk           (Erase a disk, writing random data <span class="hljs-keyword">to</span> the media)<br>secureErase          (Securely erase a disk <span class="hljs-keyword">or</span> freespace <span class="hljs-keyword">on</span> a volume)<br><br>partitionDisk        ((re)<span class="hljs-keyword">Partition</span> a disk, removing <span class="hljs-keyword">all</span> volumes)<br>resizeVolume         (Resize a volume, increasing <span class="hljs-keyword">or</span> decreasing its size)<br>splitPartition       (Split an existing <span class="hljs-keyword">partition</span> <span class="hljs-keyword">into</span> two <span class="hljs-keyword">or</span> more)<br>mergePartitions      (Combine two <span class="hljs-keyword">or</span> more existing partitions <span class="hljs-keyword">into</span> one)<br><br>appleRAID &lt;verb&gt;     (<span class="hljs-keyword">Perform</span> additional verbs related <span class="hljs-keyword">to</span> AppleRAID)<br>coreStorage &lt;verb&gt;   (<span class="hljs-keyword">Perform</span> additional verbs related <span class="hljs-keyword">to</span> CoreStorage)<br>apfs &lt;verb&gt;          (<span class="hljs-keyword">Perform</span> additional verbs related <span class="hljs-keyword">to</span> APFS)<br></code></pre></div></td></tr></table></figure>
 
 <p>diskutil with no options will provide help on that verb 上面列出的 verb 主要分为以下几类： 获取磁盘和分区信息：如 list、info、activity 等 挂（卸）载磁盘或卷：如 mount、eject、mountDisk 等 验证、修复磁盘分区或文件系统：如 verifyVolume、repairDisk 等 分区操作：如 splitPartitions、mergePartitions 等 其他：如 appleRAID、apfs 等 如不清楚某个 verb 的具体命令格式，可以直接使用 diskutil 命令加上该 verb 并且不带任何其他选项，命令行即输出该 verb 的使用介绍。如 eraseDisk 的使用介绍： ➜ ~ diskutil eraseDisk Usage: diskutil eraseDisk format name [APM[Format]MBR[Format]GPT[Format]] MountPointDiskIdentifierDeviceNode Completely erase an existing whole disk. All volumes on this disk will be destroyed. Ownership of the affected disk is required. Format is the specific file system name you want to erase it as (HFS+, etc.). Example: diskutil eraseDisk JHFS+ UntitledUFS disk3 二、获取磁盘分区信息 1. list 可以使用 list 选项简要列出 MacOS 系统的磁盘及分区信息，包括分区类型（TYPE）、分区名（NAME）、容量大小（SIZE）和标志符（IDENTIFIER）等。如此时系统挂载了 dmg 映像文件，其信息也会显示在列表中（下表中的 disk3 ）。 ➜ ~ diskutil list /dev/disk0 (internal, physical): #: TYPE NAME SIZE IDENTIFIER 0: GUID_partition_scheme *121.3 GB disk0 1: EFI EFI 209.7 MB disk0s1 2: Apple_APFS Container disk1 121.1 GB disk0s2 /dev/disk1 (synthesized): #: TYPE NAME SIZE IDENTIFIER 0: APFS Container Scheme - +121.1 GB disk1 Physical Store disk0s2 1: APFS Volume Mac OS 78.4 GB disk1s1 2: APFS Volume Preboot 22.5 MB disk1s2 3: APFS Volume Recovery 517.8 MB disk1s3 4: APFS Volume VM 3.2 GB disk1s4 /dev/disk2 (external, physical): #: TYPE NAME SIZE IDENTIFIER 0: FDisk_partition_scheme *7.8 GB disk2 1: Windows_FAT_32 UNTITLED 7.8 GB disk2s1 /dev/disk3 (disk image): #: TYPE NAME SIZE IDENTIFIER 0: Apple_partition_scheme +39.1 MB disk3 1: Apple_partition_map 32.3 KB disk3s1 2: Apple_HFS Wireshark 39.1 MB disk3s2 其中的 /dev/disk0 为内置磁盘，/dev/disk2 为外置磁盘（U 盘，已在 Windows系统下格式化为 FAT32 格式），/dev/disk3 为 DMG 映像文件。而 /dev/disk1 其实就是 disk0s2 作为 APFS 文件系统容器的具体信息。</p>
 <ol start="2">
@@ -362,6 +374,30 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
   <!-- 备案信息 -->
@@ -431,6 +467,8 @@
 
 
 
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
 
 
 
@@ -461,6 +499,30 @@
   </script>
 
 
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 
 
