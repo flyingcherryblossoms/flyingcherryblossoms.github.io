@@ -18,7 +18,7 @@
   <meta name="author" content="Quosimodo">
   <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
   
-  <title>华硕Fl8000un_x542un 黑苹果安装 - 卡西莫多の礼物</title>
+  <title>Mac安装Homebrew及镜像源更换 - 卡西莫多の礼物</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -183,7 +183,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="华硕Fl8000un_x542un 黑苹果安装">
+            <span class="h2" id="subtitle" title="Mac安装Homebrew及镜像源更换">
               
             </span>
 
@@ -193,8 +193,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-16 17:11" pubdate>
-        2021年7月16日 下午
+      <time datetime="2021-07-16 19:11" pubdate>
+        2021年7月16日 晚上
       </time>
     </span>
   
@@ -205,7 +205,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      924 字
+      426 字
     </span>
   
 
@@ -215,7 +215,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      7
        分钟
     </span>
   
@@ -245,7 +245,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">华硕Fl8000un_x542un 黑苹果安装</h1>
+            <h1 style="display: none">Mac安装Homebrew及镜像源更换</h1>
             
               <p class="note note-info">
                 
@@ -254,160 +254,46 @@
               </p>
             
             <div class="markdown-body">
-              <hr>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716141359.jpg" srcset="/img/loading.gif" lazyload></p>
-<h1 id="Hackintosh-fl8000un-x542un"><a href="#Hackintosh-fl8000un-x542un" class="headerlink" title="Hackintosh-fl8000un-x542un"></a>Hackintosh-fl8000un-x542un</h1><p>​    华硕fl8000un 黑苹果OC引导：<a target="_blank" rel="noopener" href="https://github.com/flyingcherryblossoms/Hackintosh-fl8000un-x542un">EFI的Github地址</a></p>
-<p>​    通过fl8000uq的EFI完善给fl8000un</p>
-<blockquote>
-<p>（感谢🙏：<a target="_blank" rel="noopener" href="https://github.com/KKKIIINNN/ASUS-FL8000UQ-Hackintosh%EF%BC%89">https://github.com/KKKIIINNN/ASUS-FL8000UQ-Hackintosh）</a></p>
-</blockquote>
-<p>​    使用前建议先看看，原版的README，我只是加了几个驱动。</p>
-<p>​    折腾了两天，先安装Big Sur，用了黑果小兵的10.4镜像，显示正常，但驱动就很迷幻，有时候有有时候没有，还容易掉盘，无奈选择了Catalina，发现Catalina下驱动就很稳👍。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><table>
-<thead>
-<tr>
-<th>配置</th>
-<th>型号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>处理器</td>
-<td>i7-8550U Kaby Lake</td>
-</tr>
-<tr>
-<td>核显</td>
-<td>Intel Graphics UHD620</td>
-</tr>
-<tr>
-<td>独显</td>
-<td>GeForce MX150</td>
-</tr>
-<tr>
-<td>内存</td>
-<td>4G× DDR4 2400MHz/16Gx DDR4 2400MHz</td>
-</tr>
-<tr>
-<td>硬盘</td>
-<td>512G SSD/1T HDD</td>
-</tr>
-<tr>
-<td>声卡</td>
-<td>Realtek ALC294</td>
-</tr>
-<tr>
-<td>无线网卡</td>
-<td>AR956x</td>
-</tr>
-</tbody></table>
-<h2 id="哪些工作"><a href="#哪些工作" class="headerlink" title="哪些工作"></a>哪些工作</h2><p>在Catalina上：</p>
+              <p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716192406.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<h2 id="一、brew-安装脚本-（自动选择软件源）"><a href="#一、brew-安装脚本-（自动选择软件源）" class="headerlink" title="一、brew 安装脚本 （自动选择软件源）"></a>一、brew 安装脚本 （自动选择软件源）</h2><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="二、brew-卸载脚本"><a href="#二、brew-卸载脚本" class="headerlink" title="二、brew 卸载脚本"></a>二、brew 卸载脚本</h2><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)&quot;<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="三、常用命令"><a href="#三、常用命令" class="headerlink" title="三、常用命令"></a>三、常用命令</h2><p>安装软件：<code>brew install xxx</code></p>
+<p>卸载软件：<code>brew uninstall xxx</code></p>
+<p>搜索软件：<code>brew search xxx</code></p>
+<p>更新软件：<code>brew upgrade xxx</code></p>
+<p>查看列表：<code>brew list</code></p>
+<p>更新brew：<code>brew update</code></p>
+<p>清理所有包的旧版本：<code>brew cleanup</code></p>
+<p>清理指定包的旧版本：<code>brew cleanup $FORMULA</code></p>
+<p>查看可清理的旧版本包，不执行实际操作：<code>brew cleanup -n</code></p>
+<h2 id="四、更换国内镜像源"><a href="#四、更换国内镜像源" class="headerlink" title="四、更换国内镜像源"></a>四、更换国内镜像源</h2><p>查看当前Homebrew 镜像源</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> brew.git镜像源</span><br>git -C &quot;$(brew --repo)&quot; remote -v<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> homebrew-core.git镜像源</span><br>git -C &quot;$(brew --repo homebrew/core)&quot; remote -v<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> homebrew-cask.git镜像源</span><br>git -C &quot;$(brew --repo homebrew/cask)&quot; remote -v <br></code></pre></div></td></tr></table></figure>
+
+<p>国内镜像地址：</p>
 <ul>
-<li><p><input checked="" disabled="" type="checkbox">  触控板</p>
+<li><p><a target="_blank" rel="noopener" href="https://mirrors.ustc.edu.cn/">科大</a></p>
+<p><a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/help/brew.git.html">帮助文档</a></p>
 </li>
-<li><p><input checked="" disabled="" type="checkbox">  声卡</p>
-</li>
-<li><p><input checked="" disabled="" type="checkbox">  有线网卡</p>
-</li>
-<li><p><input checked="" disabled="" type="checkbox">  无线网卡（工作缓慢）</p>
-</li>
-<li><p><input checked="" disabled="" type="checkbox">  蓝牙（开关蓝牙前请先关闭WI-FI，不然会卡住）</p>
-</li>
-<li><p><input checked="" disabled="" type="checkbox">  集成显卡</p>
-</li>
-<li><p><input disabled="" type="checkbox">  独立显卡（无法驱动）</p>
+<li><p><a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/homebrew/">阿里</a></p>
 </li>
 </ul>
-<p>已知问题：休眠出现不亮屏问题</p>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><ul>
-<li><p>BIOS关闭<code>VT-d</code></p>
-</li>
-<li><p>BIOS关闭<code>CSM</code></p>
-</li>
-<li><p>BIOS关闭<code>Secure Boot</code></p>
-</li>
-<li><p>BIOS关闭<code>Fast Boot</code></p>
-</li>
-<li><p>解锁<code>CFG Lock</code>：</p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv6167464/">教程：BIOS华硕官网有</a></p>
-<ol>
-<li><p>将U盘格式化为FAT32格式；</p>
-</li>
-<li><p>打开CFG文件夹，将里面的EFI文件复制到U盘中，重启按ESC键选择U盘启动；</p>
-</li>
-<li><p>输入命令<code>setup_var_3 0x527 0x00</code>即可解锁CFG Lock。</p>
-</li>
-</ol>
-</li>
-<li><p>安装使用安装的EFI：就是fl8000uq的EFI，可以直接去上面的链接下载，仓库里也有</p>
-</li>
-<li><p>安装完成使用配置好驱动的EFI（Catalina文件夹下）</p>
-</li>
-</ul>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li><p>HDPI开启（Big Sur不保证成功）：</p>
-<ul>
-<li>关机</li>
-<li>开机进入Open Core选择Recovery模式-&gt;终端-&gt;输入<code>csrutil disable</code>：输出Successful … 则操作成功</li>
-<li>重新开机：下载或者<code>git clone https://github.com/xzhih/one-key-hidpi</code>，进入文件夹打开<code>hdpi.command</code>，开启hdpi</li>
-<li>关机</li>
-<li>开机进入Open Core选择Recovery模式-&gt;终端-&gt;输入<code>csrutil enable</code>：输出Successful … 则操作成功<ul>
-<li>重新开机，输入<code>csrutil status</code>如果显示disable，需要在开机进OC时候，reset nvram（可能会丢失OC引导，需要重新添加引导），在进Recovery<code>csrutil enable</code>，重启，即可开启SIP。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>USB定制请参考黑果小兵的教程：<a target="_blank" rel="noopener" href="https://blog.daliansky.net/Intel-FB-Patcher-USB-Custom-Video.html">Hackintool(Intel FB Patcher) USB定制视频</a></p>
-</li>
-<li><p>蓝牙开关需要先关闭Wi-Fi，不然会卡住。</p>
-</li>
-</ol>
-<h2 id="折腾的过程"><a href="#折腾的过程" class="headerlink" title="折腾的过程"></a>折腾的过程</h2><p>​    Big Sur折腾过程中，触摸板和显示是没有问题的。</p>
-<p>出现的驱动问题如下：</p>
-<ul>
-<li><p>声卡</p>
-</li>
-<li><p>有线网络</p>
-</li>
-<li><p>无线网络</p>
-</li>
-<li><p>蓝牙</p>
-</li>
-</ul>
-<p>​    由于有线网络和无线网络都没有，这就很不方便我们查资料，所以我百度找到安卓手机USB共享网络给Mac的方法，要装一个驱动，开始找的版本因为Bigsur修改了安全机制不能直接安装，因此我直接去<a target="_blank" rel="noopener" href="https://github.com/jwise/HoRNDIS/issues/102#issuecomment-551255547">GitHub issues</a>上找了一个不用权限的修改版本，放仓库了，可以直接用。</p>
-<ol>
-<li><p>首先是声卡没有声音，fl8000un的声卡为ALC294，支持的layout如下（<a target="_blank" rel="noopener" href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs">AppleACL</a>）：</p>
-<table>
-<thead>
-<tr>
-<th>Vendor</th>
-<th>Codec</th>
-<th>Revisions and layouts</th>
-<th>MinKernel</th>
-<th>MaxKernel</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Realtek</td>
-<td><a target="_blank" rel="noopener" href="https://github.com/acidanthera/AppleALC/tree/master/Resources/ALC294">ALC294</a></td>
-<td>layout 11, 12, 13, 21, 22, 28, 66</td>
-<td>13 (10.9)</td>
-<td>—</td>
-</tr>
-</tbody></table>
-<p>我改成了11，有声音了。</p>
-</li>
-<li><p>接着是有线网卡，也没有驱动，插上去没有反应，于是我找到之前驱动过的Realtek8111驱动给替换上去了，然后解决了这个驱动问题。</p>
-</li>
-<li><p>接下来按照小时光的教程：</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.longzc.cn/index.php/archives/330">AR9565 MAC11.0黑苹果WIFI驱动教程</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.longzc.cn/index.php/archives/330">AR9565 MAC11.0黑苹果WIFI驱动教程</a></p>
-</li>
-</ul>
-<p>修复了蓝牙和Wi-Fi驱动</p>
-</li>
-</ol>
-<p>​    BigSur每次重启驱动和磁盘都可能掉，于是装了Catalina还是黑果小兵的镜像，发现声卡正常驱动就没有替换layout，然后剩下的步骤和之前一样，发现驱动完美运行。仓库里放了折腾过程的几个版本，你们可以自己试试Big Sur。要安装还是推荐Catalina。</p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>替换 USTC 镜像：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd &quot;$(brew --repo)&quot;<br>git remote set-url origin https://mirrors.ustc.edu.cn/brew.git<br></code></pre></div></td></tr></table></figure>
+
+
+<p>让 Git 将脚本访问的所有 GitHub 的 URL 替换为科大源:</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git config --global url.&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;.insteadOf &quot;https://github.com/Homebrew/homebrew-core&quot;<br>git config --global url.&quot;https://mirrors.ustc.edu.cn/linuxbrew-core.git&quot;.insteadOf &quot;https://github.com/Homebrew/linuxbrew-core&quot;<br>git config --global url.&quot;https://mirrors.ustc.edu.cn/brew.git&quot;.insteadOf &quot;https://github.com/Homebrew/brew&quot;<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> bash</span><br>echo &#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/&#x27; &gt;&gt; ~/.bashrc<br>source ~/.bashrc<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> zsh</span><br>echo &#x27;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles/&#x27; &gt;&gt; ~/.zshrc<br>source ~/.zshrc<br><br>brew update-reset<br>brew update<br></code></pre></div></td></tr></table></figure>
+
+
+<p>还原：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd &quot;$(brew --repo)&quot;<br>git remote set-url origin https://github.com/Homebrew/brew.git<br></code></pre></div></td></tr></table></figure>
+
+
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git config --global --unset url.&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;.insteadOf<br>git config --global --unset url.&quot;https://mirrors.ustc.edu.cn/linuxbrew-core.git&quot;.insteadOf<br>git config --global --unset url.&quot;https://mirrors.ustc.edu.cn/brew.git&quot;.insteadOf<br><br>brew update-reset<br>brew update<br></code></pre></div></td></tr></table></figure>
+
 
             </div>
             <hr>
@@ -444,18 +330,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hackintosh/mac%E5%AE%89%E8%A3%85homebrew%E5%8F%8A%E9%95%9C%E5%83%8F%E6%BA%90%E6%9B%B4%E6%8D%A2/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Mac安装Homebrew及镜像源更换</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Diary/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%94%E5%A4%A9/">
-                        <span class="hidden-mobile">项目实训第五天</span>
+                      <a href="/Hackintosh/%E5%8D%8E%E7%A1%95fl8000un-x542un-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85/">
+                        <span class="hidden-mobile">华硕Fl8000un_x542un 黑苹果安装</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
