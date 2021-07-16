@@ -200,6 +200,382 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Hackintosh/mac%E5%92%8Cwin%E5%AF%B9%E5%BA%94%E7%9A%84%E5%87%A0%E4%B8%AA%E6%8C%89%E9%94%AE/" target="_blank">
+          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716221826.jpg" srcset="/img/loading.gif" lazyload alt="Mac和Win对应的几个按键">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/Hackintosh/mac%E5%92%8Cwin%E5%AF%B9%E5%BA%94%E7%9A%84%E5%87%A0%E4%B8%AA%E6%8C%89%E9%94%AE/" target="_blank">
+          Mac和Win对应的几个按键
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/Hackintosh/mac%E5%92%8Cwin%E5%AF%B9%E5%BA%94%E7%9A%84%E5%87%A0%E4%B8%AA%E6%8C%89%E9%94%AE/" target="_blank">
+          
+          
+            
+          
+          
+Mac和Windows键盘对应关系： • ⌘ == Command    —–    win • ⇧ == Shift    —–    shift • ⌥ == Option    —–    Alt • ⌃ == Control    —–    Ctrl
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-16 22:00" pubdate>
+              2021-07-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Hackintosh/">Hackintosh</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hackintosh/">Hackintosh</a>
+            
+              <a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Hackintosh/mac%E8%AE%BE%E7%BD%AE%E4%B8%8D%E6%8C%82%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%88%86%E5%8C%BA/" target="_blank">
+          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716220905.jpg" srcset="/img/loading.gif" lazyload alt="Mac设置不挂在某个分区">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/Hackintosh/mac%E8%AE%BE%E7%BD%AE%E4%B8%8D%E6%8C%82%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%88%86%E5%8C%BA/" target="_blank">
+          Mac设置不挂在某个分区
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/Hackintosh/mac%E8%AE%BE%E7%BD%AE%E4%B8%8D%E6%8C%82%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%88%86%E5%8C%BA/" target="_blank">
+          
+          
+            
+          
+          
+双系统，windows分区就不用挂载了，以免出现问题，解决方法如下：
+
+打开终端，取得权限，输入  sudo -s   //输入你的密码。
+输入  nano /etc/fstab
+打开应用程序里的磁盘工具。选择你不想挂载的分区，点选左上的“显示简介”，得到你这个分区的UUID（通用唯一标识）。 
+终端里输入1vim /etc/fstab
+写入：1UUID=刚才找到的UUID none ntfs 
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-16 21:35" pubdate>
+              2021-07-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Hackintosh/">Hackintosh</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hackintosh/">Hackintosh</a>
+            
+              <a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Hackintosh/mac%E8%AE%BE%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86/" target="_blank">
+          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716220434.jpg" srcset="/img/loading.gif" lazyload alt="Mac设置终端代理">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/Hackintosh/mac%E8%AE%BE%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86/" target="_blank">
+          Mac设置终端代理
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/Hackintosh/mac%E8%AE%BE%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86/" target="_blank">
+          
+          
+            
+          
+          
+方法1:在终端中直接运行命令
+export http_proxy=http://proxyAddress:port这个办法的好处是简单直接，并且影响面很小（只对当前终端有效）。
+方法2:把代理服务器地址写入shell配置文件.bashrc或者.zshrc直接在.bashrc或者.zshrc添加下面内容
+12export http_proxy=&quot;http://localhost:port
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-16 21:25" pubdate>
+              2021-07-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Hackintosh/">Hackintosh</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hackintosh/">Hackintosh</a>
+            
+              <a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Hackintosh/mac%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" target="_blank">
+          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716220120.jpg" srcset="/img/loading.gif" lazyload alt="Mac更改默认文件打开方式">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/Hackintosh/mac%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" target="_blank">
+          Mac更改默认文件打开方式
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/Hackintosh/mac%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/" target="_blank">
+          
+          
+            
+          
+          
+只在打开方式中勾选始终用某个软件打开只会对该文件生效
+要想在同种类型的文件上生效，需要如下操作：
+右键某个类型的文件 -&gt; 显示简介 -&gt; 打开方式 -&gt; 选择打开方式并点击全部更改
+
+
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-16 20:25" pubdate>
+              2021-07-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Hackintosh/">Hackintosh</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hackintosh/">Hackintosh</a>
+            
+              <a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Hackintosh/mac%E5%AE%89%E8%A3%85java/" target="_blank">
+          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716215706.jpg" srcset="/img/loading.gif" lazyload alt="Mac安装Java">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/Hackintosh/mac%E5%AE%89%E8%A3%85java/" target="_blank">
+          Mac安装Java
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/Hackintosh/mac%E5%AE%89%E8%A3%85java/" target="_blank">
+          
+          
+            
+          
+          
+安装JDK
+打开Oracle官网下载安装包并安装安装好会自动创建软链，可以直接:1java -version
+​    但依然要配置环境变量
+
+配置环境变量
+如果是第一次配置环境变量，使用命令touch .bash_profile创建一个名为**.bash_profile **隐藏配置文件;
+如果不是第一次配置环境变量，使用命令 vim .zshrc 打开配置文件；在配置文件中输入下面的内容：1
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-16 20:20" pubdate>
+              2021-07-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Hackintosh/">Hackintosh</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hackintosh/">Hackintosh</a>
+            
+              <a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/Hackintosh/mac%E5%92%8Cwin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_blank">
+          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716215111.jpg" srcset="/img/loading.gif" lazyload alt="Mac和Win双系统时间不同步问题解决">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/Hackintosh/mac%E5%92%8Cwin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_blank">
+          Mac和Win双系统时间不同步问题解决
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/Hackintosh/mac%E5%92%8Cwin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_blank">
+          
+          
+            
+          
+          
+原因Windows和MacOSX缺省看待PC的CMOS记录的时钟是不一样的。Windows将这个时钟作为本地时间来看待，也就是CMOS时间就是北京时间。MacOSX将这个时钟作为Coordinated Universal Time (UTC) 世界标准时间看待，也就是Greenwich Mean Time (GMT) 格林威志时间。所以如果你在MacOSX和Windows都选北京时间作为本地时区
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-16 20:11" pubdate>
+              2021-07-16
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Hackintosh/">Hackintosh</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Hackintosh/">Hackintosh</a>
+            
+              <a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/Hackintosh/mac%E5%AE%89%E8%A3%85homebrew%E5%8F%8A%E9%95%9C%E5%83%8F%E6%BA%90%E6%9B%B4%E6%8D%A2/" target="_blank">
           <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716192406.png" srcset="/img/loading.gif" lazyload alt="Mac安装Homebrew及镜像源更换">
         </a>
@@ -328,7 +704,7 @@ Hackintosh-fl8000un-x542un​    华硕fl8000un 黑苹果OC引导：EFI的Github
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AD%E5%A4%A9/" target="_blank">
+        <a href="/Diary/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AD%E5%A4%A9/" target="_blank">
           <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210712100114.jpg" srcset="/img/loading.gif" lazyload alt="项目实训第六天">
         </a>
       </div>
@@ -336,13 +712,13 @@ Hackintosh-fl8000un-x542un​    华硕fl8000un 黑苹果OC引导：EFI的Github
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AD%E5%A4%A9/" target="_blank">
+        <a href="/Diary/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AD%E5%A4%A9/" target="_blank">
           项目实训第六天
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AD%E5%A4%A9/" target="_blank">
+        <a href="/Diary/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AD%E5%A4%A9/" target="_blank">
           
           
             
@@ -372,9 +748,9 @@ Hadoop分布式搭建入门：用至少3个节点搭建Hadoop集群，没有高�
             
               <a href="/categories/Program/">Program</a>
             
-              <a href="/categories/Diary/">Diary</a>
-            
               <a href="/categories/Program/Others/">Others</a>
+            
+              <a href="/categories/Diary/">Diary</a>
             
           </div>
         
@@ -396,7 +772,7 @@ Hadoop分布式搭建入门：用至少3个节点搭建Hadoop集群，没有高�
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%94%E5%A4%A9/" target="_blank">
+        <a href="/Diary/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%94%E5%A4%A9/" target="_blank">
           <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210712100114.jpg" srcset="/img/loading.gif" lazyload alt="项目实训第五天">
         </a>
       </div>
@@ -404,13 +780,13 @@ Hadoop分布式搭建入门：用至少3个节点搭建Hadoop集群，没有高�
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%94%E5%A4%A9/" target="_blank">
+        <a href="/Diary/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%94%E5%A4%A9/" target="_blank">
           项目实训第五天
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%94%E5%A4%A9/" target="_blank">
+        <a href="/Diary/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%94%E5%A4%A9/" target="_blank">
           
           
             
@@ -441,9 +817,9 @@ AVRO Sink将数据利用AVRO序列化之后写出，结合AVRO Source可以实�
             
               <a href="/categories/Program/">Program</a>
             
-              <a href="/categories/Diary/">Diary</a>
-            
               <a href="/categories/Program/Others/">Others</a>
+            
+              <a href="/categories/Diary/">Diary</a>
             
           </div>
         
@@ -454,404 +830,6 @@ AVRO Sink将数据利用AVRO序列化之后写出，结合AVRO Source可以实�
               <a href="/tags/Hadoop/">Hadoop</a>
             
               <a href="/tags/Flume/">Flume</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%9B%9B%E5%A4%A9/" target="_blank">
-          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210712100114.jpg" srcset="/img/loading.gif" lazyload alt="项目实训第四天">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%9B%9B%E5%A4%A9/" target="_blank">
-          项目实训第四天
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%9B%9B%E5%A4%A9/" target="_blank">
-          
-          
-            
-          
-          
-安装Flume
-将apache-flume-1.9.0-bin.tar.gz上传至虚拟机的/opt文件夹下并解压：
-1tar -xvf apache-flume-1.9.0-bin.tar.gz
-修改启动脚本参数
-进入apache-flume-1.9.0-bin/conf
-123456cp flume-env.sh.template flume-env.shvim flume-env.sh# 添
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-15 20:35" pubdate>
-              2021-07-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Program/">Program</a>
-            
-              <a href="/categories/Diary/">Diary</a>
-            
-              <a href="/categories/Program/Others/">Others</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Hadoop/">Hadoop</a>
-            
-              <a href="/tags/Flume/">Flume</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%B8%89%E5%A4%A9/" target="_blank">
-          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210712100114.jpg" srcset="/img/loading.gif" lazyload alt="项目实训第三天">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%B8%89%E5%A4%A9/" target="_blank">
-          项目实训第三天
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%B8%89%E5%A4%A9/" target="_blank">
-          
-          
-            
-          
-          
-MapReduce组件InputFormat - 输入格式
-InputFormat发生在Mapper之前，需要先读取数据，然后将读取出来的数据交给Mapper处理，所以InputFormat读取出来的数据是什么样子，那么Mapper就是什么样子
-如果不指定，那么MapReduce默认使用的是TextInputFormat，TextInputFormat在读取数据的时候，默认是按行读取数据，读取出
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-14 21:15" pubdate>
-              2021-07-14
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Program/">Program</a>
-            
-              <a href="/categories/Diary/">Diary</a>
-            
-              <a href="/categories/Program/Others/">Others</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Hadoop/">Hadoop</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%8C%E5%A4%A9/" target="_blank">
-          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210712100114.jpg" srcset="/img/loading.gif" lazyload alt="项目实训第二天">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%8C%E5%A4%A9/" target="_blank">
-          项目实训第二天
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%8C%E5%A4%A9/" target="_blank">
-          
-          
-            
-          
-          
-MapReduce简介
-MapReduce在处理数据的时候，首先将数据进行切片(Split)，切片本质上是一种逻辑划分(logical split)，实际上实在划分任务量
-划分完任务量之后，每一个Split都会交给一个MapTask来处理
-
-组件序列化
-在MapReduce中，需要对数据进行序列化，MapReduce中单独提供了对应的序列化形式 - 需要被序列化的对象对应的类实现接口Writab
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-13 19:30" pubdate>
-              2021-07-13
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Program/">Program</a>
-            
-              <a href="/categories/Diary/">Diary</a>
-            
-              <a href="/categories/Program/Others/">Others</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Hadoop/">Hadoop</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%B8%80%E5%A4%A9/" target="_blank">
-          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210712100114.jpg" srcset="/img/loading.gif" lazyload alt="项目实训第一天">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%B8%80%E5%A4%A9/" target="_blank">
-          项目实训第一天
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%B8%80%E5%A4%A9/" target="_blank">
-          
-          
-            
-          
-          简介概述
-Hadoop是Yahoo!开发后来贡献给了Apache的一套分布式机制
-Hadoop提供了简单的编程模型来对大量数据进行计算
-Hadoop能够从一台服务器扩展到上千台服务器，每一台服务器都能够进行计算和存储
-Hadoop提供了探测和处理异常的机制
-Hadoop本身的版本非常混乱，在选择版本的时候需要注意版本和组件之间的兼容性
-
-模块
-Hadoop Common：公共模块，实际上就是依赖N
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-12 09:47" pubdate>
-              2021-07-12
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Program/">Program</a>
-            
-              <a href="/categories/Diary/">Diary</a>
-            
-              <a href="/categories/Program/Others/">Others</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Hadoop/">Hadoop</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Others/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_blank">
-          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210711214215.jpg" srcset="/img/loading.gif" lazyload alt="博客搭建">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Others/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_blank">
-          博客搭建
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/Others/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_blank">
-          
-          
-            
-          
-          
-Github Page搭建静态博客
-注册github
-
-建立一个仓库，名称和你的账号名称一致，例如我的账号为flyingcherryblossoms，那么仓库就为flyingcherryblossoms/flyingcherryblossoms.github.io，我的已经搭建了所以这里提示已经存在。
-
-
-打开仓库-&gt;Settings-&gt;Pages-&gt;Change Theme
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-07-11 21:40" pubdate>
-              2021-07-11
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Others/">Others</a>
-            
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/Program/Matlab/matlab%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank">
-          <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210711205916.jpg" srcset="/img/loading.gif" lazyload alt="Matlab笔记（一）">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/Program/Matlab/matlab%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank">
-          Matlab笔记（一）
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/Program/Matlab/matlab%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank">
-          
-          
-            
-          
-          一、变量与函数（一）变量：命名规则：
-
-
-  不含空格
-  区别大小写
-  不超过19个字符
-  变量名必须以字母开头，之后可以为数字、字母、下划线，不能使用标点符号
-
-
-特殊变量表：
-
-
-  ans：表示结果
-  pi：圆周率
-  eps：计算机的最小数，+1产生大于1的数
-  flops：浮点运算数
-  Inf：无穷大，如1/0
-  NaN：不定量，如0/0
-  i,j：虚根，i=j=$\sq
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-04-06 10:19" pubdate>
-              2020-04-06
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Program/">Program</a>
-            
-              <a href="/categories/Program/Matlab/">Matlab</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Matlab/">Matlab</a>
             
           </div>
         
@@ -863,7 +841,7 @@ Github Page搭建静态博客
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
