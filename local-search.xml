@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>华硕Fl8000un_x542un 黑苹果安装</title>
+    <link href="/Hackintosh/%E5%8D%8E%E7%A1%95fl8000un-x542un-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85/"/>
+    <url>/Hackintosh/%E5%8D%8E%E7%A1%95fl8000un-x542un-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85/</url>
+    
+    <content type="html"><![CDATA[<hr><p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716141359.jpg"></p><h1 id="Hackintosh-fl8000un-x542un"><a href="#Hackintosh-fl8000un-x542un" class="headerlink" title="Hackintosh-fl8000un-x542un"></a>Hackintosh-fl8000un-x542un</h1><p>​    华硕fl8000un 黑苹果OC引导：<a href="https://github.com/flyingcherryblossoms/Hackintosh-fl8000un-x542un">EFI的Github地址</a></p><p>​    通过fl8000uq的EFI完善给fl8000un</p><blockquote><p>（感谢🙏：<a href="https://github.com/KKKIIINNN/ASUS-FL8000UQ-Hackintosh%EF%BC%89">https://github.com/KKKIIINNN/ASUS-FL8000UQ-Hackintosh）</a></p></blockquote><p>​    使用前建议先看看，原版的README，我只是加了几个驱动。</p><p>​    折腾了两天，先安装Big Sur，用了黑果小兵的10.4镜像，显示正常，但驱动就很迷幻，有时候有有时候没有，还容易掉盘，无奈选择了Catalina，发现Catalina下驱动就很稳👍。</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><table><thead><tr><th>配置</th><th>型号</th></tr></thead><tbody><tr><td>处理器</td><td>i7-8550U Kaby Lake</td></tr><tr><td>核显</td><td>Intel Graphics UHD620</td></tr><tr><td>独显</td><td>GeForce MX150</td></tr><tr><td>内存</td><td>4G× DDR4 2400MHz/16Gx DDR4 2400MHz</td></tr><tr><td>硬盘</td><td>512G SSD/1T HDD</td></tr><tr><td>声卡</td><td>Realtek ALC294</td></tr><tr><td>无线网卡</td><td>AR956x</td></tr></tbody></table><h2 id="哪些工作"><a href="#哪些工作" class="headerlink" title="哪些工作"></a>哪些工作</h2><p>在Catalina上：</p><ul><li><p><input checked="" disabled="" type="checkbox">  触控板</p></li><li><p><input checked="" disabled="" type="checkbox">  声卡</p></li><li><p><input checked="" disabled="" type="checkbox">  有线网卡</p></li><li><p><input checked="" disabled="" type="checkbox">  无线网卡（工作缓慢）</p></li><li><p><input checked="" disabled="" type="checkbox">  蓝牙（开关蓝牙前请先关闭WI-FI，不然会卡住）</p></li><li><p><input checked="" disabled="" type="checkbox">  集成显卡</p></li><li><p><input disabled="" type="checkbox">  独立显卡（无法驱动）</p></li></ul><p>已知问题：休眠出现不亮屏问题</p><h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><ul><li><p>BIOS关闭<code>VT-d</code></p></li><li><p>BIOS关闭<code>CSM</code></p></li><li><p>BIOS关闭<code>Secure Boot</code></p></li><li><p>BIOS关闭<code>Fast Boot</code></p></li><li><p>解锁<code>CFG Lock</code>：</p><p><a href="https://www.bilibili.com/read/cv6167464/">教程：BIOS华硕官网有</a></p><ol><li><p>将U盘格式化为FAT32格式；</p></li><li><p>打开CFG文件夹，将里面的EFI文件复制到U盘中，重启按ESC键选择U盘启动；</p></li><li><p>输入命令<code>setup_var_3 0x527 0x00</code>即可解锁CFG Lock。</p></li></ol></li><li><p>安装使用安装的EFI：就是fl8000uq的EFI，可以直接去上面的链接下载，仓库里也有</p></li><li><p>安装完成使用配置好驱动的EFI（Catalina文件夹下）</p></li></ul><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li><p>HDPI开启（Big Sur不保证成功）：</p><ul><li>关机</li><li>开机进入Open Core选择Recovery模式-&gt;终端-&gt;输入<code>csrutil disable</code>：输出Successful … 则操作成功</li><li>重新开机：下载或者<code>git clone https://github.com/xzhih/one-key-hidpi</code>，进入文件夹打开<code>hdpi.command</code>，开启hdpi</li><li>关机</li><li>开机进入Open Core选择Recovery模式-&gt;终端-&gt;输入<code>csrutil enable</code>：输出Successful … 则操作成功<ul><li>重新开机，输入<code>csrutil status</code>如果显示disable，需要在开机进OC时候，reset nvram（可能会丢失OC引导，需要重新添加引导），在进Recovery<code>csrutil enable</code>，重启，即可开启SIP。</li></ul></li></ul></li><li><p>USB定制请参考黑果小兵的教程：<a href="https://blog.daliansky.net/Intel-FB-Patcher-USB-Custom-Video.html">Hackintool(Intel FB Patcher) USB定制视频</a></p></li><li><p>蓝牙开关需要先关闭Wi-Fi，不然会卡住。</p></li></ol><h2 id="折腾的过程"><a href="#折腾的过程" class="headerlink" title="折腾的过程"></a>折腾的过程</h2><p>​    Big Sur折腾过程中，触摸板和显示是没有问题的。</p><p>出现的驱动问题如下：</p><ul><li><p>声卡</p></li><li><p>有线网络</p></li><li><p>无线网络</p></li><li><p>蓝牙</p></li></ul><p>​    由于有线网络和无线网络都没有，这就很不方便我们查资料，所以我百度找到安卓手机USB共享网络给Mac的方法，要装一个驱动，开始找的版本因为Bigsur修改了安全机制不能直接安装，因此我直接去<a href="https://github.com/jwise/HoRNDIS/issues/102#issuecomment-551255547">GitHub issues</a>上找了一个不用权限的修改版本，放仓库了，可以直接用。</p><ol><li><p>首先是声卡没有声音，fl8000un的声卡为ALC294，支持的layout如下（<a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs">AppleACL</a>）：</p><table><thead><tr><th>Vendor</th><th>Codec</th><th>Revisions and layouts</th><th>MinKernel</th><th>MaxKernel</th></tr></thead><tbody><tr><td>Realtek</td><td><a href="https://github.com/acidanthera/AppleALC/tree/master/Resources/ALC294">ALC294</a></td><td>layout 11, 12, 13, 21, 22, 28, 66</td><td>13 (10.9)</td><td>—</td></tr></tbody></table><p>我改成了11，有声音了。</p></li><li><p>接着是有线网卡，也没有驱动，插上去没有反应，于是我找到之前驱动过的Realtek8111驱动给替换上去了，然后解决了这个驱动问题。</p></li><li><p>接下来按照小时光的教程：</p><ul><li><p><a href="https://www.longzc.cn/index.php/archives/330">AR9565 MAC11.0黑苹果WIFI驱动教程</a></p></li><li><p><a href="https://www.longzc.cn/index.php/archives/330">AR9565 MAC11.0黑苹果WIFI驱动教程</a></p></li></ul><p>修复了蓝牙和Wi-Fi驱动</p></li></ol><p>​    BigSur每次重启驱动和磁盘都可能掉，于是装了Catalina还是黑果小兵的镜像，发现声卡正常驱动就没有替换layout，然后剩下的步骤和之前一样，发现驱动完美运行。仓库里放了折腾过程的几个版本，你们可以自己试试Big Sur。要安装还是推荐Catalina。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hackintosh</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hackintosh</tag>
+      
+      <tag>黑苹果</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>项目实训第六天</title>
     <link href="/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AD%E5%A4%A9/"/>
     <url>/Program/Others/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AD%E5%A4%A9/</url>
