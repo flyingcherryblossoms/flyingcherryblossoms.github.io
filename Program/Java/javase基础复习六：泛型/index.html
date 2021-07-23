@@ -18,7 +18,7 @@
   <meta name="author" content="Quosimodo">
   <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
   
-  <title>JavaSE基础复习四：异常处理 - 卡西莫多の礼物</title>
+  <title>JavaSE基础复习六：泛型 - 卡西莫多の礼物</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -183,7 +183,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="JavaSE基础复习四：异常处理">
+            <span class="h2" id="subtitle" title="JavaSE基础复习六：泛型">
               
             </span>
 
@@ -193,7 +193,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-26 22:18" pubdate>
+      <time datetime="2021-07-26 22:20" pubdate>
         2021年7月26日 晚上
       </time>
     </span>
@@ -205,7 +205,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      667 字
+      1k 字
     </span>
   
 
@@ -215,7 +215,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      13
        分钟
     </span>
   
@@ -245,7 +245,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JavaSE基础复习四：异常处理</h1>
+            <h1 style="display: none">JavaSE基础复习六：泛型</h1>
             
               <p class="note note-info">
                 
@@ -255,100 +255,78 @@
             
             <div class="markdown-body">
               <hr>
-<h1 id="JavaSE基础复习四：异常处理"><a href="#JavaSE基础复习四：异常处理" class="headerlink" title="JavaSE基础复习四：异常处理"></a>JavaSE基础复习四：异常处理</h1><p>异常：程序出现了不正常的情况</p>
-<h2 id="异常类的层级关系"><a href="#异常类的层级关系" class="headerlink" title="异常类的层级关系"></a>异常类的层级关系</h2><p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210721210752.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="JavaSE基础复习六：泛型"><a href="#JavaSE基础复习六：泛型" class="headerlink" title="JavaSE基础复习六：泛型"></a>JavaSE基础复习六：泛型</h1><h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>泛型是JDK5中引入的特性，他提供了编译时类型安全检测机制，该机制允许在编译时检测到非法的类型</p>
 <ul>
-<li><p>Error：严重错误，不需要处理</p>
+<li><p>本质：参数化类型，也就是说所操作的数据类型被指定为一个参数。顾名思义，将类型由原来的具体的类型参数化，然后在使用、调用是传入具体的类型</p>
 </li>
-<li><p>Exception：称为异常类，他表示程序本身可以处理的问题</p>
-<ul>
-<li><p>RuntimeException（运行时异常）：在编译器不检查，在运行时才会出现，可以不显式处理，也可以和编译时异常一样处理</p>
-</li>
-<li><p>非RuntimeException（编译时异常）：编译器就可以发现并处理，不处理程序不能通过编译，因此必须处理</p>
-</li>
-</ul>
-</li>
-<li><p>JVM的默认处理方案：</p>
-<ul>
-<li><p>先把异常的名称，异常的原因及异常出现的位置等信息输出在了控制台（e.printStackTrace())</p>
-</li>
-<li><p>程序停止执行</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
-<li><p>try…catch…处理</p>
-<ul>
-<li><p>格式：</p>
-<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">try</span>&#123;<br>    可能出现的异常代码<br>&#125;<br><span class="hljs-keyword">catch</span>(异常类名 变量名) &#123;<br>    异常处理代码<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>执行流程：程序从try里面的代码开始执行，出现异常，会自动生成一个异常类对象，该异常对象将被提交给Java运行时系统。当Java运行时系统接收到异常对象时，会到catch中去找匹配的异常类，找到后进行异常的处理，执行完毕后，程序还可以继续运行</p>
-</li>
-<li><p>异常类的常用方法：</p>
-<table>
-<thead>
-<tr>
-<th>方法名</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>public String getMessage()</td>
-<td>异常的原因</td>
-</tr>
-<tr>
-<td>public String toString()</td>
-<td>异常的内容</td>
-</tr>
-<tr>
-<td>public String getStackTrace()</td>
-<td>异常的所有信息</td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>throw处理</p>
-<ul>
-<li><p>当前无法处理异常是，可以将异常抛出去</p>
-</li>
-<li><p>用法：在方法后<code>fuction throws 异常名</code></p>
-</li>
-<li><p>在调用出，依然需要用try…catch…进行处理</p>
-<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">funtion</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;<br><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>    <span class="hljs-keyword">try</span> &#123;<br>        function();<br>    &#125; <span class="hljs-keyword">catch</span>(IOException e) &#123;<br>        e.printStackTrace();<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h2><ul>
-<li><p>很多异常我们需要，但API并不提供，我们可以继承Exception类或者RuntimeException，实现自定义异常。你问为什么不继承其它的非RuntiomeException，因为编译时就必须要处理，继承了没有意义</p>
+<li><p>可以使用的地方：可以用在类、方法和接口中，分别被称为泛型类、泛型方法和泛型接口</p>
 </li>
 <li><p>定义格式：</p>
-<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> 异常类名 <span class="hljs-keyword">extends</span> <span class="hljs-title">Exception</span> </span>&#123;<br>    无参构造()<br>    有参构造(String message)&#123;<br>        <span class="hljs-keyword">super</span>(message); <span class="hljs-comment">// 这个message就是输出的错误信息，Trowable带参构造需要传入</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
-<li><p>使用方法：在方法中，某个条件下<code>thorw new 异常类名(message)</code></p>
+<ul>
+<li><p>&lt;类型&gt;：指定一种类型的格式</p>
+</li>
+<li><p>&lt;类型1，类型2..&gt;：指定多种类型的格式</p>
 </li>
 </ul>
-<h2 id="throw和throws的区别"><a href="#throw和throws的区别" class="headerlink" title="throw和throws的区别"></a>throw和throws的区别</h2><table>
-<thead>
-<tr>
-<th>throw</th>
-<th>throws</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>用于方法体内，跟的是异常对象</td>
-<td>用于方法声明后，跟的是异常类名</td>
-</tr>
-<tr>
-<td>表示抛出异常，由方法体内catch内的语句处理</td>
-<td>表示抛出异常，由方法调用者处理</td>
-</tr>
-<tr>
-<td>执行throw一定抛出了某种异常</td>
-<td>表示可能出现某种异常，如果出现就抛出，没有就不管</td>
-</tr>
-</tbody></table>
+<p>多种类型之间用逗号隔开。这里的类型可以看成是形参，将来具体调用时候给定的类型可以看成是实参，并且只能是<strong>引用数据类型</strong></p>
+</li>
+<li><p>泛型的优点：</p>
+<ul>
+<li>吧运行时期的问题提前到了编译期间</li>
+<li>避免了强制类型转换</li>
+</ul>
+</li>
+</ul>
+<h3 id="泛型使用方法"><a href="#泛型使用方法" class="headerlink" title="泛型使用方法"></a>泛型使用方法</h3><ul>
+<li><p>泛型类</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">修饰符 <span class="hljs-class"><span class="hljs-keyword">class</span> 类名&lt;类型&gt; </span>&#123;&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Generic</span>&lt;<span class="hljs-title">T</span>&gt; </span>&#123;&#125;<br></code></pre></div></td></tr></table></figure></li>
+<li><p>泛型方法</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">修饰符 &lt;类型&gt; 返回值类型 方法名(类型 变量名) &#123;...&#125;<br><br><span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">(T t)</span> </span>&#123;&#125;<br></code></pre></div></td></tr></table></figure>
+
+<p>此时的T可以是任意引用类型，实际开发中一般不会这么使用，一般会用extends和super关键字限定类型</p>
+</li>
+<li><p>泛型接口</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">修饰符 <span class="hljs-class"><span class="hljs-keyword">interface</span> 接口名&lt;类型&gt; </span>&#123;&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Generic</span>&lt;<span class="hljs-title">T</span>&gt; </span>&#123;&#125;<br></code></pre></div></td></tr></table></figure></li>
+</ul>
+<h3 id="类型通配符"><a href="#类型通配符" class="headerlink" title="类型通配符"></a>类型通配符</h3><ul>
+<li>类型通配符：&lt;?&gt;<ul>
+<li>List&lt;?&gt;：表示元素类型位置的List，他的元素可以匹配任何的类型</li>
+<li>这种带通配符的List仅表示它是各种泛型List的父类，并不能把元素添加到其中</li>
+</ul>
+</li>
+<li>类型通配符的上限：&lt;? extends 类型&gt;<ul>
+<li>List&lt;? extends Number&gt;：它表示的类型是<strong>Number或其子类型</strong></li>
+</ul>
+</li>
+<li>类型通配符的下限：&lt;? super 类型&gt;<ul>
+<li>List&lt;? Super Number&gt;：   它表示的类型是<strong>Number或其父类型</strong></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>List&lt;?&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;Object&gt;();<br>List&lt;?&gt; list1 = <span class="hljs-keyword">new</span> ArrayList&lt;Number&gt;();<br>List&lt;?&gt; list2 = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br><br>System.out.println(<span class="hljs-string">&quot;--------&quot;</span>);<br><span class="hljs-comment">//        List&lt;? extends Number&gt; list3 = new ArrayList&lt;Object&gt;(); // 报错，Object不是Number的子类型</span><br>List&lt;?&gt; list4 = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>List&lt;?&gt; list5 = <span class="hljs-keyword">new</span> ArrayList&lt;Number&gt;();<br><br>System.out.println(<span class="hljs-string">&quot;--------&quot;</span>);<br>List&lt;? <span class="hljs-keyword">super</span> Number&gt; list6 = <span class="hljs-keyword">new</span> ArrayList&lt;Object&gt;();<br>List&lt;? <span class="hljs-keyword">super</span> Number&gt; list7 = <span class="hljs-keyword">new</span> ArrayList&lt;Number&gt;();<br><span class="hljs-comment">//        List&lt;? super Number&gt; list8 = new ArrayList&lt;Integer&gt;; // 报错，Integer不是Number的父类</span><br></code></pre></div></td></tr></table></figure>
+
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>可变参数又称参数个数可变，用作方法的形参出现，那么方法参数个数就是可变的了</p>
+<ul>
+<li><p>原理：<strong>将传入的多个参数封装为了一个数组</strong></p>
+</li>
+<li><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java">修饰符 返回值类型 方法名(数据类型... 变量名) &#123;&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-keyword">int</span>... a)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> n : a) &#123;<br>        sum += n;<br>    &#125;<br>    <span class="hljs-keyword">return</span> sum;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+<li><p>注意：</p>
+<ul>
+<li><p>如果一个方法有多个参数，<strong>那么可变参数一定要写到最后</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sum</span><span class="hljs-params">(String a, <span class="hljs-keyword">int</span> b, <span class="hljs-keyword">int</span>... c)</span> </span>&#123;<br>    System.out.println(a);<br>    System.out.println(b);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : c) &#123;<br>        System.out.println(num);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+<li><p>当有方法重载，优先使用确定参数个数的方法，如果没有再使用可变参数的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-keyword">int</span>... a)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> n : a) &#123;<br>        sum += n;<br>    &#125;<br>    <span class="hljs-keyword">return</span> sum;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b, <span class="hljs-keyword">int</span> c)</span> </span>&#123;  <span class="hljs-comment">// 当传入三个int参数时，优先使用此方法</span><br>    <span class="hljs-keyword">return</span> a+b+c;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>&#123; <span class="hljs-comment">// 当传入两个int参数时，优先使用此方法</span><br>    <span class="hljs-keyword">return</span> a+b;<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>常用的方法：</p>
+<ul>
+<li>Arrays工具类中：<code>public static &lt;T&gt; List&lt;T&gt; asList(T... a)</code>，返回由指定数组支持的固定大小的列表</li>
+<li>List接口中：<code>public static &lt;E&gt; List&lt;E&gt; of(E... elements)</code>，返回包含任意数量元素的不可变列表</li>
+<li>Set接口中：<code>public static &lt;E&gt; Set&lt;E&gt; of(E... elements)</code>，返回一个包含任意数量元素的不可变集合</li>
+</ul>
+</li>
+</ul>
 
             </div>
             <hr>
@@ -387,18 +365,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Program/Java/javase%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E4%BA%94%EF%BC%9A%E9%9B%86%E5%90%88/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaSE基础复习五：集合</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Program/Java/javase%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E4%B8%89%EF%BC%9A%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/">
-                        <span class="hidden-mobile">JavaSE基础复习三：常用工具类</span>
+                      <a href="/Program/Java/javase%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E4%BA%94%EF%BC%9A%E9%9B%86%E5%90%88/">
+                        <span class="hidden-mobile">JavaSE基础复习五：集合</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
