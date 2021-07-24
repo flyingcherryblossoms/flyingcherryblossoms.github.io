@@ -299,7 +299,7 @@
 <div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select year(regexp_replace(&#x27;2021/07/19&#x27;, &#x27;/&#x27;, &#x27;-&#x27;));<br></code></pre></div></td></tr></table></figure>
 </code></pre>
 <ol start="4">
-<li>提取邮箱后缀：‘<a href="mailto:&#x74;&#x6f;&#x6d;&#x40;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#x6d;">&#x74;&#x6f;&#x6d;&#x40;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#x6d;</a>‘需要邮箱的后缀提取出来</li>
+<li>提取邮箱后缀：‘<a href="mailto:&#x74;&#x6f;&#109;&#x40;&#49;&#x36;&#51;&#x2e;&#99;&#111;&#109;">&#x74;&#x6f;&#109;&#x40;&#49;&#x36;&#51;&#x2e;&#99;&#111;&#109;</a>‘需要邮箱的后缀提取出来</li>
 <li>方式一：切分</li>
 </ol>
 <div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select split(&#x27;tom@163.com&#x27;, &#x27;@&#x27;)[1];<br></code></pre></div></td></tr></table></figure>
