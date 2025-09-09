@@ -1,0 +1,882 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>项目实训第六天 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="项目实训第六天">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-16 08:22" pubdate>
+        2021年7月16日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      85
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">项目实训第六天</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>第六天答辩题目，随机抽取，抽到了第一题（答案是同学写的，我整理发出来了）：</p>
+<ol>
+<li><p>Hadoop分布式搭建<br>入门：用至少3个节点搭建Hadoop集群，没有高可用，节点进程分布合理<br>升级：搭建Zookeeper集群，实现Hadoop高可用<br>高级：在上述基础上，搭建历史服务器以及实现黑白名单机制<br>满分：实现联邦HDFS</p>
+<p><strong>做这一题</strong></p>
+</li>
+<li><p>隐藏好友<br>入门：用3个及以上MapReduce完成<br>  升级：用2个MapReduce完成<br>  高级：用工作流调度2个MapReduce</p>
+</li>
+<li><p>Flume采集MySQL数据<br>入门：自定义Source，采集固定表的数据<br>  升级：可以采集任意表的数据<br>  高级：不限制于MySQL数据库，可以采集任意数据库的任意表数据</p>
+</li>
+<li><p>Flume向MySQL写入数据<br>入门：自定义Sink，写入固定的表<br>  升级：可以用户指定表及字段，向数据库写入<br>  高级：不限制于MySQL数据库，可以向任意数据库写入数据</p>
+</li>
+<li><p>部署Ganglia监控Flume<br>入门：成功部署Ganglia<br>  升级：成功部署Ganglia并且监控Flume<br>  高级：在监控基础上，形成监控日志，可以通过日志分析出请求高峰时间以及数据读写高峰</p>
+</li>
+<li><p>共同好友&amp;访问次数<br>入门：完成共同好<br>  升级：完成共同好友&amp;访问次数<br>  高级：可以获取任意多个人的共同好友，例如可以获取3&#x2F;4&#x2F;5等个人的共同好友</p>
+</li>
+</ol>
+<p>  friend.txt</p>
+  <figure class="highlight mipsasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mipsasm">tom rose<br>tom <span class="hljs-keyword">jim</span><br><span class="hljs-keyword"></span>tom smith<br>tom lucy<br>rose tom<br>rose lucy<br>rose smith<br><span class="hljs-keyword">jim </span>tom<br><span class="hljs-keyword">jim </span>lucy<br>smith <span class="hljs-keyword">jim</span><br><span class="hljs-keyword"></span>smith tom<br>smith rose<br></code></pre></div></td></tr></table></figure>
+
+<p>  commonfriend.txt</p>
+  <figure class="highlight mathematica"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mathematica"><span class="hljs-variable">A</span><span class="hljs-operator">:</span><span class="hljs-variable">B</span><span class="hljs-operator">,</span><span class="hljs-built_in">C</span><span class="hljs-operator">,</span><span class="hljs-built_in">D</span><span class="hljs-operator">,</span><span class="hljs-variable">F</span><span class="hljs-operator">,</span><span class="hljs-built_in">E</span><span class="hljs-operator">,</span><span class="hljs-built_in">O</span><br><span class="hljs-variable">B</span><span class="hljs-operator">:</span><span class="hljs-variable">A</span><span class="hljs-operator">,</span><span class="hljs-built_in">C</span><span class="hljs-operator">,</span><span class="hljs-built_in">E</span><span class="hljs-operator">,</span><span class="hljs-built_in">K</span><br><span class="hljs-built_in">C</span><span class="hljs-operator">:</span><span class="hljs-variable">F</span><span class="hljs-operator">,</span><span class="hljs-variable">A</span><span class="hljs-operator">,</span><span class="hljs-built_in">D</span><span class="hljs-operator">,</span><span class="hljs-built_in">I</span><br><span class="hljs-built_in">D</span><span class="hljs-operator">:</span><span class="hljs-variable">A</span><span class="hljs-operator">,</span><span class="hljs-built_in">E</span><span class="hljs-operator">,</span><span class="hljs-variable">F</span><span class="hljs-operator">,</span><span class="hljs-variable">L</span><br><span class="hljs-built_in">E</span><span class="hljs-operator">:</span><span class="hljs-variable">B</span><span class="hljs-operator">,</span><span class="hljs-built_in">C</span><span class="hljs-operator">,</span><span class="hljs-built_in">D</span><span class="hljs-operator">,</span><span class="hljs-variable">M</span><span class="hljs-operator">,</span><span class="hljs-variable">L</span><br><span class="hljs-variable">F</span><span class="hljs-operator">:</span><span class="hljs-variable">A</span><span class="hljs-operator">,</span><span class="hljs-variable">B</span><span class="hljs-operator">,</span><span class="hljs-built_in">C</span><span class="hljs-operator">,</span><span class="hljs-built_in">D</span><span class="hljs-operator">,</span><span class="hljs-built_in">E</span><span class="hljs-operator">,</span><span class="hljs-built_in">O</span><span class="hljs-operator">,</span><span class="hljs-variable">M</span><br><span class="hljs-variable">G</span><span class="hljs-operator">:</span><span class="hljs-variable">A</span><span class="hljs-operator">,</span><span class="hljs-built_in">C</span><span class="hljs-operator">,</span><span class="hljs-built_in">D</span><span class="hljs-operator">,</span><span class="hljs-built_in">E</span><span class="hljs-operator">,</span><span class="hljs-variable">F</span><br><span class="hljs-variable">H</span><span class="hljs-operator">:</span><span class="hljs-variable">A</span><span class="hljs-operator">,</span><span class="hljs-built_in">C</span><span class="hljs-operator">,</span><span class="hljs-built_in">D</span><span class="hljs-operator">,</span><span class="hljs-built_in">E</span><span class="hljs-operator">,</span><span class="hljs-built_in">O</span><br><span class="hljs-built_in">I</span><span class="hljs-operator">:</span><span class="hljs-variable">A</span><span class="hljs-operator">,</span><span class="hljs-built_in">O</span><br><span class="hljs-variable">J</span><span class="hljs-operator">:</span><span class="hljs-variable">B</span><span class="hljs-operator">,</span><span class="hljs-built_in">O</span><br><span class="hljs-built_in">K</span><span class="hljs-operator">:</span><span class="hljs-variable">A</span><span class="hljs-operator">,</span><span class="hljs-built_in">C</span><span class="hljs-operator">,</span><span class="hljs-built_in">D</span><br><span class="hljs-variable">L</span><span class="hljs-operator">:</span><span class="hljs-built_in">D</span><span class="hljs-operator">,</span><span class="hljs-built_in">E</span><span class="hljs-operator">,</span><span class="hljs-variable">F</span><br><span class="hljs-variable">M</span><span class="hljs-operator">:</span><span class="hljs-built_in">E</span><span class="hljs-operator">,</span><span class="hljs-variable">F</span><span class="hljs-operator">,</span><span class="hljs-variable">G</span><br><span class="hljs-built_in">O</span><span class="hljs-operator">:</span><span class="hljs-variable">A</span><span class="hljs-operator">,</span><span class="hljs-variable">H</span><span class="hljs-operator">,</span><span class="hljs-built_in">I</span><span class="hljs-operator">,</span><span class="hljs-variable">J</span><br></code></pre></div></td></tr></table></figure>
+
+<p>  tomcat.log</p>
+  <figure class="highlight accesslog"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs accesslog"><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:32 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /asf.avi HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:32 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /bupper.png HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:32 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /bupper.css HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:33 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /bg-button HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:33 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /bbutton.css HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:33 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /asf.jpg HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:33 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /tomcat.css HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:33 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /tomcat.png HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:33 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /tbutton.png HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:33 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /tinput.png HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:33 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /tbg.css HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:34 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /tomcat.css HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:34 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /bg.css HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:34 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /bg-button.css HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:34 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /bg-input.css HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:34 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /bd-input.png HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:34 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /bg-input.png HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><span class="hljs-number">192.168.120.23</span> -- <span class="hljs-string">[30/Apr/2018:20:25:34 +0800]</span> <span class="hljs-string">&quot;<span class="hljs-keyword">GET</span> /music.mp3 HTTP/1.1&quot;</span> <span class="hljs-number">304</span> -<br><br></code></pre></div></td></tr></table></figure>
+
+<h1 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h1><h2 id="Hadoop完全分布式"><a href="#Hadoop完全分布式" class="headerlink" title="Hadoop完全分布式"></a>Hadoop完全分布式</h2><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>主机hadoop:</p>
+<ul>
+<li><p>&#x2F;opt&#x2F;hadoop-3.1.3</p>
+</li>
+<li><p>&#x2F;opt&#x2F;jdk1.8</p>
+</li>
+<li><p>&#x2F;etc&#x2F;profile  	# 环境变量位置</p>
+</li>
+<li><p>&#x2F;mnt&#x2F;hgfs		# 共享文件夹</p>
+</li>
+</ul>
+<p>node1、node2为hadoop的拷贝</p>
+<h4 id="hadoop"><a href="#hadoop" class="headerlink" title="hadoop"></a>hadoop</h4><ol>
+<li><p>设置hosts</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /etc/hosts<br>192.168.244.100  hadoop<br>192.168.244.101  node1<br>192.168.244.102  node2<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>生成ssh公钥，准备配置三台主机间的ssh连接</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">ssh-keygen -t rsa<br>cat /root/.ssh/id_rsa.pub &gt;&gt; /root/.ssh/authorized_keys # 记录公钥<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+<h4 id="node1"><a href="#node1" class="headerlink" title="node1"></a>node1</h4><ol>
+<li><p>VMware克隆node1**（问题一，紧急模式）**</p>
+</li>
+<li><p>配置网络</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /etc/sysconfig/network-scripts<br>vim ifcfg-ens33 # IPADDR=192.168.244.101  DNS1=114.114.114.114<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>配置映射</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /etc/hostname # 修改主机名为node1<br>vim /etc/hosts # 修改ip映射 添加node1、node2<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>重新配置本机ssh</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">ssh-keygen -t rsa # 配置免密<br>cd /root/.ssh<br>cat id_rsa.pub &gt;&gt; authorized_keys # 记录公钥<br>chmod 0600 ~/.ssh/authorized_keys # 修改文件权限<br>ssh-copy-id -i hadoop # 将公钥传给主机<br>vim /etc/ssh/sshd_config # 允许root登录 PermitRootLogin yes<br>systemctl enable sshd # 设置ssh服务开机自启<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>检查配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">terminal</span><br>ssh root@192.168.244.101 # 检测ssh是否正常运行<br>ping 192.168.100 # 检测和其他主机是否连通<br>ping www.baidu.com # 检测网络是否正常<br>ip addr # ip是否正常<br>java -version # java是否正常<br>hadoop -version # hadoop是否正常<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+<h4 id="node2"><a href="#node2" class="headerlink" title="node2"></a>node2</h4><ol>
+<li><p>VMware克隆node2</p>
+</li>
+<li><p>配置网络</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /etc/sysconfig/network-scripts<br>vim ifcfg-ens33 # IPADDR=192.168.244.102  DNS1=114.114.114.114<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>配置映射</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /etc/hostname # 修改主机名为node2<br>vim /etc/hosts # 修改ip映射 添加node1、node2<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>重新配置本机ssh</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">ssh-keygen -t rsa # 配置免密<br>cd /root/.ssh<br>cat id_rsa.pub &gt;&gt; authorized_keys # 记录公钥<br>chmod 0600 ~/.ssh/authorized_keys # 修改文件权限<br>ssh-copy-id -i hadoop # 将公钥传给主机<br>vim /etc/ssh/sshd_config # 允许root登录 PermitRootLogin yes<br>systemctl enable sshd # 设置ssh服务开机自启<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>检查配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">terminal</span><br>ssh root@192.168.244.101 # 检测ssh是否正常运行<br>ping 192.168.100 # 检测和其他主机是否连通<br>ping www.baidu.com # 检测网络是否正常<br>ip addr # ip是否正常<br>java -version # java是否正常<br>hadoop -version # hadoop是否正常<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+<h3 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h3><ol>
+<li><p>hadoop主机公钥传输给子节点，并测试连接子节点</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoop</span><br>ssh-copy-id -i node1<br>ssh-copy-id -i node2<br>ssh node1 # 连接成功<br>ssh node2 # 连接成功<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>配置hadoop</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoop</span><br>cd /opt/hadoop-3.1.3/etc/hadoop/<br></code></pre></div></td></tr></table></figure>
+
+<p>① <strong>vim core-site.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>fs.default.name<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hdfs://hadoop:9000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hadoop.tmp.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hadoop-3.1.3/tmp<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>② <strong>vim hdfs-site.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- 副本数量 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.replication<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.name.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hadoop-3.1.3/name<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.data.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hadoop-3.1.3/data<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>        <span class="hljs-comment">&lt;!-- 不检查权限 --&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.permissions<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>③ <strong>vim mapred-site.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.framework.name<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>yarn<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>④ <strong>vim yarn-site.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><span class="hljs-comment">&lt;!-- Site specific YARN configuration properties --&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>mapreduce_shuffle<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-comment">&lt;!-- 忽略虚拟内存检查 --&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>                <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.nodemanager.vmem-check-enabled<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<p>⑤ <strong>vim workers</strong></p>
+<figure class="highlight txt"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs txt">node1node2<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>拷贝共享主机上的hadoop文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoopcp -r /opt/hadoop-3.1.3/etc/hadoop /mnt/hgfs/hadoop_copy# node1rm -rf /opt/hadoop-3.1.3/etc/hadoopcp -r /mnt/hgfs/hadoop_copy /opt/hadoop-3.1.3/etc/hadoop# node2rm -rf /opt/hadoop-3.1.3/etc/hadoopcp -r /mnt/hgfs/hadoop_copy /opt/hadoop-3.1.3/etc/hadoop</span><br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>配置完毕，在主机hadoop进行初始化</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">rm -rf /opt/hadoop-3.1.3/logsmkdir /opt/hadoop-3.1.3/logshdfs namenode -format<br></code></pre></div></td></tr></table></figure>
+
+
+</li>
+<li><p>启动分布式集群**（问题二，bash v3.2+）**</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoopstart-all.sh</span><br></code></pre></div></td></tr></table></figure></li>
+</ol>
+<p>hadoop分布式集群启动成功</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104603.png" srcset="/img/loading.gif" lazyload></p>
+<p>上传文件成功</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104611.png" srcset="/img/loading.gif" lazyload></p>
+<p>idea BigDataTools连接成功</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104629.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>显示进入紧急模式</p>
+<p>开始不太清楚问题所在，输入root密码后也可以成功进入系统</p>
+<p>但随后，配置网络始终不生效，显示网卡未在运行（systemctl status network），polkit状态为死亡（systemctl status polkit）</p>
+<p>于是查看系统日志发现，是某个挂载未找到对应内容导致的</p>
+<p>随后在通过vim &#x2F;etc&#x2F;fstab找到，是挂载的共享文件夹没有正常配置，因为VMware在新的虚拟机中会默认关闭这个选项，打开后问题成功解决</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104640.png" srcset="/img/loading.gif" lazyload></p>
+<p>启用共享文件夹</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104647.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>出现的问题如下图：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104705.png" srcset="/img/loading.gif" lazyload></p>
+<p>开始看到 “要求bash v3.2+” 比较奇怪，不可能bash版本出问题吧</p>
+<p>随后想到了当前终端并不是bash，而是在配置快捷工具的zsh中</p>
+<p>于是执行以下命令，简单解决 。</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104653.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<h2 id="Zookeeper高性能集群"><a href="#Zookeeper高性能集群" class="headerlink" title="Zookeeper高性能集群"></a>Zookeeper高性能集群</h2><h3 id="软件版本："><a href="#软件版本：" class="headerlink" title="软件版本："></a>软件版本：</h3><table>
+<thead>
+<tr>
+<th>软件</th>
+<th>版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>java</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td>hadoop</td>
+<td>3.1.3</td>
+</tr>
+<tr>
+<td>hbase</td>
+<td>2.3.5</td>
+</tr>
+<tr>
+<td>zookeeper</td>
+<td>3.6.0</td>
+</tr>
+</tbody></table>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104750.png" srcset="/img/loading.gif" lazyload alt="image-20210715145346435"></p>
+<p>hbase和zookeeper版本对应</p>
+<p><a target="_blank" rel="noopener" href="http://hbase.apache.org/book.html#zookeeper">http://hbase.apache.org/book.html#zookeeper</a></p>
+<p>hbase参考：<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/hbase_doc/hbase_doc-vxnl2k1n.html">https://www.w3cschool.cn/hbase_doc/hbase_doc-vxnl2k1n.html</a></p>
+<h3 id="配置zk"><a href="#配置zk" class="headerlink" title="配置zk"></a>配置zk</h3><h4 id="hadoop-1"><a href="#hadoop-1" class="headerlink" title="hadoop"></a>hadoop</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cp /mnt/hgfs/apache-zookeeper-3.6.0-bin.tar.gz /opt<br>cp /mnt/hgfs/hbase-2.3.5-bin.tar.gz /opt<br>cd /opt<br>tar -xvf apache-zookeeper-3.6.0-bin.tar.gz<br>tar -xvf hbase-2.3.5-bin.tar.gz<br>rm -rf /opt/apache-zookeeper-3.6.0-bin.tar.gz<br>rm -rf /opt/hbase-2.3.5-bin.tar.gz<br></code></pre></div></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd opt<br>mv apache-zookeeper-3.6.0-bin zookeeper-3.6.0<br>cd zookeeper-3.6.0/conf<br>cp zoo_sample.cfg zoo.cfg<br>vim zoo.cfg<br></code></pre></div></td></tr></table></figure>
+
+
+
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-comment"># 修改</span><br><span class="hljs-attr">dataDir</span>=<span class="hljs-string">/opt/zookeeper-3.6.0/tmp</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 添加</span><br><span class="hljs-attr">server.1</span>=<span class="hljs-string">hadoop:2888:3888</span><br><span class="hljs-attr">server.2</span>=<span class="hljs-string">node1:2888:3888</span><br><span class="hljs-attr">server.3</span>=<span class="hljs-string">node2:2888:3888</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<p>vim &#x2F;etc&#x2F;profile</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-comment"># 添加</span><br><span class="hljs-attr">export</span> <span class="hljs-string">ZOOKEEPER_HOME=/opt/zookeeper-3.6.0</span><br><span class="hljs-attr">export</span> <span class="hljs-string">PATH=$PATH:$ZOOKEEPER_HOME/bin</span><br></code></pre></div></td></tr></table></figure>
+
+<p>source &#x2F;etc&#x2F;profile</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /opt/zookeeper-3.6.0  # zookeeper-3.6.0目录下<br>mkdir tmp<br>touch tmp/myid<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">共享配置好的zookeeper文件</span><br>cp -r /opt/zookeeper-3.6.0 /mnt/hgfs<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h4 id="node1-1"><a href="#node1-1" class="headerlink" title="node1"></a>node1</h4><p>cp -r &#x2F;mnt&#x2F;hgfs&#x2F;zookeeper-3.6.0 &#x2F;opt&#x2F;</p>
+<p>vim &#x2F;etc&#x2F;profile</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-comment"># 添加</span><br><span class="hljs-attr">export</span> <span class="hljs-string">ZOOKEEPER_HOME=/opt/zookeeper-3.6.0</span><br><span class="hljs-attr">export</span> <span class="hljs-string">PATH=$PATH:$ZOOKEEPER_HOME/bin</span><br></code></pre></div></td></tr></table></figure>
+
+<p>source &#x2F;etc&#x2F;profile</p>
+<h4 id="node2-1"><a href="#node2-1" class="headerlink" title="node2"></a>node2</h4><p>cp -r &#x2F;mnt&#x2F;hgfs&#x2F;zookeeper-3.6.0 &#x2F;opt&#x2F;</p>
+<p>vim &#x2F;etc&#x2F;profile</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-comment"># 添加</span><br><span class="hljs-attr">export</span> <span class="hljs-string">ZOOKEEPER_HOME=/opt/zookeeper-3.6.0</span><br><span class="hljs-attr">export</span> <span class="hljs-string">PATH=$PATH:$ZOOKEEPER_HOME/bin</span><br></code></pre></div></td></tr></table></figure>
+
+<p>source &#x2F;etc&#x2F;profile</p>
+<h4 id="综合-启动时出现错误1"><a href="#综合-启动时出现错误1" class="headerlink" title="综合(启动时出现错误1)"></a>综合(启动时出现错误1)</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoop</span><br>echo 1 &gt; /opt/zookeeper-3.6.0/tmp/myid<br><span class="hljs-meta prompt_"># </span><span class="language-bash">node1</span><br>echo 2 &gt; /opt/zookeeper-3.6.0/tmp/myid<br><span class="hljs-meta prompt_"># </span><span class="language-bash">node2</span><br>echo 3 &gt; /opt/zookeeper-3.6.0/tmp/myid<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoop</span><br>/opt/zookeeper-3.6.0/bin/zkServer.sh start<br><span class="hljs-meta prompt_"># </span><span class="language-bash">node1</span><br>/opt/zookeeper-3.6.0/bin/zkServer.sh start<br><span class="hljs-meta prompt_"># </span><span class="language-bash">node2</span><br>/opt/zookeeper-3.6.0/bin/zkServer.sh start<br></code></pre></div></td></tr></table></figure>
+
+
+
+<p>查看版本（错误2）</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104906.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="zk配置成功"><a href="#zk配置成功" class="headerlink" title="zk配置成功"></a>zk配置成功</h4><p>启动成功</p>
+<p>查看状态，一个leader，两个follower</p>
+<p>查看版本</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104923.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h4><p>启动失败</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104934.png" srcset="/img/loading.gif" lazyload></p>
+<p>查看日志logs</p>
+<p>​	错误: 找不到或无法加载主类 org.apache.zookeeper.server.quorum.QuorumPeerMain</p>
+<p>查阅文档发现，-bin的包才是我们需要的，重新下载进行配置</p>
+<h4 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h4><p>命令不在白名单</p>
+<p>解决：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoopvim /opt/zookeeper-3.6.0/conf/zoo.cfgecho <span class="hljs-built_in">stat</span>|nc localhost 2181</span><br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-comment"># 添加 开启4字命令4lw.commands.whitelist=*</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+<h3 id="hadoop文件修改"><a href="#hadoop文件修改" class="headerlink" title="hadoop文件修改"></a>hadoop文件修改</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoopcd /opt/hadoop-3.1.3/etc/hadoop/</span><br></code></pre></div></td></tr></table></figure>
+
+<p>① <strong>vim core-site.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>	<span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>fs.defaultFS<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hdfs://myha01/<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>	<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>	<span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hadoop.tmp.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hadoop-3.1.3/tmp<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>	<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>	<span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>io.file.buffer.size<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>131072<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>	<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>	<span class="hljs-comment">&lt;!-- 添加：指定zookeeper地址 --&gt;</span>	<span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>ha.zookeeper.quorum<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop:2181,node1:2181,node2:2181<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>	<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>	<span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>ha.zookeeper.session-timeout.ms<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>1000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>		<span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>hadoop链接zookeeper的超时时长设置ms<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span>	<span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>② <strong>vim hdfs-site.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 副本数量 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.replication<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.name.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>file:///opt/hadoop-3.1.3/name<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.datanode.data.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>file:///opt/hadoop-3.1.3/data<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 不检查权限 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.permissions<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.nameservices<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>myha01<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.webhdfs.enabled<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- myha01(core中指定)下面有两个NameNode，分别是nn1，nn2 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.ha.namenodes.myha01<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>nn1,nn2,nn3<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.rpc-address.myha01.nn1<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop:9000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.http-address.myha01.nn1<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop:50070<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- nn2的RPC通信地址 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.rpc-address.myha01.nn2<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node1:9000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- nn2的http通信地址 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.http-address.myha01.nn2<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node1:50070<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- nn3的RPC通信地址 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.rpc-address.myha01.nn3<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node2:9000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- nn3的http通信地址 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.http-address.myha01.nn3<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node2:50070<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 指定NameNode的edits元数据的共享存储位置。也就是JournalNode列表                          该url的配置格式：qjournal://host1:port1;host2:port2;host3:port3/journalId        journalId推荐使用nameservice，默认端口号是：8485 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.shared.edits.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>qjournal://hadoop:8485;node1:8485;node2:8485/myha01<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 指定JournalNode在本地磁盘存放数据的位置 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.journalnode.edits.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hadoop-3.1.3/journaldata<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 开启NameNode失败自动切换 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.ha.automatic-failover.enabled<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 配置失败自动切换实现方式 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.client.failover.proxy.provider.myha01<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 配置隔离机制方法，多个机制用换行分割，即每个机制暂用一行 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.ha.fencing.methods<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>            sshfence        <span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 使用sshfence隔离机制时需要ssh免登陆 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.ha.fencing.ssh.private-key-files<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/root/.ssh/id_rsa<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 配置sshfence隔离机制超时时间 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.ha.fencing.ssh.connect-timeout<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>30000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>ha.failover-controller.cli-check.rpc-timeout.ms<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>60000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>③ <strong>vim mapred-site.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.framework.name<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>yarn<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.jobtracker.http.address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop:50030<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 历史服务器端地址 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.jobhistory.address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop:10020<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 历史服务器web端地址 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.jobhistory.webapp.address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop:19888<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapred.job.tracker<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>http://hadoop:9001<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>④ <strong>vim yarn-site.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 忽略虚拟内存检查 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.nodemanager.vmem-check-enabled<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 开启RM高可用 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.ha.enabled<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 指定RM的cluster id --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.cluster-id<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>yrc<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 指定RM的名字 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.ha.rm-ids<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>rm1,rm2<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 分别指定RM的地址 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.hostname.rm1<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node1<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.hostname.rm2<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node2<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 指定zk集群地址 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.zk-address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop:2181,node1:2181,node2:2181<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>mapreduce_shuffle<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 开启日志聚集功能 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.log-aggregation-enable<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 设置日志聚集服务器地址 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>          <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.log.server.url<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>          <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>http://hadoop:19888/jobhistory/logs<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 设置日志保留时间 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.log-aggregation.retain-seconds<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>86400<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 启用自动恢复 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.recovery.enabled<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-comment">&lt;!-- 制定resourcemanager的状态信息存储在zookeeper集群上 --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.store.class<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.application.classpath<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hadoop-3.1.3/etc/hadoop:/opt/hadoop-3.1.3/share/hadoop/common/lib/*:/opt/hadoop-3.1.3/share/hadoop/common/*:/opt/hadoop-3.1.3/share/hadoop/hdfs:/opt/hadoop-3.1.3/share/hadoop/hdfs/lib/*:/opt/hadoop-3.1.3/share/hadoop/hdfs/*:/opt/hadoop-3.1.3/share/hadoop/mapreduce/lib/*:/opt/hadoop-3.1.3/share/hadoop/mapreduce/*:/opt/hadoop-3.1.3/share/hadoop/yarn:/opt/hadoop-3.1.3/share/hadoop/yarn/lib/*:/opt/hadoop-3.1.3/share/hadoop/yarn/*<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<p>将文件共享给子节点</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoopscp -r /opt/hadoop-3.1.3/etc/hadoop node1:/opt/hadoop-3.1.3/etcscp -r /opt/hadoop-3.1.3/etc/hadoop node2:/opt/hadoop-3.1.3/etc</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+<p>初始化（错误3）</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoop node1 node2zkServer.sh starthadoop-daemon.sh start journalnode# hadoophdfs namenode -formatscp -r /opt/hadoop-3.1.3/name/current node1:/opt/hadoop-3.1.3/namescp -r /opt/hadoop-3.1.3/name/current node2:/opt/hadoop-3.1.3/name# hadoophdfs zkfc -formatZKhadoop-daemon.sh start zkfc <span class="hljs-comment"># 尝试运行start-dfs.sh # 尝试运行（错误3）start-yarn.sh # 尝试运行</span></span><br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+<p>运行命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoop node1 node2zkServer.sh start# hadoop-daemon.sh start journalnode# hadoop-daemon.sh start zkfcstart-all.sh</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<p>关闭命令（错误5）</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoopstop-all.sh（错误5）hadoop-daemon.sh stop zkfchadoop-daemon.sh stop journalnodezkServer.sh stop</span><br></code></pre></div></td></tr></table></figure>
+
+
+
+<h3 id="运行成功"><a href="#运行成功" class="headerlink" title="运行成功"></a>运行成功</h3><p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104947.png" srcset="/img/loading.gif" lazyload></p>
+<p>后台状态运行正常（两个namenode）</p>
+<p>分布式文件系统使用正常</p>
+<p>查看（node1、node2）中namenode状态</p>
+<p>准备杀死node1：active</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104958.png" srcset="/img/loading.gif" lazyload></p>
+<p>可以看到node1中namenode已被杀死</p>
+<p>node2中namenode状态自动转为active</p>
+<p>网页访问</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105008.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="错误3"><a href="#错误3" class="headerlink" title="错误3"></a>错误3</h4><p>journaldata中有数据存在使得journalnode格式化失败</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105022.png" srcset="/img/loading.gif" lazyload></p>
+<p>修改journaldata存放地址</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105039.png" srcset="/img/loading.gif" lazyload></p>
+<p>为：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105047.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /opt/hadoop-3.1.3rm -rf data/journaldatamkdir journaldata<br></code></pre></div></td></tr></table></figure>
+
+
+
+<h4 id="错误4"><a href="#错误4" class="headerlink" title="错误4"></a>错误4</h4><p>没有指定HDFS_JOURNALNODE_USER</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105056.png" srcset="/img/loading.gif" lazyload></p>
+<p>此时hadoop整体能够运行</p>
+<p>联系第一次配置时分析，应该是需要修改sh文件指定执行者</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /opt/hadoop-3.1.3/sbinvim start-dfs.shHDFS_JOURNALNODE_USER=rootHDFS_ZKFC_USER=rootvim stop-dfs.shHDFS_JOURNALNODE_USER=rootHDFS_ZKFC_USER=root<br></code></pre></div></td></tr></table></figure>
+
+<p>子节点同样修改</p>
+<h4 id="错误5"><a href="#错误5" class="headerlink" title="错误5"></a>错误5</h4><p>namenode没有正常关闭</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105105.png" srcset="/img/loading.gif" lazyload></p>
+<p>查阅资料发现问题是任务的不正常结束</p>
+<p>另外在hadoop2中还发现存在pid文件的不安全问题</p>
+<p>先尝试清理数据文件并重新初始化，成功解决</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /opt/hadoop-3.1.3rm -rf datarm -rf namerm -rf tmprm -rf journaldatarm -rf logsmkdir datamkdir namemkdir tmpmkdir journaldatamkdir logs<br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+<hr>
+<p>历史服务器及高可用性</p>
+<h2 id="历史服务器"><a href="#历史服务器" class="headerlink" title="历史服务器"></a>历史服务器</h2><h3 id="hadoop-2"><a href="#hadoop-2" class="headerlink" title="hadoop"></a>hadoop</h3><p>vim mapred-site.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- 历史服务器端地址 --&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.jobhistory.address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop:10020<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>   <span class="hljs-comment">&lt;!-- 历史服务器web端地址 --&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.jobhistory.webapp.address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>       <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hadoop:19888<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>vim yarn-site.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- 开启日志聚集功能 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.log-aggregation-enable<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 设置日志聚集服务器地址 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>  <br>    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.log.server.url<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>  <br>    <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>http://hadoop102:19888/jobhistory/logs<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 设置日志保留时间为7天 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.log-aggregation.retain-seconds<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>604800<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>分发配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">scp -r /opt/hadoop-3.1.3/etc/hadoop node1:/opt/hadoop-3.1.3/etc<br>scp -r /opt/hadoop-3.1.3/etc/hadoop node2:/opt/hadoop-3.1.3/etc<br>mapred --daemon start historyserver<br></code></pre></div></td></tr></table></figure>
+
+<p>进入以下网址查看日志：<a target="_blank" rel="noopener" href="https://hadoop:19888/jobhistory">https://hadoop:19888/jobhistory</a></p>
+<p>测试</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">创建测试文件</span><br>hdfs dfs -mkdir /test<br>vim a.txt<br>hdfs dfs -put a.txt /test<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">如果HDFS有/output目录删除</span><br>hdfs dfs -rmr /output<br><span class="hljs-meta prompt_"># </span><span class="language-bash">执行mapreduce程序</span><br>hadoop jar /opt/hadoop-3.1.3/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.3.jar wordcount /test /output<br></code></pre></div></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="黑白名单"><a href="#黑白名单" class="headerlink" title="黑白名单"></a>黑白名单</h3><h4 id="白名单"><a href="#白名单" class="headerlink" title="白名单"></a>白名单</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /opt/hadoop-3.1.3/etc/hadoop<br>vim dfs.hosts<br><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoop</span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">node1</span><br></code></pre></div></td></tr></table></figure>
+
+<p>vim hdfs-site.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.hosts<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hadoop-3.1.3/etc/hadoop/dfs.hosts<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>分发:</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">scp</span> -r /opt/hadoop-<span class="hljs-number">3</span>.<span class="hljs-number">1</span>.<span class="hljs-number">3</span>/etc/hadoop node1:/opt/hadoop-<span class="hljs-number">3</span>.<span class="hljs-number">1</span>.<span class="hljs-number">3</span>/etc<br><span class="hljs-attribute">scp</span> -r /opt/hadoop-<span class="hljs-number">3</span>.<span class="hljs-number">1</span>.<span class="hljs-number">3</span>/etc/hadoop node2:/opt/hadoop-<span class="hljs-number">3</span>.<span class="hljs-number">1</span>.<span class="hljs-number">3</span>/etc<br></code></pre></div></td></tr></table></figure>
+
+<p>仅允许hadoop、node1加入集群，node2就无法加入集群</p>
+<p>检测：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">刷新节点</span><br>hdfs dfsadmin -refreshNodes <br></code></pre></div></td></tr></table></figure>
+
+<p>node2将无法加入集群</p>
+<h4 id="黑名单"><a href="#黑名单" class="headerlink" title="黑名单"></a>黑名单</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /opt/hadoop-3.1.3/etc/hadoopvim dfs.hosts.exclude# node2<br></code></pre></div></td></tr></table></figure>
+
+<p>vim hdfs-site.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.hosts.exclude<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hadoop-3.1.3/etc/hadoop/dfs.hosts.exclude<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+
+<p>分发:</p>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">scp</span> -r /opt/hadoop-<span class="hljs-number">3</span>.<span class="hljs-number">1</span>.<span class="hljs-number">3</span>/etc/hadoop node1:/opt/hadoop-<span class="hljs-number">3</span>.<span class="hljs-number">1</span>.<span class="hljs-number">3</span>/etcscp -r /opt/hadoop-<span class="hljs-number">3</span>.<span class="hljs-number">1</span>.<span class="hljs-number">3</span>/etc/hadoop node2:/opt/hadoop-<span class="hljs-number">3</span>.<span class="hljs-number">1</span>.<span class="hljs-number">3</span>/etc<br></code></pre></div></td></tr></table></figure>
+
+<p>仅允许hadoop、node1加入集群，node2就无法加入集群</p>
+<p>检测：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">刷新节点hdfs dfsadmin -refreshNodesyarn rmadmin -refreshNodes</span><br></code></pre></div></td></tr></table></figure>
+
+<p>node2节点状态将变为：decommission in progress（退役中）</p>
+<p>在一段时间后变为decommissioned（所有块已经复制完成）</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/%E5%AE%9E%E8%AE%AD/">实训</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hadoop/">Hadoop</a>
+                    
+                      <a class="hover-with-bg" href="/tags/FLume/">FLume</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Hackintosh/%E5%8D%8E%E7%A1%95fl8000un-x542un-%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">华硕Fl8000un_x542un 黑苹果安装</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%94%E5%A4%A9/">
+                        <span class="hidden-mobile">项目实训第五天</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

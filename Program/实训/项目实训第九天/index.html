@@ -1,0 +1,792 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>项目实训第九天 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="项目实训第九天">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-21 08:30" pubdate>
+        2021年7月21日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      43
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">项目实训第九天</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><h2 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ol>
+<li><p>窗口函数的作用是用于限制要处理的数据量的大小</p>
+</li>
+<li><p>语法</p>
+</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">分析函数 <span class="hljs-keyword">over</span>(<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> 字段 <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> 字段 <span class="hljs-keyword">rows</span> <span class="hljs-keyword">between</span> 起始范围 <span class="hljs-keyword">and</span> 结束范围)<br></code></pre></div></td></tr></table></figure>
+<h3 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h3><ol>
+<li>原始数据</li>
+</ol>
+  <figure class="highlight text"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">jack,2017-01-01,10<br>tony,2017-01-02,15<br>jack,2017-02-03,23<br>tony,2017-01-04,29<br>jack,2017-01-05,46<br>jack,2017-04-06,42<br>tony,2017-01-07,50<br>jack,2017-01-08,55<br>mart,2017-04-08,62<br>mart,2017-04-09,68<br>neil,2017-05-10,12<br>mart,2017-04-11,75<br>neil,2017-06-12,80<br>mart,2017-04-13,94<br></code></pre></div></td></tr></table></figure>
+<ol start="2">
+<li>建表</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> orders (name string, orderdate string, cost <span class="hljs-keyword">double</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;,&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/orders.txt&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> orders;<br></code></pre></div></td></tr></table></figure>
+<ol start="4">
+<li>需求一：查询2017年4月份消费的顾客名单以及2017年4月份产生的总的消费人次</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span>, <span class="hljs-built_in">count</span>(<span class="hljs-operator">*</span>) <span class="hljs-keyword">over</span>() <span class="hljs-keyword">from</span> orders <span class="hljs-keyword">where</span> <span class="hljs-keyword">year</span>(orderdate) <span class="hljs-operator">=</span> <span class="hljs-number">2017</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">month</span>(orderdate) <span class="hljs-operator">=</span> <span class="hljs-number">4</span>;<br></code></pre></div></td></tr></table></figure>
+<ol start="5">
+<li>需求二：获取每一个顾客的消费明细以及每一位顾客的月度消费总额</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span>, <span class="hljs-built_in">sum</span>(cost) <span class="hljs-keyword">over</span> (<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> name, <span class="hljs-keyword">month</span>(orderdate)) <span class="hljs-keyword">from</span> orders;<br></code></pre></div></td></tr></table></figure>
+<ol start="6">
+<li>需求三：获取每一个顾客的消费明细以及到当前日期为止的累计消费</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span>, <span class="hljs-built_in">sum</span>(cost) <span class="hljs-keyword">over</span>(<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> name <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> orderdate <span class="hljs-keyword">rows</span> <span class="hljs-keyword">between</span> unbounded preceding <span class="hljs-keyword">and</span> <span class="hljs-keyword">current</span> <span class="hljs-type">row</span>) <span class="hljs-keyword">from</span> orders;<br></code></pre></div></td></tr></table></figure>
+<ol start="7">
+<li>需求四：查询顾客的消费明细以及每一次消费之后上一次的消费时间</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span>, <span class="hljs-built_in">lag</span>(orderdate, <span class="hljs-number">1</span>) <span class="hljs-keyword">over</span>(<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> name <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> orderdate) <span class="hljs-keyword">from</span> orders;<br></code></pre></div></td></tr></table></figure>
+<ol start="8">
+<li>需求五：获取最早的20%的顾客的消费名单 - 首先要先对数据进行排序，然后将数据分成5个桶，获取第一个桶的数据</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> name <span class="hljs-keyword">from</span> (<span class="hljs-keyword">select</span> <span class="hljs-operator">*</span>, <span class="hljs-built_in">ntile</span>(<span class="hljs-number">5</span>) <span class="hljs-keyword">over</span>(<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> orderdate) <span class="hljs-keyword">as</span> o <span class="hljs-keyword">from</span> orders)tmp <span class="hljs-keyword">where</span> o <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br></code></pre></div></td></tr></table></figure>
+<h3 id="案例二"><a href="#案例二" class="headerlink" title="案例二"></a>案例二</h3><ol>
+<li>原始数据</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">Charles    Chinese    <span class="hljs-number">87</span><br>Charles    Math    <span class="hljs-number">95</span><br>Charles    English    <span class="hljs-number">68</span><br>Lily    Chinese    <span class="hljs-number">94</span><br>Lily    Math    <span class="hljs-number">56</span><br>Lily    English    <span class="hljs-number">84</span><br>William    Chinese    <span class="hljs-number">64</span><br>William    Math    <span class="hljs-number">86</span><br>William    English    <span class="hljs-number">84</span><br>Vincent    Chinese    <span class="hljs-number">65</span><br>Vincent    Math    <span class="hljs-number">85</span><br>Vincent    English    <span class="hljs-number">78</span><br></code></pre></div></td></tr></table></figure>
+<ol start="2">
+<li>建表语句</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> scores(name string, subject string, score <span class="hljs-type">int</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;\t&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/scores&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> scores;<br></code></pre></div></td></tr></table></figure>
+<ol start="4">
+<li><p>需求一：按学科，对每一个学生的成绩进行降序排序</p>
+</li>
+<li><p>顺次排序</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span>, <span class="hljs-built_in">row_number</span>() <span class="hljs-keyword">over</span>(<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> subject <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> score <span class="hljs-keyword">desc</span>) <span class="hljs-keyword">from</span> scores;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>空位排序</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span>, <span class="hljs-built_in">rank</span>() <span class="hljs-keyword">over</span>(<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> subject <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> score <span class="hljs-keyword">desc</span>) <span class="hljs-keyword">from</span> scores;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>非空位排序</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span>, <span class="hljs-built_in">dense_rank</span>() <span class="hljs-keyword">over</span>(<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> subject <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> score <span class="hljs-keyword">desc</span>) <span class="hljs-keyword">from</span> scores;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><h3 id="join"><a href="#join" class="headerlink" title="join"></a>join</h3><ol>
+<li><p>在Hive中，类似于MySQL，提供了left join&#x2F;right join&#x2F;inner join&#x2F;full outer join方式。在使用的时候，如果不指定，那么默认使用的是inner join</p>
+</li>
+<li><p>案例</p>
+</li>
+<li><p>建立orders表</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> orders (orderid <span class="hljs-type">int</span>, orderdate string, productid <span class="hljs-type">int</span>, num <span class="hljs-type">int</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span> location <span class="hljs-string">&#x27;/orders&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建立products表</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> products (productid <span class="hljs-type">int</span>, name string, price <span class="hljs-keyword">double</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span> location <span class="hljs-string">&#x27;/products&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>连接查询</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 左连<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> orders o <span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> products p <span class="hljs-keyword">on</span> o.productid <span class="hljs-operator">=</span> p.productid;<br># 右连<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> orders o <span class="hljs-keyword">right</span> <span class="hljs-keyword">join</span> products p <span class="hljs-keyword">on</span> o.productid <span class="hljs-operator">=</span> p.productid;<br># 内连<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> orders o <span class="hljs-keyword">inner</span> <span class="hljs-keyword">join</span> products p <span class="hljs-keyword">on</span> o.productid <span class="hljs-operator">=</span> p.productid;<br># 全外连接<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> orders o <span class="hljs-keyword">full</span> <span class="hljs-keyword">outer</span> <span class="hljs-keyword">join</span> products p <span class="hljs-keyword">on</span> o.productid <span class="hljs-operator">=</span> p.productid;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>需求：每一天卖了多少钱</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> o.orderdate, <span class="hljs-built_in">sum</span>(o.num <span class="hljs-operator">*</span> p.price) <span class="hljs-keyword">from</span> orders o <span class="hljs-keyword">join</span> products p <span class="hljs-keyword">on</span> o.productid <span class="hljs-operator">=</span> p.productid <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> o.orderdate;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="having"><a href="#having" class="headerlink" title="having"></a>having</h3><ol>
+<li><p>如果需要对指定字段来进行查询，那么此时考虑使用where；如果需要对聚合结果进行查询，此时需要使用having</p>
+</li>
+<li><p>案例</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1 Apollo 4900<br>1 Billy 5100<br>1 Cary 4800<br>1 Dylan 5000<br>1 Ford 4700<br>2 Apollo 5300<br>2 Billy 4600<br>2 Cary 4700<br>2 Dylan 5100<br>2 Ford 4500<br>3 Apollo 5200<br>3 Billy 4300<br>3 Cary 4600<br>3 Dylan 5200<br>3 Ford 4800<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> salaries (id <span class="hljs-type">int</span>, name string, salary <span class="hljs-keyword">double</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/salaries&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> salaries;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>需求：获取平均工资达到5000的员工</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 方式一：子查询<br><span class="hljs-keyword">select</span> name, avgsalary <span class="hljs-keyword">from</span> (<span class="hljs-keyword">select</span> name, <span class="hljs-built_in">avg</span>(salary) <span class="hljs-keyword">as</span> avgsalary <span class="hljs-keyword">from</span> salaries <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> name)tmp <span class="hljs-keyword">where</span> avgsalary <span class="hljs-operator">&gt;=</span> <span class="hljs-number">5000</span>;<br># 方式二：<span class="hljs-keyword">having</span><br><span class="hljs-keyword">select</span> name, <span class="hljs-built_in">avg</span>(salary) <span class="hljs-keyword">as</span> avgsalary <span class="hljs-keyword">from</span> salaries <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> name <span class="hljs-keyword">having</span> avgsalary <span class="hljs-operator">&gt;=</span> <span class="hljs-number">5000</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="beeline"><a href="#beeline" class="headerlink" title="beeline"></a>beeline</h3><ol>
+<li><p>beeline是Hive提供的一种用于进行远程连接的方式，底层利用了JDBC的方式来进行</p>
+</li>
+<li><p>步骤</p>
+</li>
+<li><p>退出Hive，关闭Hadoop</p>
+</li>
+<li><p>编辑文件</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">vim /opt/hadoop-3.1.3/etc/hadoop/core-site.xml<br></code></pre></div></td></tr></table></figure>
+
+在文件中添加
+
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hadoop.proxyuser.root.hosts<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hadoop.proxyuser.root.groups<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>*<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>重启Hadoop</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">start-all.sh<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>启动Hive的后台进程</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">hive --service hiveserver2 &amp;<br>hive --service metastore &amp;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="5">
+<li>进行远程连接</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">beeline -u jdbc:hive2://192.168.233.133:10000/hivedemo -n root<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="SerDe"><a href="#SerDe" class="headerlink" title="SerDe"></a>SerDe</h3><ol>
+<li><p>SerDe(Serializar - Deserializar)是Hive中提供的一套序列化反序列化机制，实际过程中经常使用这个机制来处理一些不规则的数据</p>
+</li>
+<li><p>SerDe在 使用的时候需要指定正则表达式，在正则表达式中需要给定捕获组，通过捕获组来一一对应表中的字段</p>
+</li>
+<li><p>案例</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">192.168.120.23 -- [30/Apr/2018:20:25:32 +0800] &quot;GET /asf.avi HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:32 +0800] &quot;GET /bupper.png HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:32 +0800] &quot;GET /bupper.css HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:33 +0800] &quot;GET /bg-button HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:33 +0800] &quot;GET /bbutton.css HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:33 +0800] &quot;GET /asf.jpg HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:33 +0800] &quot;GET /tomcat.css HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:33 +0800] &quot;GET /tomcat.png HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:33 +0800] &quot;GET /tbutton.png HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:33 +0800] &quot;GET /tinput.png HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:33 +0800] &quot;GET /tbg.css HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:34 +0800] &quot;GET /tomcat.css HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:34 +0800] &quot;GET /bg.css HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:34 +0800] &quot;GET /bg-button.css HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:34 +0800] &quot;GET /bg-input.css HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:34 +0800] &quot;GET /bd-input.png HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:34 +0800] &quot;GET /bg-input.png HTTP/1.1&quot; 304 -<br>192.168.120.23 -- [30/Apr/2018:20:25:34 +0800] &quot;GET /music.mp3 HTTP/1.1&quot; 304 -<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>方式一：不使用SerDe</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code>1. 需要先创建临时表用于存储数据
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> logs_tmp(log string);<br></code></pre></div></td></tr></table></figure>
+
+2. 将数据加载到临时表中
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/tomcat.log&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> logs_tmp;<br></code></pre></div></td></tr></table></figure>
+
+3. 创建表用于存储解析之后的结果
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> logs(ip string, logdate string, timezone string, request_Way string, resource string, protocol string, stateid <span class="hljs-type">int</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+
+4. 解析数据
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">insert into</span> <span class="hljs-keyword">table</span> logs <span class="hljs-keyword">select</span> arr[<span class="hljs-number">0</span>], arr[<span class="hljs-number">1</span>], arr[<span class="hljs-number">2</span>],arr[<span class="hljs-number">3</span>], arr[<span class="hljs-number">4</span>], arr[<span class="hljs-number">5</span>], <span class="hljs-built_in">cast</span>(arr[<span class="hljs-number">6</span>] <span class="hljs-keyword">as</span> <span class="hljs-type">int</span>) <span class="hljs-keyword">from</span> (<span class="hljs-keyword">select</span> split(regexp_replace(log, <span class="hljs-string">&#x27;(.*) \-\- \\[(.*) (.*)\\] \&quot;(.*) (.*) (.*)\&quot; (.*) \-&#x27;</span>, <span class="hljs-string">&#x27;$1 $2 $3 $4 $5 $6 $7&#x27;</span>), <span class="hljs-string">&#x27; &#x27;</span>) <span class="hljs-keyword">as</span> arr <span class="hljs-keyword">from</span> logs_tmp)tmp;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>方式二：使用SerDe</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code>1. 建表用于管理数据
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> logs(ip string, logdate string, timezone string, request_way string, resource string, protocol string, stateid <span class="hljs-type">int</span>) <span class="hljs-type">row</span> format serde <span class="hljs-string">&#x27;org.apache.hadoop.hive.serde2.RegexSerDe&#x27;</span> <span class="hljs-keyword">with</span> serdeproperties (&quot;input.regex&quot; <span class="hljs-operator">=</span> &quot;(.*) \-\- \\[(.*) (.*)\\] \&quot;(.<span class="hljs-operator">*</span>) (.<span class="hljs-operator">*</span>) (.<span class="hljs-operator">*</span>)\&quot; (.*) \-&quot;) stored <span class="hljs-keyword">as</span> textfile;<br></code></pre></div></td></tr></table></figure>
+
+2. 加载数据
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/tomcat.log&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> logs;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><ol>
+<li><p>视图只能读(select)不能写(insert)，需要从原来的表中来抽取字段构成视图 - 组建视图的目的是为了提高查询效率</p>
+</li>
+<li><p>视图分为物化视图和虚拟视图：如果将抽取出来的视图存储到磁盘上，此时这种视图称之为物化视图；如果将抽取出来的视图维系在内存中，此时这种视图称之为虚拟视图</p>
+</li>
+<li><p>Hive只支持虚拟视图，不支持物化视图</p>
+</li>
+<li><p>建立视图</p>
+</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> logs_view <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> ip, logdate, resource <span class="hljs-keyword">from</span> logs;<br></code></pre></div></td></tr></table></figure>
+<ol start="5">
+<li><p>在建立视图的时候，并没有指定封装的select语句，当第一次使用视图的时候，才会触发这个封装的select语句</p>
+</li>
+<li><p>删除视图</p>
+</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">view</span> logs_view;<br></code></pre></div></td></tr></table></figure>
+<h3 id="注意问题"><a href="#注意问题" class="headerlink" title="注意问题"></a>注意问题</h3><ol>
+<li>Hive将数据最终以文件的形式存储到HDFS上，在存储的时候可以采取不同的文件格式</li>
+<li>如果不指定，那么Hive默认会将数据以textfile(文本)来存储，在text格式下，不支持update和delete操作</li>
+<li>Hive还支持orc和parquet格式，不同于textfile格式，orc和parquet格式采用的是物理列逻辑行的格式来存储数据 - 即意味着orc和parquet在存储数据的时候是以列为单位来进行存储。orc和parquet格式可以采取更好的压缩方式，同时orc和parquet支持update和delete，但是update和delete的效率非常低</li>
+</ol>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ol>
+<li><p>不同于MySQL，Hive中提供了两种不同的排序方式：order by和sort by</p>
+</li>
+<li><p>案例</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">3 Max 89<br>1 Eric 89<br>3 Paul 82<br>1 Hank 95<br>2 Larry 74<br>1 Henry 84<br>2 Justin 82<br>3 Tim 85<br>2 ken 84<br>1 Ivan 85<br>3 Nick 84<br>2 Leo 82<br>2 Mars 86<br>1 Jim 74<br>3 Reed 81<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表管理数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> scores(class <span class="hljs-type">int</span>, name string, score <span class="hljs-type">int</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/scores&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> scores;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>Hive会将SQL转化为MapReduce程序来执行 - 在MapReduce中，默认只有1个ReduceTask - 在只有1个ReduceTask的前提下，order by和sort by没有区别</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code>1. order by排序
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> overwrite directory <span class="hljs-string">&#x27;/result/orderby1&#x27;</span> <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;\t&#x27;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> scores <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> score <span class="hljs-keyword">desc</span>;<br></code></pre></div></td></tr></table></figure>
+
+2. sort by排序
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> overwrite directory <span class="hljs-string">&#x27;/result/sortby1&#x27;</span> <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;\t&#x27;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> scores sort <span class="hljs-keyword">by</span> score <span class="hljs-keyword">desc</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="5">
+<li>设置多个ReduceTask，通过命令<code>set mapred.reduce.tasks = 3;</code>来设置 - order by忽略ReduceTask的数量直接对数据进行整体的排序，sort by则是将数据分配到3个ReduceTask中，然后再在每一个ReduceTask内部进行排序</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code>1. order by排序
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> overwrite directory <span class="hljs-string">&#x27;/result/orderby2&#x27;</span> <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;\t&#x27;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> scores <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> score <span class="hljs-keyword">desc</span>;<br></code></pre></div></td></tr></table></figure>
+
+2. sort by排序
+
+<figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> overwrite directory <span class="hljs-string">&#x27;/result/sortby2&#x27;</span> <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;\t&#x27;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> scores sort <span class="hljs-keyword">by</span> score <span class="hljs-keyword">desc</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="6">
+<li>需求：分班级，在每一个班级内将学生按照分数进行降序排序</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 方式一：可以使用窗口函数<br><span class="hljs-keyword">insert</span> overwrite directory <span class="hljs-string">&#x27;/result/over&#x27;</span> <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span>, <span class="hljs-built_in">rank</span>() <span class="hljs-keyword">over</span>(<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> class <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> score <span class="hljs-keyword">desc</span>) <span class="hljs-keyword">from</span> scores;<br># 方式二：使用distribute <span class="hljs-keyword">by</span><br><span class="hljs-keyword">insert</span> overwrite directory <span class="hljs-string">&#x27;/result/distributeby&#x27;</span> <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> scores distribute <span class="hljs-keyword">by</span> class sort <span class="hljs-keyword">by</span> score <span class="hljs-keyword">desc</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="Hive和数据库的区别"><a href="#Hive和数据库的区别" class="headerlink" title="Hive和数据库的区别"></a>Hive和数据库的区别</h3><ol>
+<li>存储介质：Hive将数据以文本形式落地到HDFS的磁盘上，因为HDFS的副本特性，所以Hive天然支持数据的可靠性；MySQL会将数据自动的落地到本地磁盘上，也就意味着如果本地磁盘损坏，数据就可能会产生丢失</li>
+<li>应用场景：Hive适应于OLAP场景，强调对数据进行分析和管理；数据库是用于OLTP场景，强调对数据进行存储以及操作的事务问题 - Hive默认不支持事务</li>
+<li>数据量：Hive依靠于HDFS来存储数据，因此一个Hive集群能够存储和处理的数据量大小实际上是由HDFS集群的大小来决定，HDFS集群可以轻松的扩展到上千台数据，可以存储几十真至于上百PB的数据；数据库主要依靠本地磁盘来存储数据，并且数据库的扩展性相对而言是比较差的(Oracle能够大概最多扩展到100台服务器上)，因此导致数据库存储的数据量相对比较低</li>
+<li>索引机制：Hive3.x不支持索引，在Hive1.x和Hive2.x中支持索引机制，但是不会自动建立索引而是需要用户在使用的时候手动建立索引表并且需要手动更新索引；在数据库中，会自动的针对主键建立索引，并且会自动更新主键索引</li>
+<li>效率：Hive在执行的时候，需要将写的SQL转化为MapReduce程序，之后再交给YARN来执行，因此Hive的效率相对比较低，更适合于<strong>离线分析&#x2F;离线批处理</strong>场景；MySQL在执行的时候，会将写的SQL转化为执行计划树，然后执行过程，此时MySQL的执行效率相对而言是比较高的</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/%E5%AE%9E%E8%AE%AD/">实训</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hadoop/">Hadoop</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Hive/">Hive</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%8D%81%E5%A4%A9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">项目实训第十天</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AB%E5%A4%A9/">
+                        <span class="hidden-mobile">项目实训第八天</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

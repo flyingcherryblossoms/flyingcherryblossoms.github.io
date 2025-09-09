@@ -1,0 +1,856 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>项目实训第八天 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="项目实训第八天">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-20 08:25" pubdate>
+        2021年7月20日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      34
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">项目实训第八天</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<h2 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="基本案例"><a href="#基本案例" class="headerlink" title="基本案例"></a>基本案例</h3><ol>
+<li><p>拼接</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">baike baidu com<br>mail 163 com<br>music qq com<br>news baidu com<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>在Hive中建表来管理这些数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table webs (app string, company string, kind string) row format delimited fields terminated by &#x27; &#x27;;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">load data local inpath &#x27;/opt/hivedemo/webs&#x27; into table webs;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>拼接数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql"># 方式一<br>select concat(app, &#x27;.&#x27;, company, &#x27;.&#x27;, kind) from webs;<br># 方式二<br>select concat_ws(&#x27;.&#x27;, app, company, kind) from webs;<br># 方式三<br>select concat_ws(&#x27;.&#x27;, *) from webs;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li><p>提取年份 ：’2021-07-19’，需要将日期中的年份提取出来</p>
+</li>
+<li><p>方式一：剪切</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select cast(split(&#x27;2021-07-19&#x27;, &#x27;-&#x27;)[0] as int);<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>方式二：提取</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select year(&#x27;2021-07-19&#x27;);<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li><p>提取年份：’2021&#x2F;07&#x2F;19’，需要将日期中的年份提取出来</p>
+</li>
+<li><p>方式一：剪切</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select cast(split(&#x27;2021/07/19&#x27;, &#x27;/&#x27;)[0] as int);<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>方式二：替换</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select year(regexp_replace(&#x27;2021/07/19&#x27;, &#x27;/&#x27;, &#x27;-&#x27;));<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li><p>提取邮箱后缀：‘<a href="mailto:&#x74;&#111;&#109;&#x40;&#49;&#54;&#51;&#46;&#99;&#111;&#x6d;">tom@163.com</a>‘需要邮箱的后缀提取出来</p>
+</li>
+<li><p>方式一：切分</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select split(&#x27;tom@163.com&#x27;, &#x27;@&#x27;)[1];<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>方式二：提取</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select regexp_extract(&#x27;tom@163.com&#x27;, &#x27;(.*)@(.*)&#x27;, 2);<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="NVL"><a href="#NVL" class="headerlink" title="NVL"></a>NVL</h3><ol>
+<li><p>nvl(s1, s2)：如果s1的值不为null，则返回s1；如果s1的值为null，那么会返回s2的值</p>
+</li>
+<li><p>案例：计算平均奖金</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1 Alex 3000<br>2 Bill 2600<br>3 Cathy 1500<br>4 Danny<br>5 Evan 2000<br>6 Feddy 2400<br>7 Grace 1000<br>8 Hack 1500<br>9 Iran<br>10 John 2800<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>在Hive中建表来管理原始数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table rewards(id int, name string, reward double) row format delimited fields terminated by &#x27; &#x27;;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">load data local inpath &#x27;/opt/hivedemo/rewards&#x27; into table rewards;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>获取这个月平均每一个人发了多少奖金</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select avg(reward) from rewards; # avg在求平均值的时候，会自动的跳过null值<br>select avg(nvl(reward, 0)) from rewards;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="case-when"><a href="#case-when" class="headerlink" title="case when"></a>case when</h3><ol>
+<li><p>case when类似于Java中的switch-case结构，对数据进行分支选择</p>
+</li>
+<li><p>案例：统计每一个部门的男女生人数</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1 技术 Nancy 女<br>2 技术 Mark 男<br>3 财务 Mike 男<br>4 技术 Nack 男<br>5 财务 Lucy 女<br>6 财务 Lily 女<br>7 技术 Lisa 女<br>8 技术 Kite 男<br>9 财务 Sam 男<br>10 财务 Simon 男<br>11 技术 Tony 男<br>12 财务 Thomas 男<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表语句</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> employers(id <span class="hljs-type">int</span>, department string, name string, gender string) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/employers&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> employers;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>分别统计每一个部门内男女生的人数</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> department, <span class="hljs-built_in">sum</span>(<span class="hljs-keyword">case</span> gender <span class="hljs-keyword">when</span> <span class="hljs-string">&#x27;男&#x27;</span> <span class="hljs-keyword">then</span> <span class="hljs-number">1</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span> <span class="hljs-keyword">end</span>) <span class="hljs-keyword">as</span> totalmale, <span class="hljs-built_in">sum</span>(<span class="hljs-keyword">case</span> gender <span class="hljs-keyword">when</span> <span class="hljs-string">&#x27;女&#x27;</span> <span class="hljs-keyword">then</span> <span class="hljs-number">1</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span> <span class="hljs-keyword">end</span>) <span class="hljs-keyword">as</span> totalfemale <span class="hljs-keyword">from</span> employers <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> department;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="explode"><a href="#explode" class="headerlink" title="explode"></a>explode</h3><ol>
+<li><p>explode函数在使用的时候，需要传入一个数组或者映射。如果传入的是一个数组，那么会将数组中的每一个元素提取出来成为单独的一行；如果传入的是一个映射，那么会将映射的键值对拆分成两列</p>
+</li>
+<li><p>案例：单词统计</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">hadoop flume hadoop hdfs<br>flume source hadoop source map reduce<br>sink flume hadoop map hdfs channel<br>hadoop hdfs map reduce<br>shuffle hadoop flume source map<br>hdfs sink channel reduce hadoop flume<br>hadoop test flume sink<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表语句</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> words(warr <span class="hljs-keyword">array</span><span class="hljs-operator">&lt;</span>string<span class="hljs-operator">&gt;</span>) <span class="hljs-type">row</span> format delimited collection items terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/words&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> words;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>统计每一个单词出现的次数</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> w, <span class="hljs-built_in">count</span>(w) <span class="hljs-keyword">from</span> (<span class="hljs-keyword">select</span> explode(warr) <span class="hljs-keyword">as</span> w <span class="hljs-keyword">from</span> words)ws <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> w;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="列转行"><a href="#列转行" class="headerlink" title="列转行"></a>列转行</h3><ol>
+<li><p>所谓列转行，指的是将某一列的数据拆分成多行的数据</p>
+</li>
+<li><p>案例一</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">济公之降龙降世    动画/奇幻/冒险<br>黑寡妇    动作/科幻/冒险<br>明日之战    动作/科幻<br>疾速猪杀    剧情/惊悚<br>钛    剧情/惊悚<br>人类清除计划5    惊悚/科幻/犯罪<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> movies (name string, kinds <span class="hljs-keyword">array</span><span class="hljs-operator">&lt;</span>string<span class="hljs-operator">&gt;</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;\t&#x27;</span> collection items terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;/&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/movies&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> movies;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>列转行 - 炸裂</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> name, k <span class="hljs-keyword">from</span> movies <span class="hljs-keyword">lateral</span> <span class="hljs-keyword">view</span> explode(kinds) k_tmp <span class="hljs-keyword">as</span> k;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="5">
+<li>查询惊悚片</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> name, k <span class="hljs-keyword">from</span> movies <span class="hljs-keyword">lateral</span> <span class="hljs-keyword">view</span> explode(kinds) k_tmp <span class="hljs-keyword">as</span> k <span class="hljs-keyword">where</span> k <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;惊悚&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li><p>案例二</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">Darl 活泼/大方 打篮球/打游戏<br>Danny 活泼/幽默 打篮球/听音乐<br>Fred 大方/开朗 打游戏/看电影<br>Frank 幽默/开朗 打游戏/听音乐<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> person(name string, characters <span class="hljs-keyword">array</span><span class="hljs-operator">&lt;</span>string<span class="hljs-operator">&gt;</span>, hobbies <span class="hljs-keyword">array</span><span class="hljs-operator">&lt;</span>string<span class="hljs-operator">&gt;</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span> collection items terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;/&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/person&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> person;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>炸裂多列</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> name, c, h <span class="hljs-keyword">from</span> person <span class="hljs-keyword">lateral</span> <span class="hljs-keyword">view</span> explode(characters) c_tmp <span class="hljs-keyword">as</span> c <span class="hljs-keyword">lateral</span> <span class="hljs-keyword">view</span> explode(hobbies) h_tmp <span class="hljs-keyword">as</span> h;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="行转列"><a href="#行转列" class="headerlink" title="行转列"></a>行转列</h3><ol>
+<li><p>所谓行转列，将多行的数据合并到一列上</p>
+</li>
+<li><p>案例一</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">智齿 悬疑<br>智齿 犯罪<br>狼行者 动画<br>狼行者 奇幻<br>狼行者 冒险<br>杀手妻子的保镖 犯罪<br>杀手妻子的保镖 动作<br>杀手妻子的保镖 喜剧<br>我要我们在一起 剧情<br>我要我们在一起 爱情<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> movies (name string, kind string) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/movies&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> movies;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>行转列</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> name, concat_ws(<span class="hljs-string">&#x27;/&#x27;</span>, collect_set(kind)) <span class="hljs-keyword">from</span> movies <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> name;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li><p>案例二</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1 1 burt<br>1 2 james<br>1 3 fred<br>1 4 bruce<br>1 1 carol<br>1 2 taylor<br>1 3 evan<br>1 4 grace<br>1 1 richard<br>1 2 adam<br>1 3 ben<br>1 4 ross<br>1 1 charles<br>1 2 cody<br>1 3 wendy<br>1 4 david<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create table</span> students(grade <span class="hljs-type">int</span>, class <span class="hljs-type">int</span>, name string) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27; &#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">load data <span class="hljs-keyword">local</span> inpath <span class="hljs-string">&#x27;/opt/hivedemo/students&#x27;</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">table</span> students;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>合并 - 行转列</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sql"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> grade, class, concat_ws(<span class="hljs-string">&#x27;,&#x27;</span>, collect_list(name)) <span class="hljs-keyword">from</span> students <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> grade, class;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
+<li>在Hive中，将窗口函数以外的函数分为了3类</li>
+<li>UDF(User Defined Function)：用户定义函数。这类函数的特点是一进一出，即输入一行数据获取到一行结果。例如year，length，sin，floor等</li>
+<li>UDAF(User Defined Aggregation Function)：用户定义聚合函数。这类函数的特点是多进一出，即输入多行数据会获取到一行结果。例如count，sum，min，max，avg，collect_set，collect_list等</li>
+<li>UDTF(User Defined Table-generated Function)：用户定义表生成函数。这类函数的特点一进多出，即输入一行数据会获取到多行结果，例如explode</li>
+<li>在Hive中，大约90%的函数都是UDF函数，UDF函数也是最常用的函数</li>
+</ol>
+<h3 id="UDF"><a href="#UDF" class="headerlink" title="UDF"></a>UDF</h3><ol>
+<li><p>构建Maven工程，导入对应的POM依赖</p>
+</li>
+<li><p>在Hive1.x和Hive2.x中，需要定义一个类继承UDF类；在Hive3.x中，UDF类已经过时，所以此时需要定义一个类继承GenericUDF类</p>
+</li>
+</ol>
+  <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 在Hive3.x中需要继承GenericUDF</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AuthUDF</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">GenericUDF</span> &#123;<br><br>  <span class="hljs-comment">// 初始化方法</span><br>  <span class="hljs-comment">// 这个方法的返回值类型决定了evaluate方法的返回值类型</span><br>  <span class="hljs-meta">@Override</span><br>  <span class="hljs-keyword">public</span> ObjectInspector <span class="hljs-title function_">initialize</span><span class="hljs-params">(ObjectInspector[] arguments)</span> <span class="hljs-keyword">throws</span> UDFArgumentException &#123;<br>      <span class="hljs-comment">// 判断参数个数</span><br>      <span class="hljs-keyword">if</span> (arguments.length &lt; <span class="hljs-number">2</span>)<br>          <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UDFArgumentException</span>(<span class="hljs-string">&quot;参数个数缺少，至少需要2个参数！！！&quot;</span>);<br>      <span class="hljs-comment">// 返回值类型决定了evaluate方法的返回值类型</span><br>      <span class="hljs-keyword">return</span> PrimitiveObjectInspectorFactory.javaIntObjectInspector;<br>  &#125;<br><br>  <span class="hljs-comment">// Hive在执行的时候，实际上的执行逻辑需要覆盖在这个方法中</span><br>  <span class="hljs-meta">@Override</span><br>  <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">evaluate</span><span class="hljs-params">(DeferredObject[] arguments)</span> &#123;<br>      <span class="hljs-comment">// 获取到字符串</span><br>      <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> arguments[<span class="hljs-number">0</span>].toString();<br>      <span class="hljs-comment">// 获取子串</span><br>      <span class="hljs-type">String</span> <span class="hljs-variable">sub</span> <span class="hljs-operator">=</span> arguments[<span class="hljs-number">1</span>].toString();<br>      <span class="hljs-comment">// 获取子串在字符串中第一次出现的下标</span><br>      <span class="hljs-keyword">return</span> str.indexOf(sub);<br>  &#125;<br><br>  <span class="hljs-meta">@Override</span><br>  <span class="hljs-keyword">public</span> String <span class="hljs-title function_">getDisplayString</span><span class="hljs-params">(String[] children)</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<ol start="3">
+<li><p>定义完类之后，需要将这个类打成jar包，然后将这个jar上传到Linux系统中</p>
+</li>
+<li><p>需要在Hive中添加jar包</p>
+</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">add</span> jar <span class="hljs-operator">/</span>opt<span class="hljs-operator">/</span>hivedemo<span class="hljs-operator">/</span>cqhive<span class="hljs-number">-1.0</span><span class="hljs-operator">-</span>SNAPSHOT.jar;<br></code></pre></div></td></tr></table></figure>
+<ol start="5">
+<li>需要在Hive中构建临时函数来使用</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> temporary <span class="hljs-keyword">function</span> indexof <span class="hljs-keyword">as</span> <span class="hljs-string">&#x27;cn.tedu.udf.AuthUDF&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+<h3 id="UDTF"><a href="#UDTF" class="headerlink" title="UDTF"></a>UDTF</h3><ol>
+<li>定义一个类继承GenericUDTF，覆盖其中的方法</li>
+</ol>
+  <figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AuthUDTF</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">GenericUDTF</span> &#123;<br><br>  <span class="hljs-comment">// 初始化方法</span><br>  <span class="hljs-comment">// 返回值决定了process方法的返回值类型</span><br>  <span class="hljs-meta">@Override</span><br>  <span class="hljs-keyword">public</span> StructObjectInspector <span class="hljs-title function_">initialize</span><span class="hljs-params">(StructObjectInspector argOIs)</span> &#123;<br>      <span class="hljs-comment">// 指定拆分出来的列名</span><br>      List&lt;String&gt; fieldsName = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>      fieldsName.add(<span class="hljs-string">&quot;word&quot;</span>);<br>      <span class="hljs-comment">// 指定拆分出来的数据类型</span><br>      List&lt;ObjectInspector&gt; fieldsType = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>      fieldsType.add(PrimitiveObjectInspectorFactory.javaStringObjectInspector);<br>      <span class="hljs-keyword">return</span> ObjectInspectorFactory.getStandardStructObjectInspector(fieldsName, fieldsType);<br>  &#125;<br><br>  <span class="hljs-comment">// 处理数据的方法</span><br>  <span class="hljs-meta">@Override</span><br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">process</span><span class="hljs-params">(Object[] args)</span> <span class="hljs-keyword">throws</span> HiveException &#123;<br>      <span class="hljs-comment">// 判断参数个数</span><br>      <span class="hljs-keyword">if</span> (args.length &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">HiveException</span>();<br>      <span class="hljs-comment">// 获取第一个参数</span><br>      <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> args[<span class="hljs-number">0</span>].toString();<br>      <span class="hljs-comment">// 获取一个切分符号</span><br>      <span class="hljs-type">String</span> <span class="hljs-variable">symbol</span> <span class="hljs-operator">=</span> args.length &gt;= <span class="hljs-number">2</span> ? args[<span class="hljs-number">1</span>].toString() : <span class="hljs-string">&quot;-&quot;</span>;<br>      <span class="hljs-comment">// 切分字符串</span><br>      String[] arr = str.split(symbol);<br>      List&lt;String&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>      <span class="hljs-comment">// 遍历数组依次写出</span><br>      <span class="hljs-keyword">for</span> (String s : arr) &#123;<br>          <span class="hljs-comment">// 将数据放到集合中</span><br>          list.add(s);<br>          <span class="hljs-comment">// 将数据写出</span><br>          forward(list);<br>          <span class="hljs-comment">// 写完之后需要清空集合</span><br>          list.clear();<br>      &#125;<br>  &#125;<br><br>  <span class="hljs-meta">@Override</span><br>  <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">close</span><span class="hljs-params">()</span> &#123;<br><br>  &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<ol start="2">
+<li>指定jar包</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">add</span> jar <span class="hljs-operator">/</span>opt<span class="hljs-operator">/</span>hivedemo<span class="hljs-operator">/</span>cqhive<span class="hljs-number">-1.0</span><span class="hljs-operator">-</span>SNAPSHOT.jar;<br></code></pre></div></td></tr></table></figure>
+<ol start="3">
+<li>构建临时函数</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"><span class="hljs-keyword">create</span> temporary <span class="hljs-keyword">function</span> splitarr <span class="hljs-keyword">as</span> <span class="hljs-string">&#x27;cn.tedu.udtf.AuthUDTF&#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+<h2 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ol>
+<li><p>窗口函数又称之为开窗函数，用于决定要处理的数据量的多少</p>
+</li>
+<li><p>基本语法</p>
+</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql">分析函数 <span class="hljs-keyword">over</span>(<span class="hljs-keyword">partition</span> <span class="hljs-keyword">by</span> 字段 <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> 字段 起始范围 <span class="hljs-keyword">and</span> 结束范围)<br></code></pre></div></td></tr></table></figure>
+<ol start="3">
+<li><p>partition by ：对数据进行分类</p>
+</li>
+<li><p>order by：对数据进行排序</p>
+</li>
+<li><p>处理范围</p>
+</li>
+<li><p>关键词</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code>| 关键词 | 解释  |
+| --- | --- |
+| preceding | 往前  |
+| following | 往后  |
+| current row | 当前行 |
+| unbounded | 无边界 |
+</code></pre></div>
+<ol start="2">
+<li>案例</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code>1. unbounded preceding：从第一行开始
+2. unbounded following：到最后一行结束
+3. 2 preceding and current row：最近三行数据
+4. current row and 3 following：从当前行往后再数三行
+</code></pre></div>
+<ol start="6">
+<li><p>分析函数</p>
+</li>
+<li><p>count(col)：统计指定列的总的个数</p>
+</li>
+<li><p>sum(col)：针对指定列进行求和</p>
+</li>
+<li><p>avg(col)：针对指定列进行求平均</p>
+</li>
+<li><p>max(col)：获取指定列的最大值</p>
+</li>
+<li><p>min(col)：获取指定列的最小值</p>
+</li>
+<li><p>lag(col, n)：表示获取往前数第n行的数据。假设当前行是第6行，那么lag(col, 3)表示要处理第3行的数据</p>
+</li>
+<li><p>lead(col, n)：表示获取往后第n行的数据。</p>
+</li>
+<li><p>ntile(n)：要求数据必须先排序，排序之后将数据平均分到n个桶中，桶的编号从1开始依次递增。如果数据不能平分到每一个桶中，那么此时每一个桶之间的元素个数最多相差1个</p>
+</li>
+<li><p>row_number()：不考虑数据是否重复，会顺次进行递增编号</p>
+</li>
+<li><p>rank()：在数据排序之后会对数据进行自增的编号，如果值相同，那么编号会重复且产生空位</p>
+</li>
+<li><p>dense_rank()：在数据排序之后会对数据进行自增的编号，如果值相同，那么编号会重复且不产生空位</p>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/%E5%AE%9E%E8%AE%AD/">实训</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hadoop/">Hadoop</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Hive/">Hive</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%B9%9D%E5%A4%A9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">项目实训第九天</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/Java/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81unicode%E5%92%8Cutf8%E7%9A%84%E5%85%B3%E7%B3%BB/">
+                        <span class="hidden-mobile">字符编码Unicode和UTF8的关系</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

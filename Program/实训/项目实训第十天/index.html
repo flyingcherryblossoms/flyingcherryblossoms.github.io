@@ -1,0 +1,872 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>项目实训第十天 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="项目实训第十天">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-22 08:11" pubdate>
+        2021年7月22日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      35
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">项目实训第十天</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<h1 id="电信日志分析"><a href="#电信日志分析" class="headerlink" title="电信日志分析"></a>电信日志分析</h1><h2 id="数据采集"><a href="#数据采集" class="headerlink" title="数据采集"></a>数据采集</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ol>
+<li>在实际过程中，流量日志并不是集中在一台服务器上而是放在了多台服务器上，此时需要考虑将数据先从多台服务器上收集过来其中到HDFS上</li>
+<li>在收集日志的时候，可以考虑使用日志收集框架Flume、Scribe等</li>
+</ol>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li><p>将三台虚拟机启动，将后两台虚拟机作为日志产生的服务器，第一台虚拟机作为日志进行汇聚的服务器</p>
+</li>
+<li><p>在第二台和第三台虚拟机上，上传日志文件</p>
+</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> /opt<br><span class="hljs-built_in">mkdir</span> telecomlog<br><span class="hljs-built_in">cd</span> telecomlog/<br>rz<br><span class="hljs-comment"># 上传日志文件</span><br></code></pre></div></td></tr></table></figure>
+<ol start="3">
+<li>第二台和第三台虚拟机上做日志收集</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> /opt/flume-1.9.0/data<br>vim telecomlog.conf<br></code></pre></div></td></tr></table></figure>
+<p>  在文件中添加</p>
+  <figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1</span><br><span class="hljs-attr">a1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks</span> = <span class="hljs-string">k1</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 配置Source</span><br><span class="hljs-comment"># 如果监听的目录下产生了新的文件</span><br><span class="hljs-comment"># 那么需要将新的文件的内容来自动收集</span><br><span class="hljs-attr">a1.sources.s1.type</span> = <span class="hljs-string">spooldir</span><br><span class="hljs-comment"># 指定要监听的目录</span><br><span class="hljs-attr">a1.sources.s1.spoolDir</span> = <span class="hljs-string">/opt/telecomlog</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 配置Channel</span><br><span class="hljs-attr">a1.channels.c1.type</span> = <span class="hljs-string">memory</span><br><span class="hljs-attr">a1.channels.c1.capacity</span> = <span class="hljs-string">1000</span><br><span class="hljs-attr">a1.channels.c1.transactionCapacity</span> = <span class="hljs-string">1000</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 配置Sink</span><br><span class="hljs-comment"># 需要将收集到的数据汇聚到第一个节点上</span><br><span class="hljs-attr">a1.sinks.k1.type</span> = <span class="hljs-string">avro</span><br><span class="hljs-attr">a1.sinks.k1.hostname</span> = <span class="hljs-string">hadoop</span><br><span class="hljs-attr">a1.sinks.k1.port</span> = <span class="hljs-string">8090</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 绑定</span><br><span class="hljs-attr">a1.sources.s1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks.k1.channel</span> = <span class="hljs-string">c1</span><br></code></pre></div></td></tr></table></figure>
+<ol start="4">
+<li>在第一台虚拟机上来汇聚数据到HDFS上</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> /opt/flume-1.9.0/data/<br>vim telecomlog.conf<br></code></pre></div></td></tr></table></figure>
+<p>  在文件中添加</p>
+  <figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1</span><br><span class="hljs-attr">a1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks</span> = <span class="hljs-string">k1</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 配置Source</span><br><span class="hljs-comment"># 接收其他节点发送来的数据</span><br><span class="hljs-attr">a1.sources.s1.type</span> = <span class="hljs-string">avro</span><br><span class="hljs-comment"># 指定要监听的主机</span><br><span class="hljs-attr">a1.sources.s1.bind</span> = <span class="hljs-string">0.0.0.0</span><br><span class="hljs-comment"># 指定要监听的端口</span><br><span class="hljs-attr">a1.sources.s1.port</span> = <span class="hljs-string">8090</span><br><span class="hljs-comment"># 添加一个拦截器用于标记时间戳</span><br><span class="hljs-attr">a1.sources.s1.interceptors</span> = <span class="hljs-string">i1</span><br><span class="hljs-attr">a1.sources.s1.interceptors.i1.type</span> = <span class="hljs-string">timestamp</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 配置Channel</span><br><span class="hljs-attr">a1.channels.c1.type</span> = <span class="hljs-string">memory</span><br><span class="hljs-attr">a1.channels.c1.capacity</span> = <span class="hljs-string">10000</span><br><span class="hljs-attr">a1.channels.c1.transactionCapacity</span> = <span class="hljs-string">1000</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 配置Sink</span><br><span class="hljs-comment"># 将数据写到HDFS上</span><br><span class="hljs-attr">a1.sinks.k1.type</span> = <span class="hljs-string">hdfs</span><br><span class="hljs-comment"># 指定在HDFS上的存储位置</span><br><span class="hljs-attr">a1.sinks.k1.hdfs.path</span> = <span class="hljs-string">hdfs://hadoop:9000/telecomlog/reporttime=%Y-%m-%d</span><br><span class="hljs-comment"># 指定文件在HDFS上的存储类型</span><br><span class="hljs-attr">a1.sinks.k1.hdfs.fileType</span> = <span class="hljs-string">DataStream</span><br><span class="hljs-comment"># 指定文件的滚动间隔时间</span><br><span class="hljs-attr">a1.sinks.k1.hdfs.rollInterval</span> = <span class="hljs-string">3600</span><br><span class="hljs-attr">a1.sinks.k1.hdfs.rollSize</span> = <span class="hljs-string">0</span><br><span class="hljs-attr">a1.sinks.k1.hdfs.rollCount</span> = <span class="hljs-string">0</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 绑定</span><br><span class="hljs-attr">a1.sources.s1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks.k1.channel</span> = <span class="hljs-string">c1</span><br></code></pre></div></td></tr></table></figure>
+<ol start="5">
+<li>在第一个虚拟机上启动HDFS</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">start-dfs.sh<br></code></pre></div></td></tr></table></figure>
+<ol start="6">
+<li>先启动第一个虚拟机上的Flume</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/conf -f telecomlog.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure>
+<ol start="7">
+<li>再启动第二个虚拟机上的Flume</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/conf -f telecomlog.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure>
+<h2 id="数据清洗"><a href="#数据清洗" class="headerlink" title="数据清洗"></a>数据清洗</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><ol>
+<li>将数据收集到HDFS上之后，需要对数据进行处理，但是数据的字段相对比较多，并不是所有的字段都需要处理，那么此时就需要对原始数据进行分析，这个过程称之为数据清洗</li>
+<li>数据清洗的时候，如果过程相对简单，那么可以考虑使用SQL工具(例如Hive，Kettle等)来清洗，如果数据处理过程相对比较复杂，那么可以考虑使用计算框架(例如MapReduce，Spark，Flink等)来清洗处理</li>
+</ol>
+<h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>需要先开启YARN</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">start-yarn.sh<br></code></pre></div></td></tr></table></figure>
+<ol start="2">
+<li>启动Hive后台进程</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">hive --service hiveserver2 &amp;<br>hive --service metastore &amp;<br></code></pre></div></td></tr></table></figure>
+<ol start="3">
+<li>启动Hive</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">hive<br></code></pre></div></td></tr></table></figure>
+<ol start="4">
+<li>在Hive建库建表</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 建库<br><span class="hljs-keyword">create</span> database telecom;<br># 使用这个库<br>use telecom;<br># 建表<br><span class="hljs-keyword">create</span> <span class="hljs-keyword">EXTERNAL</span> <span class="hljs-keyword">table</span> telecom (a1 string, a2 string, a3 string, a4 string, a5 string, a6 string, a7 string, a8 string, a9 string, a10 string, a11 string, a12 string, a13 string, a14 string, a15 string, a16 string, a17 string, a18 string, a19 string, a20 string, a21 string, a22 string, a23 string, a24 string, a25 string, a26 string, a27 string, a28 string, a29 string, a30 string, a31 string, a32 string, a33 string, a34 string, a35 string, a36 string, a37 string, a38 string, a39 string, a40 string, a41 string, a42 string, a43 string, a44 string, a45 string, a46 string, a47 string, a48 string, a49 string, a50 string, a51 string, a52 string, a53 string, a54 string, a55 string, a56 string, a57 string, a58 string, a59 string, a60 string, a61 string, a62 string, a63 string, a64 string, a65 string, a66 string, a67 string, a68 string, a69 string, a70 string, a71 string, a72 string, a73 string, a74 string, a75 string, a76 string, a77 string) <br>partitioned <span class="hljs-keyword">by</span> (reporttime string) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;|&#x27;</span> stored <span class="hljs-keyword">as</span> textfile location <span class="hljs-string">&#x27;/telecomlog&#x27;</span>;<br># 修复分区<br>msck repair <span class="hljs-keyword">table</span> telecom;<br># 抽样数据<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> telecom <span class="hljs-keyword">tablesample</span>(<span class="hljs-number">5</span> <span class="hljs-keyword">rows</span>);<br></code></pre></div></td></tr></table></figure>
+<ol start="5">
+<li>原表中有78个字段，但是对需求分析真正有用的只有23个字段，此时需要从这78个字段中将这23个字段抽取出来 - 清洗表</li>
+</ol>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 建立表<br><span class="hljs-keyword">create table</span> dataclear(reporttime string, appType <span class="hljs-type">bigint</span>, appSubtype <span class="hljs-type">bigint</span>, userIp string, userPort <span class="hljs-type">bigint</span>, appServerIP string, appServerPort <span class="hljs-type">bigint</span>, host string, cellid string, appTypeCode <span class="hljs-type">bigint</span>, interruptType String, transStatus <span class="hljs-type">bigint</span>, trafficUL <span class="hljs-type">bigint</span>, trafficDL <span class="hljs-type">bigint</span>, retranUL <span class="hljs-type">bigint</span>, retranDL <span class="hljs-type">bigint</span>, procdureStartTime <span class="hljs-type">bigint</span>, procdureEndTime <span class="hljs-type">bigint</span>)<span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;|&#x27;</span>;<br># 需要从原始表中来抽取字段<br><span class="hljs-keyword">insert</span> overwrite <span class="hljs-keyword">table</span> dataclear <span class="hljs-keyword">select</span> concat(reporttime, <span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27;00:00:00&#x27;</span>), a23, a24, a27, a29, a31, a33, a59, a17, a19, a68, a55, a34, a35, a40, a41, a20, a21 <span class="hljs-keyword">from</span> telecom;<br># 抽样数据<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> dataclear <span class="hljs-keyword">tablesample</span>(<span class="hljs-number">5</span> <span class="hljs-keyword">rows</span>);<br></code></pre></div></td></tr></table></figure>
+<ol start="6">
+<li>抽取完字段之后，需要对数据进行整理，例如需要对数据进行合并、去重、转换、补齐、舍弃等 - 对数据整理，建立一个事实表</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>字段</th>
+<th>字段类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>reportTime</td>
+<td>datetime</td>
+<td>小时 时间片 default ‘YYYY-MM-DD HH24:MI:SS’</td>
+</tr>
+<tr>
+<td>1</td>
+<td>appType</td>
+<td>int</td>
+<td>应用大类</td>
+</tr>
+<tr>
+<td>2</td>
+<td>appSubtype</td>
+<td>int</td>
+<td>应用小类</td>
+</tr>
+<tr>
+<td>3</td>
+<td>userIP</td>
+<td>varchar(20)</td>
+<td>用户IP</td>
+</tr>
+<tr>
+<td>4</td>
+<td>userPort</td>
+<td>int</td>
+<td>用户端口</td>
+</tr>
+<tr>
+<td>5</td>
+<td>appServerIP</td>
+<td>varchar(20)</td>
+<td>服务器IP</td>
+</tr>
+<tr>
+<td>6</td>
+<td>appServerPort</td>
+<td>int</td>
+<td>服务器端口</td>
+</tr>
+<tr>
+<td>7</td>
+<td>host</td>
+<td>varchar(50)</td>
+<td>域名</td>
+</tr>
+<tr>
+<td>8</td>
+<td>cellid</td>
+<td>varchar(20)</td>
+<td>小区ID</td>
+</tr>
+<tr>
+<td>9</td>
+<td>attempts</td>
+<td>int(20)</td>
+<td>尝试次数</td>
+</tr>
+<tr>
+<td>10</td>
+<td>accepts</td>
+<td>int(20)</td>
+<td>接受次数</td>
+</tr>
+<tr>
+<td>11</td>
+<td>trafficUL</td>
+<td>int(20)</td>
+<td>上行流量</td>
+</tr>
+<tr>
+<td>12</td>
+<td>trafficDL</td>
+<td>int(20)</td>
+<td>下行流量</td>
+</tr>
+<tr>
+<td>13</td>
+<td>retranUL</td>
+<td>int(20)</td>
+<td>重传上行报文数</td>
+</tr>
+<tr>
+<td>14</td>
+<td>retranDL</td>
+<td>int(20)</td>
+<td>重传下行报文数</td>
+</tr>
+<tr>
+<td>15</td>
+<td>failCount</td>
+<td>int(20)</td>
+<td>延时失败次数</td>
+</tr>
+<tr>
+<td>16</td>
+<td>transDelay</td>
+<td>int(20)</td>
+<td>传输时延*</td>
+</tr>
+</tbody></table>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 构建一个事实表<br><span class="hljs-keyword">create table</span> f_http_app_host(reporttime string, appType <span class="hljs-type">bigint</span>, appSubtype <span class="hljs-type">bigint</span>, userIP string, userPort <span class="hljs-type">int</span>, appServerIP string, appServerPort <span class="hljs-type">int</span>, host string, cellid string, attempts <span class="hljs-type">bigint</span>, accepts <span class="hljs-type">bigint</span>, trafficUL <span class="hljs-type">bigint</span>, trafficDL <span class="hljs-type">bigint</span>, retranUL <span class="hljs-type">bigint</span>, retranDL <span class="hljs-type">bigint</span>, failCount <span class="hljs-type">bigint</span>, transDelay <span class="hljs-type">bigint</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;|&#x27;</span> stored <span class="hljs-keyword">as</span> textfile;<br># 抽取字段<br><span class="hljs-keyword">insert</span> overwrite <span class="hljs-keyword">table</span> f_http_app_host <span class="hljs-keyword">select</span> reporttime, appType, appSubtype, userIp, userPort, appServerIP, appServerPort, host,  if(cellid <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-string">&#x27;&#x27;</span>, &quot;000000000&quot;, cellid), if(appTypeCode <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">103</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>), if(appTypeCode <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">103</span> <span class="hljs-keyword">and</span> find_in_set(transStatus, &quot;10,11,12,13,14,15,32,33,34,35,36,37,38,48,49,50,51,52,53,54,55,199,200,201,202,203,204,205,206,302,304,306&quot;)<span class="hljs-operator">!=</span><span class="hljs-number">0</span> <span class="hljs-keyword">and</span> interruptType <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>), if(apptypeCode <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">103</span>, trafficUL, <span class="hljs-number">0</span>),  if(apptypeCode <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">103</span>, trafficDL, <span class="hljs-number">0</span>),  if(apptypeCode <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">103</span>, retranUL, <span class="hljs-number">0</span>),  if(apptypeCode <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">103</span>, retranDL, <span class="hljs-number">0</span>),  if(appTypeCode <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">103</span> <span class="hljs-keyword">and</span> transStatus <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> interruptType <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>), if(appTypeCode <span class="hljs-operator">=</span><span class="hljs-operator">=</span> <span class="hljs-number">103</span>,  procdureEndTime <span class="hljs-operator">-</span> procdureStartTime, <span class="hljs-number">0</span>) <span class="hljs-keyword">from</span> dataclear;<br># 数据抽样<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> f_http_app_host <span class="hljs-keyword">tablesample</span>(<span class="hljs-number">5</span> <span class="hljs-keyword">rows</span>);<br></code></pre></div></td></tr></table></figure>
+<ol start="7">
+<li>根据不同需求将数据来抽取出来，例如分析各个APP的受欢迎程度</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>字段</th>
+<th>字段类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>hourid</td>
+<td>datetime</td>
+<td>小时时间片</td>
+</tr>
+<tr>
+<td>1</td>
+<td>appType</td>
+<td>int</td>
+<td>应用大类</td>
+</tr>
+<tr>
+<td>2</td>
+<td>appSubtype</td>
+<td>int</td>
+<td>应用小类</td>
+</tr>
+<tr>
+<td>3</td>
+<td>attempts</td>
+<td>int(20)</td>
+<td>尝试次数</td>
+</tr>
+<tr>
+<td>4</td>
+<td>accepts</td>
+<td>int(20)</td>
+<td>接受次数</td>
+</tr>
+<tr>
+<td>5</td>
+<td>succRatio</td>
+<td>double</td>
+<td>尝试成功率</td>
+</tr>
+<tr>
+<td>6</td>
+<td>trafficUL</td>
+<td>int(20)</td>
+<td>上行流量</td>
+</tr>
+<tr>
+<td>7</td>
+<td>trafficDL</td>
+<td>int(20)</td>
+<td>下行流量</td>
+</tr>
+<tr>
+<td>8</td>
+<td>totalTraffic</td>
+<td>int(20)</td>
+<td>总流量</td>
+</tr>
+<tr>
+<td>9</td>
+<td>retranUL</td>
+<td>int(20)</td>
+<td>重传上行报文数</td>
+</tr>
+<tr>
+<td>10</td>
+<td>retranDL</td>
+<td>int(20)</td>
+<td>重传下行报文数</td>
+</tr>
+<tr>
+<td>11</td>
+<td>retranTraffic</td>
+<td>int(20)</td>
+<td>重传报文数据</td>
+</tr>
+<tr>
+<td>12</td>
+<td>failCount</td>
+<td>int(20)</td>
+<td>延时失败次数</td>
+</tr>
+<tr>
+<td>13</td>
+<td>transDelay</td>
+<td>int(20)</td>
+<td>传输时延</td>
+</tr>
+</tbody></table>
+  <figure class="highlight sql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sql"># 建立受欢迎的APP的表<br><span class="hljs-keyword">create table</span> D_H_HTTP_APPTYPE(hourid string, appType <span class="hljs-type">bigint</span>, appSubtype <span class="hljs-type">bigint</span>, attempts <span class="hljs-type">bigint</span>, accepts <span class="hljs-type">bigint</span>, succRatio <span class="hljs-keyword">double</span>, trafficUL <span class="hljs-type">bigint</span>, trafficDL <span class="hljs-type">bigint</span>, totalTraffic <span class="hljs-type">bigint</span>, retranUL <span class="hljs-type">bigint</span>, retranDL <span class="hljs-type">bigint</span>, retranTraffic <span class="hljs-type">bigint</span>, failCount <span class="hljs-type">bigint</span>, transDelay <span class="hljs-type">bigint</span>) <span class="hljs-type">row</span> format delimited fields terminated <span class="hljs-keyword">by</span> <span class="hljs-string">&#x27;|&#x27;</span> stored <span class="hljs-keyword">as</span> textfile;<br># 从事实表中来抽取字段到要分析的表中<br><span class="hljs-keyword">insert</span> overwrite <span class="hljs-keyword">table</span> D_H_HTTP_APPTYPE <span class="hljs-keyword">select</span> reporttime, apptype, appsubtype, <span class="hljs-built_in">sum</span>(attempts), <span class="hljs-built_in">sum</span>(accepts), round(<span class="hljs-built_in">sum</span>(accepts)<span class="hljs-operator">/</span><span class="hljs-built_in">sum</span>(attempts), <span class="hljs-number">2</span>), <span class="hljs-built_in">sum</span>(trafficUL), <span class="hljs-built_in">sum</span>(trafficDL), <span class="hljs-built_in">sum</span>(trafficUL)<span class="hljs-operator">+</span><span class="hljs-built_in">sum</span>(trafficDL), <span class="hljs-built_in">sum</span>(retranUL), <span class="hljs-built_in">sum</span>(retranDL), <span class="hljs-built_in">sum</span>(retranUL)<span class="hljs-operator">+</span><span class="hljs-built_in">sum</span>(retranDL), <span class="hljs-built_in">sum</span>(failCount), <span class="hljs-built_in">sum</span>(transDelay)<span class="hljs-keyword">from</span> f_http_app_host <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> reporttime, apptype, appsubtype;<br># 数据抽样<br><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> D_H_HTTP_APPTYPE <span class="hljs-keyword">tablesample</span>(<span class="hljs-number">5</span> <span class="hljs-keyword">rows</span>);<br># 获取最受欢迎的APP <span class="hljs-operator">-</span> 统计每一个APP的流量<br><span class="hljs-keyword">select</span> appSubtype, <span class="hljs-built_in">sum</span>(totalTraffic) <span class="hljs-keyword">as</span> total <span class="hljs-keyword">from</span> D_H_HTTP_APPTYPE <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> appSubtype sort <span class="hljs-keyword">by</span> total <span class="hljs-keyword">desc</span> limit <span class="hljs-number">5</span>;<br></code></pre></div></td></tr></table></figure>
+<h2 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><ol>
+<li>在实际过程中，在对数据处理完成之后，一般需要对数据进行可视化操作</li>
+<li>如果在进行可视化操作的时候使用的是一些基于Hadoop的BI工具，那么可以直接从HDFS上来读取数据；如果使用开源的可视化工具，那么此时需要需要将数据导出到数据库中</li>
+</ol>
+<h3 id="Sqoop"><a href="#Sqoop" class="headerlink" title="Sqoop"></a>Sqoop</h3><ol>
+<li><p>Sqoop是Apache提供的一套用于进行数据导入导出的工具，可以在HDFS和数据库之间实现数据的导入和导出效果</p>
+</li>
+<li><p>安装步骤</p>
+</li>
+<li><p>进入&#x2F;opt目录下，上传sqoop的安装包</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> /opt<br>rz<br><span class="hljs-comment"># 选择Sqoop的安装包上传</span><br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>解压</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">tar -xvf sqoop-1.4.7.bin__hadoop-2.6.0.tar.gz<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>重命名</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh"><span class="hljs-built_in">mv</span> sqoop-1.4.7.bin__hadoop-2.6.0 sqoop-1.4.7<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>进入Sqoop的配置目录</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> sqoop-1.4.7/conf/<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="5">
+<li>编辑文件</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh"><span class="hljs-comment"># 复制文件</span><br><span class="hljs-built_in">cp</span> sqoop-env-template.sh sqoop-env.sh<br><span class="hljs-comment"># 编辑文件</span><br>vim sqoop-env.sh<br><span class="hljs-comment"># 在文件中添加</span><br><span class="hljs-built_in">export</span> HADOOP_COMMON_HOME=/opt/hadoop-3.1.3<br><span class="hljs-built_in">export</span> HADOOP_MAPRED_HOME=/opt/hadoop-3.1.3<br><span class="hljs-built_in">export</span> HIVE_HOME=/opt/hive-3.1.2<br><span class="hljs-comment"># 保存退出，重新生效</span><br><span class="hljs-built_in">source</span> sqoop-env.sh<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="6">
+<li>进入Sqoop的lib目录，将MySQL的连接驱动包放到这个目录下</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> ../lib<br><span class="hljs-comment"># 复制</span><br><span class="hljs-built_in">cp</span> /opt/hive-3.1.2/lib/mysql-connector-java-5.1.27.jar ./<br></code></pre></div></td></tr></table></figure>
+<ol start="7">
+<li>编辑环境变量</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">vim /etc/profile.d/sqoophome.sh<br><span class="hljs-comment"># 在文件中添加</span><br><span class="hljs-built_in">export</span> SQOOP_HOME=/opt/sqoop-1.4.7<br><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$SQOOP_HOME</span>/bin<br><span class="hljs-comment"># 保存退出，重新生效</span><br><span class="hljs-built_in">source</span> /etc/profile.d/sqoophome.sh<br><span class="hljs-comment"># 查看Sqoop的版本</span><br>sqoop version<br></code></pre></div></td></tr></table></figure>
+<ol start="3">
+<li><p>Sqoop基本命令</p>
+</li>
+<li><p>查看MySQL中已经存在的库</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">sqoop list-databases --connect jdbc:mysql://hadoop:3306 --username root --password root<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>查看MySQL指定库中的指定的表</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">sqoop list-tables --connect jdbc:mysql://hadoop:3306/hive --username root --password root<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>将HDFS上的数据导出到MySQL中</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code>1. 在MySQL中建表
+  
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table orders(id int primary key, orderdate varchar(10), productid int, num int);<br></code></pre></div></td></tr></table></figure>
+  
+2. 将HDFS上的数据导出到MySQL中
+  
+  <figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">sqoop <span class="hljs-built_in">export</span> --connect jdbc:mysql://hadoop:3306/test --username root --password root --export-dir <span class="hljs-string">&#x27;/txt/order.txt&#x27;</span> --table orders -m 1 --fields-terminated-by <span class="hljs-string">&#x27; &#x27;</span>;<br></code></pre></div></td></tr></table></figure>
+  
+</code></pre>
+<ol start="4">
+<li>将MySQL中的数据导入到HDFS上</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight sh"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">sqoop import --connect jdbc:mysql://hadoop:3306/test --username root --password root --table orders --target-dir <span class="hljs-string">&#x27;/sqoop/orders&#x27;</span> --fields-terminated-by <span class="hljs-string">&#x27;\t&#x27;</span> -m 1;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/%E5%AE%9E%E8%AE%AD/">实训</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hadoop/">Hadoop</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Flume/">Flume</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Hive/">Hive</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Sqoop/">Sqoop</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">项目实训第十一天</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%B9%9D%E5%A4%A9/">
+                        <span class="hidden-mobile">项目实训第九天</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

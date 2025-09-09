@@ -1,0 +1,848 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>JavaSE基础复习三：常用工具类 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="JavaSE基础复习三：常用工具类">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-26 22:17" pubdate>
+        2021年7月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      18
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JavaSE基础复习三：常用工具类</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<h1 id="JavaSE基础复习三：常用工具类"><a href="#JavaSE基础复习三：常用工具类" class="headerlink" title="JavaSE基础复习三：常用工具类"></a>JavaSE基础复习三：常用工具类</h1><p><strong>常用工具类设计思想</strong>：</p>
+<ul>
+<li><p>构造方法用private修饰，防止创建对象</p>
+</li>
+<li><p>方法用<code>public static</code>修饰，以供直接访问</p>
+</li>
+</ul>
+<h2 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h2><ul>
+<li><p>方法都是静态，可以直接调用</p>
+</li>
+<li><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public static void abs(int a)</td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td>public static double ceil(double a)</td>
+<td>返回大于或等于参数的最小double，等于一个正是</td>
+</tr>
+<tr>
+<td>public static double floor(double a)</td>
+<td>返回小于或等于参数的最大double值，等于一个整数</td>
+</tr>
+<tr>
+<td>public static int round(float a)</td>
+<td>按照四舍五入返回最接近的int值</td>
+</tr>
+<tr>
+<td>public static int max(int a, int b)</td>
+<td>返回两个int值中的较大值</td>
+</tr>
+<tr>
+<td>public static int min(int a, int b)</td>
+<td>返回两个int值中的较小值</td>
+</tr>
+<tr>
+<td>public static double pow(double a, double b)</td>
+<td>返回a的b次幂</td>
+</tr>
+<tr>
+<td>public static double random()</td>
+<td>返回为随机的double的正值[0.0, 1.0)</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h2><ul>
+<li><p>在java.lang中，不用导包</p>
+</li>
+<li><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>exit(int status)</td>
+<td>退出，输入退出的状态码，非零表示异常</td>
+</tr>
+<tr>
+<td>static Map&lt;String,​String&gt; getenv(String name)</td>
+<td>获取系统环境变量</td>
+</tr>
+<tr>
+<td>static String getenv​(String name)</td>
+<td>获取确切的某个环境变量值</td>
+</tr>
+<tr>
+<td>static String currentTimeMillis()</td>
+<td>获取时间（从1970到现在的毫秒）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>currentTimeMills()可用来计时</p>
+</li>
+</ul>
+<h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><ul>
+<li><p>Object类是所有类的超类</p>
+</li>
+<li><p>常用方法</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean equals()</td>
+<td>判断对象是否相等，默认比较地址。建议所有子类重写此方法</td>
+</tr>
+<tr>
+<td>String toString()</td>
+<td>返回对象的字符串表示形式。默认返回<code>包名类名@地址</code>的字符串。建议所有子类重写此方法</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h2><ul>
+<li><p>包含操作数组的各种方法</p>
+</li>
+<li><p>常用方法：toString()，sort()</p>
+</li>
+<li><p>冒泡排序：</p>
+<ul>
+<li><p>n个元素进行排列，总共需要比较n-1次</p>
+</li>
+<li><p>每一次比较完毕，下一次的比较就会少一个数据参与运算</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本类型包装类"><a href="#基本类型包装类" class="headerlink" title="基本类型包装类"></a>基本类型包装类</h2><ul>
+<li><p>将基本数据类型封装成对象的好处在于可以在对象中定义更多的功能方法操作该数据</p>
+</li>
+<li><p>常用的操作：基本数据类型和字符串之间的转换</p>
+</li>
+<li><p>对应关系：</p>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Integer类（其它的包装类类似）：</p>
+<ul>
+<li><p>包含的有用字段：MAX_VALUE、MIN_VALUE，分别表示能表示的最大int值和最小int值</p>
+</li>
+<li><p>常用的方法：</p>
+<ul>
+<li><p>public static Integer valueOf(int i)，返回表示指定的int值的Integer实例</p>
+</li>
+<li><p>public static Integer valueOf(String s)，返回一个保存指定值的Integer对象String</p>
+</li>
+<li><p>用构造方法创建对象的方法过时了，不建议使用</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>int和String相互转换</p>
+<ul>
+<li><p>int -&gt; String：<code>String str = String.valueOf(int a);</code></p>
+</li>
+<li><p>String -&gt; int：<code>Integer i = Integer.valueOf(String str);</code> 获取int值, <code>i.intValue();</code> 因为可以自动拆装箱，直接使用Integer对象就可以了</p>
+</li>
+</ul>
+</li>
+<li><p>自动拆装箱</p>
+<ul>
+<li><p>装箱：把基本类型换成对应的成包装类类型</p>
+</li>
+<li><p>拆箱：把包装类类型装换为对应的基本类型</p>
+</li>
+<li><p>自动装箱：基本类型赋值给包装类型引用，例如：<code>Integer i = 100;</code></p>
+</li>
+<li><p>自动拆箱：<code>i + 200;</code></p>
+</li>
+</ul>
+</li>
+<li><p><strong>用包装类使用前最好判断是否为null</strong>，推荐只要是对象，使用前都要判断是否为null</p>
+</li>
+</ul>
+<h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><ul>
+<li><p>构造函数：</p>
+<ul>
+<li><p>Date()，无参构造，初始化以最接近的毫秒为单位</p>
+</li>
+<li><p>Date(long date)，传入毫秒，初始化为从1700年1月1日加上传入的毫秒数的日期</p>
+</li>
+</ul>
+</li>
+<li><p>常用方法：</p>
+<ul>
+<li><p><code>public long getTime()</code>：获取的是日期对象从1970年1月1日00:00:00到现在的毫秒值，和<code>System.currentTimeMills()</code>类似</p>
+</li>
+<li><p><code>public void setTime(long time)</code>：设置时间，给的是毫秒值</p>
+</li>
+</ul>
+</li>
+<li><p>SimpleDateFormat类</p>
+<ul>
+<li><p>该类是一个具体类，用于格式化和解析日期，Date类的日期输出并不直观，SimpleDateFormat类可以方便输出我们便于查看的日期格式</p>
+</li>
+<li><p>该类的作用：Date -&gt; String（格式化），String -&gt; Date（解析）</p>
+</li>
+<li><p>日期和日期格式由字符串模式指定，在日期和时间模式字符串中，从’A’到’Z’以及’a’到’z’，单引号内容被直接复制过去，不会被解释为模式字符</p>
+</li>
+<li><p>常用的模式字母及对应关系如下：</p>
+<table>
+<thead>
+<tr>
+<th>字母</th>
+<th>对应日期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>y</td>
+<td>年</td>
+</tr>
+<tr>
+<td>M</td>
+<td>月</td>
+</tr>
+<tr>
+<td>d</td>
+<td>日</td>
+</tr>
+<tr>
+<td>H</td>
+<td>时</td>
+</tr>
+<tr>
+<td>m</td>
+<td>分</td>
+</tr>
+<tr>
+<td>s</td>
+<td>秒</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>构造方法：</p>
+<ul>
+<li><p>无参构造，构造一个SimpleDateFormat，使用默认模式和日期格式</p>
+</li>
+<li><p>输入模式串的构造，根据所给模式构造和默认的日期格式构造</p>
+</li>
+</ul>
+</li>
+<li><p>格式化和解析方法：</p>
+<ul>
+<li><p>格式化（Date -&gt; String）：<code>public final String format(Date date)</code></p>
+</li>
+<li><p>解析（String -&gt; Date） ：<code>public Date parse(String source)</code></p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-comment">// 格式化</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleDateFormat</span>().format(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>());<br>        System.out.println(s);<br><br>        s = <span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleDateFormat</span>(<span class="hljs-string">&quot;y年M月d日 &#x27;At&#x27; H:m:s&quot;</span>).format(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>());<br>        System.out.println(s);<br><br>        <span class="hljs-comment">// 解析</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">s1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">String</span>(<span class="hljs-string">&quot;2021-1-1 18:22:31&quot;</span>);<br>        <span class="hljs-type">Date</span> <span class="hljs-variable">date</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleDateFormat</span>(<span class="hljs-string">&quot;y-M-d h:m:s&quot;</span>).parse(s1);<br>        System.out.println(date);<br></code></pre></div></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h2><ul>
+<li><p>为某一时刻和一组日历字段之间的转换提供一些方法，并为操作日历字段提供了一些方法</p>
+</li>
+<li><p>抽象类，可以通过getInstance()方法获取其子类实例</p>
+</li>
+<li><p>包含很多静态方法</p>
+</li>
+<li><p>常用方法：</p>
+<ul>
+<li><p><code>public int get (int field)</code></p>
+<p>常用字段：</p>
+<ul>
+<li><p>Calendar.YEAR</p>
+</li>
+<li><p>Calendar.MONTH：月从0开始算</p>
+</li>
+<li><p>Calendar.DATE</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>常用的字段组合：</p>
+<ul>
+<li><p>For the date fields:</p>
+<blockquote>
+<p>YEAR + MONTH + DAY_OF_MONTH<br>YEAR + MONTH + WEEK_OF_MONTH + DAY_OF_WEEK<br>YEAR + MONTH + DAY_OF_WEEK_IN_MONTH + DAY_OF_WEEK<br>YEAR + DAY_OF_YEAR<br>YEAR + DAY_OF_WEEK + WEEK_OF_YEAR</p>
+</blockquote>
+<p>For the time of day fields:</p>
+<blockquote>
+<p>HOUR_OF_DAY<br>AM_PM + HOUR</p>
+</blockquote>
+</li>
+<li><p><code>add(int Field, int amount)</code>：对任意字段进行加减</p>
+</li>
+<li><p><code>set(int Field, int amount)</code>：直接设置某个字段的值</p>
+<p><code>set(int year, int month, int day)</code>：设置年月日</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-type">Calendar</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> Calendar.getInstance();<br>c.add(Calendar.YEAR, -<span class="hljs-number">3</span>); <span class="hljs-comment">// 三年前的今天</span><br>c.set(Calendar.MONTH, <span class="hljs-number">1</span>); <span class="hljs-comment">// 二月份，从0算起</span><br><span class="hljs-type">int</span> <span class="hljs-variable">year</span> <span class="hljs-operator">=</span> c.get(Calendar.YEAR);<br><span class="hljs-type">int</span> <span class="hljs-variable">month</span> <span class="hljs-operator">=</span> c.get(Calendar.MONTH)+<span class="hljs-number">1</span>;<br><span class="hljs-type">int</span> <span class="hljs-variable">date</span> <span class="hljs-operator">=</span> c.get(Calendar.DATE);<br>System.out.println(year+<span class="hljs-string">&quot;年&quot;</span>+month+<span class="hljs-string">&quot;月&quot;</span>+date+<span class="hljs-string">&quot;日&quot;</span>);<br>c.set(<span class="hljs-number">2021</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// 2021年3月1日</span><br>c.add(Calendar.DATE, -<span class="hljs-number">1</span>); <span class="hljs-comment">// 二月最后一天</span><br>System.out.println(c.get(Calendar.YEAR)+<span class="hljs-string">&quot;年二月份有&quot;</span>+c.get(Calendar.DATE)+<span class="hljs-string">&quot;天&quot;</span>);<br></code></pre></div></td></tr></table></figure></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Program/">Program</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/Java/javase%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E5%9B%9B%EF%BC%9A%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JavaSE基础复习四：异常处理</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/Java/javase%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E4%BA%8C%EF%BC%9A%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
+                        <span class="hidden-mobile">JavaSE基础复习二：面向对象</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

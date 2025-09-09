@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>Matlab笔记（一） - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Matlab笔记（一）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-06 10:19" pubdate>
+        2020年4月6日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Matlab笔记（一）</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h3 id="一、变量与函数"><a href="#一、变量与函数" class="headerlink" title="一、变量与函数"></a>一、变量与函数</h3><h4 id="（一）变量："><a href="#（一）变量：" class="headerlink" title="（一）变量："></a>（一）变量：</h4><p>命名规则：</p>
+<blockquote>
+<ul>
+<li>不含空格</li>
+<li>区别大小写</li>
+<li>不超过19个字符</li>
+<li>变量名必须以字母开头，之后可以为数字、字母、下划线，不能使用标点符号</li>
+</ul>
+</blockquote>
+<p>特殊变量表：</p>
+<blockquote>
+<ul>
+<li>ans：表示结果</li>
+<li>pi：圆周率</li>
+<li>eps：计算机的最小数，+1产生大于1的数</li>
+<li>flops：浮点运算数</li>
+<li>Inf：无穷大，如1&#x2F;0</li>
+<li>NaN：不定量，如0&#x2F;0</li>
+<li>i,j：虚根，i&#x3D;j&#x3D;$\sqrt{-1}$</li>
+<li>nargin：所有函数的输入变量数目</li>
+<li>nargout：所有函数的输出变量数目</li>
+<li>realmin：最小可用正实数</li>
+<li>realmax：最大可用正实数</li>
+</ul>
+</blockquote>
+<h4 id="（二）-数学运算符号及标点符号"><a href="#（二）-数学运算符号及标点符号" class="headerlink" title="（二）.数学运算符号及标点符号"></a>（二）.数学运算符号及标点符号</h4><blockquote>
+<p>+，-，*，&#x2F; .*：点乘运算，及矩阵对应元素相乘之后相加 .&#x2F;：点除运算 ^：幂运算 .^：点幂运算 \：左除运算 （1）MATLAB的每条命令后，若为都好或无标点符号则显示命令的结果；若命令后为分号，则禁止显示结果 （2）”%”后面所有文字为注释 （3）”…”表示续行</p>
+</blockquote>
+<h4 id="（三）数学函数"><a href="#（三）数学函数" class="headerlink" title="（三）数学函数"></a>（三）数学函数</h4><p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210711194532.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="（四）M文件"><a href="#（四）M文件" class="headerlink" title="（四）M文件"></a>（四）M文件</h4><blockquote>
+<p>类似于c++的头文件，用于储存编写的函数，后缀为M的文件，这类文件的第一行必须是特殊字符 <code>function</code> 开始,格式为：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> 因变量名 = 函数名（自变量名）</span><br></code></pre></div></td></tr></table></figure>
+
+<p>函数值的获得必须通过具体的运算实现，并赋给因变量。 M文件建立方法： 1.在Matlab中，点:File-&gt;New-&gt;M-file 2.在编辑窗口中输入程序内容 3.点：File-&gt;Save，存盘，M文件必须与函数名一致 Matlab的应用程序也以M文件保存</p>
+</blockquote>
+<h3 id="二、数组"><a href="#二、数组" class="headerlink" title="二、数组"></a>二、数组</h3><h4 id="（一）创建简单的数组"><a href="#（一）创建简单的数组" class="headerlink" title="（一）创建简单的数组"></a>（一）创建简单的数组</h4><blockquote>
+<p>x &#x3D; [ a b c d e f] 创建包含指定元素的行向量 x &#x3D; first:last 创建从first开始，加数为1，last结束的行向量 x &#x3D; linespace(first, last ,n) 创建从first到last，中间有n个元素的行向量 x &#x3D; logspace(first, last, n) 创建从开始，到结束，有n个元素的对数分隔行向量</p>
+</blockquote>
+<h4 id="（二）数组元素的访问"><a href="#（二）数组元素的访问" class="headerlink" title="（二）数组元素的访问"></a>（二）数组元素的访问</h4><blockquote>
+<p>1.访问一个元素：x(i) 访问数组x的第i个元素，i从1开始 2.访问一块元素：x(im:in) 访问冲im到in的元素 3.直接使用元素编址序号：x([i_1,i_2,i_3……]) 访问数组x的第i1到in个元素</p>
+</blockquote>
+<h4 id="（三）数组的方向"><a href="#（三）数组的方向" class="headerlink" title="（三）数组的方向"></a>（三）数组的方向</h4><blockquote>
+<p>分号分隔一行，逗号分隔一个元素 直接产生列向量：c &#x3D; [1 ; 2 ; 3 ; 4] 转置产生列向量：b &#x3D; [1 2 3 4]; c &#x3D; b’</p>
+</blockquote>
+<h4 id="（四）数组的运算"><a href="#（四）数组的运算" class="headerlink" title="（四）数组的运算"></a>（四）数组的运算</h4><h5 id="1-数组和标量运算"><a href="#1-数组和标量运算" class="headerlink" title="1. 数组和标量运算"></a>1. 数组和标量运算</h5><blockquote>
+<p>数组对标量的加、减、乘、除、乘方是数组的每个元素对该标量施加相应的加、减、乘、除、乘方运算。 设：a &#x3D; [a1,a2,a3……,an], c &#x3D; 标量 则：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab">a+c = [a1+c, a2+c,……,an+c]<br><br>a.*=[a1\* c, a2\*c,……,an\*c]<br><br>a./c=[a1/ c, a2/c,……,an/c]<br><br>a.\c=[c/a1, /a2,……,c/an]<br><br>a.\^c=[a1\^ c, a2\^c,……,an\^c]<br><br>c.\^a=[c\^a1,c\^a2,……，c\^an]<br></code></pre></div></td></tr></table></figure></blockquote>
+<h5 id="2-数组和数组运算"><a href="#2-数组和数组运算" class="headerlink" title="2.数组和数组运算"></a>2.数组和数组运算</h5><blockquote>
+<p>当两个数组有相同维数时，加、减、乘、除、乘方运算可按元素对元素方式进行，不同大小或维数的数组是不能进行运算的。 设：a&#x3D;[a1,a2,……,an], b&#x3D;[b1,b2,……,bn] 则：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab">a+c = [a1+b1, a2+b2,……,an+bn]<br><br>a.*=[a1\* b1, a2\*b2,……,an\*bn]<br><br>a./c=[a1/ b1, a2/b2,……,an/bn]<br><br>a.\c=[b1/a1, b2/a2,……,bn/an]<br><br>a.\^c=[a1\^ b1, a2\^c2,……,an\^bn]<br><br>c.\^a=[b1\^a1,b2\^a2,……，b\^an]<br></code></pre></div></td></tr></table></figure></blockquote>
+<h3 id="三、矩阵"><a href="#三、矩阵" class="headerlink" title="三、矩阵"></a>三、矩阵</h3><h4 id="（一）矩阵的建立"><a href="#（一）矩阵的建立" class="headerlink" title="（一）矩阵的建立"></a>（一）矩阵的建立</h4><blockquote>
+<p>都好或空格用于分隔某一行的元素，分号用于区分不同行。除了分号，在输入矩阵时，按Enter键也表示开始新的一行。输入矩阵时，严格要求所有行有相同的列。 例： p &#x3D; [1 1 1 1; 2 2 2 2; 3 3 3 3] p &#x3D; [1 1 1 1 ​ 2 2 2 2 ​ 3 3 3 3] 特殊矩阵的建立</p>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab">a = []    <span class="hljs-comment">%生成空矩阵，当对一项操作无结果是，返回空矩阵，大小为零</span><br><br>a = <span class="hljs-built_in">zeros</span>(m, n)   <span class="hljs-comment">%生成m行，n列的零矩阵</span><br><br>a = <span class="hljs-built_in">ones</span>(m, n)    <span class="hljs-comment">%生成一个m行，n列的元素全为1的矩阵</span><br><br>a = <span class="hljs-built_in">eye</span>(m, n)     <span class="hljs-comment">%生成一个m行，n列的单位矩阵</span><br><br>a = <span class="hljs-built_in">rand</span>(m, n)    <span class="hljs-comment">%生成一个m行，n列的随机矩阵</span><br></code></pre></div></td></tr></table></figure></blockquote>
+<h4 id="（二）矩阵中元素的操作"><a href="#（二）矩阵中元素的操作" class="headerlink" title="（二）矩阵中元素的操作"></a>（二）矩阵中元素的操作</h4><blockquote>
+<ol>
+<li>矩阵A的第r行：A（r，：）</li>
+<li>矩阵A的第r列：A（：，r）</li>
+<li>取m行,n列元素：A（m, n)</li>
+<li>依次提取矩阵A的每一列，将A拉伸为一个列向量：A（：）</li>
+<li>取矩阵A的第1₂行、第i<del>1</del>-j<del>2</del>列构成新矩阵：A（i<del>1</del>:i<del>2</del>，j<del>1</del>:j<del>2</del>）</li>
+<li>以逆序提取矩阵A的第i<del>1</del>-i<del>2</del>行，构成新矩阵：A（i<del>2</del> ：-1 : i<del>1</del> , ：)</li>
+<li>以逆序提取矩阵A的第j<del>z列，构成新矩阵：A（：, j</del>2~ :-1：j<del>1</del>）</li>
+<li>删除A的第i记行，构成新矩阵：A（i<del>1</del>：i<del>2</del>，：）&#x3D;[]</li>
+<li>删除A的第j<del>1</del>-j<del>2</del>列，构成新矩阵：A（：，j<del>1</del> ：j<del>2</del>）&#x3D;[]</li>
+<li>将矩阵A和B拼接成新矩阵：[A B]；[A；B]</li>
+</ol>
+</blockquote>
+<h4 id="（三）矩阵的运算"><a href="#（三）矩阵的运算" class="headerlink" title="（三）矩阵的运算"></a>（三）矩阵的运算</h4><blockquote>
+<ol>
+<li><p>标量矩阵运算 同标量-数组运算</p>
+</li>
+<li><p>矩阵和矩阵运算</p>
+</li>
+</ol>
+<ul>
+<li>元素对元素的运算，同数组-数组的运算</li>
+<li>矩阵运算：<ul>
+<li>矩阵加法：A+B</li>
+<li>矩阵乘法：A*B</li>
+<li>方阵的行列式：det（A）</li>
+<li>方阵的逆：inv（A）</li>
+<li>方阵的特征值与特征向量：[V, D]&#x3D;eig[A]</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="四、关系与逻辑运算"><a href="#四、关系与逻辑运算" class="headerlink" title="四、关系与逻辑运算"></a>四、关系与逻辑运算</h3><p> <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210711195137.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="五、控制流"><a href="#五、控制流" class="headerlink" title="五、控制流"></a>五、控制流</h3><p>MATLAB提供三种决策或控制流结构：</p>
+<ul>
+<li>for循环</li>
+<li>while循环</li>
+<li>if-else-end结构</li>
+</ul>
+<p>这些结构经常包含大量的MATLAB命令，故经常出现在MATLAB程序中，而不知直接加在MATLAB提示符下。</p>
+<h4 id="（一）for循环"><a href="#（一）for循环" class="headerlink" title="（一）for循环"></a>（一）for循环</h4><blockquote>
+<p>允许一组命令以固定的和预定的次数重复</p>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-keyword">for</span> x=array<br>  &#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></div></td></tr></table></figure>
+
+<p>在for和end语句之间的命令串<code>&#123;commands&#125;</code>按数组（array）中的每一列执行一次。在每次迭代中，x被指定为数组的下一列，即在第n次循环中，x&#x3D;array(: , n)</p>
+</blockquote>
+<h4 id="（二）while循环"><a href="#（二）while循环" class="headerlink" title="（二）while循环"></a>（二）while循环</h4><blockquote>
+<p>允许一组命令以不定次数重复</p>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-keyword">while</span> expression<br>  &#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></div></td></tr></table></figure>
+
+<p>只要表达式里<code>express</code>的所有蒜素为真，就执行while和end语句之间的命令串<code>&#123;commands&#125;</code></p>
+</blockquote>
+<h4 id="（三）if-else-end结构"><a href="#（三）if-else-end结构" class="headerlink" title="（三）if-else-end结构"></a>（三）if-else-end结构</h4><blockquote>
+<ol>
+<li><p>有一个选择的一般形式是：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span><br>&#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></div></td></tr></table></figure>
+
+<p>如果在表达式<code>express</code>里的所有元素为真就执行if和end语句之间的命令串<code>&#123;commands&#125;</code></p>
+</li>
+<li><p>一般形式</p>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br> …………<br><span class="hljs-keyword">else</span><br>&#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210711194930.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">y</span>=<span class="hljs-title">BubbleSort</span><span class="hljs-params">(x)</span></span><br>x_len=<span class="hljs-built_in">length</span>(x);<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:x_len<span class="hljs-number">-1</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span>=<span class="hljs-number">1</span>:x_len-<span class="hljs-built_in">i</span><br>        <span class="hljs-keyword">if</span>(x(<span class="hljs-built_in">j</span>)&gt;x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>))<br>            [x(<span class="hljs-built_in">j</span>),x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>)]=swap(x(<span class="hljs-built_in">j</span>),x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>));<br>        <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-built_in">disp</span>([num2str(<span class="hljs-built_in">i</span>),<span class="hljs-string">&#x27;.Sort:x=&#x27;</span>,num2str(x)]);<br><span class="hljs-keyword">end</span><br>y=x;<br><span class="hljs-keyword">end</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[a,b]</span>=<span class="hljs-title">swap</span><span class="hljs-params">(x,y)</span></span><br>a=y;<br>b=x;<br><span class="hljs-keyword">end</span><br><br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">y</span> = <span class="hljs-title">fun1</span><span class="hljs-params">(x,y)</span></span><br>y = x*x + <span class="hljs-built_in">sin</span>(x*y) + <span class="hljs-number">2</span>*y;<br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">highsum</span> = <span class="hljs-title">high</span><span class="hljs-params">()</span></span><br>h = <span class="hljs-number">100</span>;<br>summary = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:<span class="hljs-number">10</span><br>   summary = summary + h<br>   h = h/<span class="hljs-number">2</span><br><span class="hljs-keyword">end</span><br>highsum = summary;<br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">maxmatrix</span> = <span class="hljs-title">max_matrix</span><span class="hljs-params">(x)</span></span><br>x<br>[x,y] = <span class="hljs-built_in">find</span>(x==<span class="hljs-built_in">max</span>(<span class="hljs-built_in">max</span>(x)))<br>maxmatrix = <span class="hljs-built_in">max</span>(<span class="hljs-built_in">max</span>(x));<br></code></pre></div></td></tr></table></figure>
+
+<figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span> = <span class="hljs-title">sum_factorial</span><span class="hljs-params">(x)</span></span><br>f = sum(<span class="hljs-built_in">factorial</span>(<span class="hljs-number">1</span>:x))<br></code></pre></div></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/Matlab/">Matlab</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Matlab/">Matlab</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%E6%9D%82%E9%A1%B9/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">博客搭建</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/Matlab/matlab%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">
+                        <span class="hidden-mobile">Matlab笔记（二）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,889 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>项目实训第七天 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="项目实训第七天">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-19 08:22" pubdate>
+        2021年7月19日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      29
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">项目实训第七天</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="注意问题"><a href="#注意问题" class="headerlink" title="注意问题"></a>注意问题</h3><ol>
+<li>在Hive中，每一个database在HDFS上都会对应一个目录</li>
+<li>在Hive中，没有主键的概念，也就意味着在定义表的时候不需要定义主键</li>
+<li>Hive在建表的时候就需要指定字段之间的间隔符号，建好表之后就无法修改</li>
+<li>在插入数据的时候，insert into表示追加数据；insert overwrite表示将原来的数据清空之后再加入数据</li>
+</ol>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><table>
+<thead>
+<tr>
+<th>SQL</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>show databases;</td>
+<td>查看所有的库</td>
+</tr>
+<tr>
+<td>create database hivedemo;</td>
+<td>创建库</td>
+</tr>
+<tr>
+<td>drop database demo;</td>
+<td>删除库</td>
+</tr>
+<tr>
+<td>use hivedemo;</td>
+<td>使用库</td>
+</tr>
+<tr>
+<td>create table person (id int, name string, age int, gender string);</td>
+<td>建立person表</td>
+</tr>
+<tr>
+<td>insert into person values(1, ‘Sam’, 19, ‘male’);</td>
+<td>插入数据</td>
+</tr>
+<tr>
+<td>select * from person;</td>
+<td>查询数据</td>
+</tr>
+<tr>
+<td>load data local inpath ‘&#x2F;opt&#x2F;hivedemo&#x2F;person’ into table person;</td>
+<td>加载数据</td>
+</tr>
+<tr>
+<td>drop table person;</td>
+<td>删除表</td>
+</tr>
+<tr>
+<td>create table person (id int, name string, age int, gender string) row format delimited fields terminated by ‘ ‘;</td>
+<td>在建表的时候指定字段之间的间隔符号</td>
+</tr>
+<tr>
+<td>desc person;</td>
+<td>描述表结构</td>
+</tr>
+<tr>
+<td>create table p2 like person;</td>
+<td>创建一个和person表的表结构一致的表p2</td>
+</tr>
+<tr>
+<td>insert into table p2 select * from person where age &gt;&#x3D; 18;</td>
+<td>将person表中age&gt;&#x3D;18的数据查询出来放到p2表中</td>
+</tr>
+<tr>
+<td>from person insert overwrite table p2 select * where gender &#x3D; ‘male’ insert into table p3 select * where age &lt; 18;</td>
+<td>将person表中性别为男生的数据放到p2表中，同时将age&lt;18的数据查询出来放到p3表中</td>
+</tr>
+<tr>
+<td>insert overwrite local directory ‘&#x2F;opt&#x2F;hivedata’ row format delimited fields terminated by ‘\t’ select * from person where age &gt;&#x3D; 18;</td>
+<td>将person表中age&gt;&#x3D;18的数据查询出来放到本地目录下</td>
+</tr>
+<tr>
+<td>insert overwrite directory ‘&#x2F;person’ row format delimited fields terminated by ‘,’ select * from person where gender &#x3D;’female’;</td>
+<td>将person表中性别为女的数据查询出来放到HDFS的person目录下</td>
+</tr>
+<tr>
+<td>alter table person rename to p1;</td>
+<td>修改表名</td>
+</tr>
+<tr>
+<td>alter table p1 add columns(height double);</td>
+<td>动态添加列</td>
+</tr>
+</tbody></table>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ol>
+<li><p>在Hive中，提供了相对丰富的数据类型，大概可以分为两类：基本类型和复杂类型</p>
+</li>
+<li><p>基本类型</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Hive类型</th>
+<th>Java类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tinyint</td>
+<td>byte</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td>short</td>
+</tr>
+<tr>
+<td><font color='red'>int</font></td>
+<td>int</td>
+</tr>
+<tr>
+<td>bigint</td>
+<td>long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>float</td>
+</tr>
+<tr>
+<td><font color='red'>double</font></td>
+<td>double</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><font color='red'>string </font></td>
+<td>String</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>Timestamp</td>
+</tr>
+<tr>
+<td>binary</td>
+<td>byte[]</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li>复杂类型：array，map，struct</li>
+</ol>
+<h3 id="复杂类型"><a href="#复杂类型" class="headerlink" title="复杂类型"></a>复杂类型</h3><ol>
+<li><p><font color='red'>array：数组类型</font>，对应了Java中的数组或者集合</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1 lucy,lily  david,evan<br>2 adair,bruce,lee simon,tony,tom,rose<br>3 bob,alex,cindy frank,fred<br>4 henry,william kite,job,thomas<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table battles (id int, groupa array&lt;string&gt;, groupb array&lt;string&gt;) row format delimited fields terminated by &#x27; &#x27; collection items terminated by &#x27;,&#x27;;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">load data local inpath &#x27;/opt/hivedemo/battles&#x27; into table battles;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>判断非空</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select groupa[2] from battles where groupa[2] is not null;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li><p>map：映射类型，对应了Java中的Map类型</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1 tom,15 sam,17<br>2 lily,16 lucy,16<br>3 david,14 danny,15<br>4 frank,19 fred,19<br>5 henry,17 hack,18<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表语句</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table groups (groupid int, membera map&lt;string,int&gt;, memberb map&lt;string,int&gt;) row format delimited fields terminated by &#x27; &#x27; map keys terminated by &#x27;,&#x27;;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">load data local inpath &#x27;/opt/hivedemo/groups&#x27; into table groups;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>查询数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select membera[&#x27;frank&#x27;] from groups  where membera[&#x27;frank&#x27;] is not null;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li><p>struct：结构体类型，对应了Java中的对象</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1 tom,19,male,182.5,68.7<br>2 tony,18,male,181.3,70.2<br>3 thomas,18,male,183.6,79.1<br>4 vincent,17,female,165.9,50.1<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>建表语句</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table infos (id int, info struct&lt;name:string, age:int, gender:string, height:double, weight:double&gt;) row format delimited fields terminated by &#x27; &#x27; collection items terminated by &#x27;,&#x27;;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">load data local inpath &#x27;/opt/hivedemo/infos&#x27; into table infos;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>查询数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select info.age from infos where info.name = &#x27;vincent&#x27;;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h2 id="表结构"><a href="#表结构" class="headerlink" title="表结构"></a>表结构</h2><h3 id="内部表和外部表"><a href="#内部表和外部表" class="headerlink" title="内部表和外部表"></a>内部表和外部表</h3><ol>
+<li><p>在Hive中手动建表手动添加数据(包括insert和load)，这种表称之为内部表</p>
+</li>
+<li><p>在Hive中手动建表来管理HDFS上已经存在的数据，这种表称之为外部表</p>
+</li>
+<li><p>外部表建表语句</p>
+</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create external table orders (orderid int, orderdate string, productid int, num int) row format delimited fields terminated by &#x27; &#x27;location &#x27;/orders&#x27;;<br></code></pre></div></td></tr></table></figure>
+<ol start="4">
+<li>可以通过命令来确定一个表是内部表还是外部表</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">desc extended p1;<br># 或者<br>desc formatted p1;<br></code></pre></div></td></tr></table></figure>
+<p>  如果Table Type的属性值为MANAGED_TABLE，就表示这是一个内部表；如果Table Type的属性值为EXTERNAL_TABLE，那么就表示这是一个外部表</p>
+<ol start="5">
+<li><p>内部表在被删除的时候，在HDFS上对应的目录会一起删除；外部表在被删除的时候，在HDFS上对应的目录不会被删除</p>
+</li>
+<li><p>在实际生产过程中，数据前期的采集和管理使用的是外部表；后期对数据进行处理和分析的时候，大部分时候采用的是内部表</p>
+</li>
+</ol>
+<h3 id="分区表"><a href="#分区表" class="headerlink" title="分区表"></a>分区表</h3><ol>
+<li><p>分区表的作用是对数据进行分类</p>
+</li>
+<li><p>分区表建表语句</p>
+</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table cities (id int, name string) partitioned by (province string) row format delimited fields terminated by &#x27; &#x27;;<br></code></pre></div></td></tr></table></figure>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">load data local inpath &#x27;/opt/hivedemo/hebei&#x27; into table cities partition(province = &#x27;hebei&#x27;);<br>load data local inpath &#x27;/opt/hivedemo/henan&#x27; into table cities partition(province = &#x27;henan&#x27;);<br></code></pre></div></td></tr></table></figure>
+<ol start="4">
+<li><p>在Hive中，每一个分区在HDFS上都会形成一个单独的目录</p>
+</li>
+<li><p>当对分区表进行查询的时候，如果指定了分区条件，那么分区表的查询速度要高于未分区表；如果在查询的时候进行可跨分区查询，那么此时未分区表的查询速度要高于分区表</p>
+</li>
+<li><p>手动添加分区</p>
+</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">alter table cities add partition(province = &#x27;guangdong&#x27;) location &#x27;/user/hive/warehouse/hivedemo.db/cities/province=guangdong&#x27;;<br></code></pre></div></td></tr></table></figure>
+<ol start="7">
+<li>修复表</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">msck repair table cities; # 这个命令有执行失败的可能<br></code></pre></div></td></tr></table></figure>
+<ol start="8">
+<li>修改分区表</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">alter table cities partition(province = &#x27;shanxi&#x27;) rename to partition(province = &#x27;test&#x27;);<br></code></pre></div></td></tr></table></figure>
+<ol start="9">
+<li>删除分区</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">alter table cities drop partition(province = &#x27;test&#x27;);<br></code></pre></div></td></tr></table></figure>
+<ol start="10">
+<li><p>在Hive中，要求分区表中被分区的字段在原始数据中不存在</p>
+</li>
+<li><p>动态分区</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1 hebei 邢台<br>2 hebei 承德<br>3 shanxi 太原<br>4 shanxi 大同<br>5 liaoning 沈阳<br>6 liaoning 大连<br>7 jilin 长春<br>8 liaoning 鞍山<br>9 shanxi 阳泉<br>10 liaoning 抚顺<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>在Hive中建立临时表用于管理原始数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table cities_tmp (tid int, tprovince string, tname string) row format delimited fields terminated by &#x27; &#x27;;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>将数据加载到临时表中</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">load data local inpath &#x27;/opt/hivedemo/cities&#x27; into table cities_tmp;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>关闭严格模式</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">set hive.exec.dynamic.partition.mode=nonstrict;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="5">
+<li>从未分区表中查询出来放到已分区表中</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">insert into table cities partition(province) select tid, tname, tprovince from cities_tmp distribute by tprovince;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="12">
+<li><p>Hive本身支持多字段分区，多个字段之间，前一个字段形成的目录会包含后一个字段形成的目录，此时会形成多级目录，实际过程中，会利用多字段分区来实现多级分类的效果。例如年级班级、省市县等</p>
+</li>
+<li><p>原始数据</p>
+</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight text"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">1 1 1 tom<br>1 1 2 sam<br>1 1 3 bob<br>1 1 4 alex<br>1 2 1 bruce<br>1 2 2 cindy<br>1 2 3 jack<br>1 2 4 john<br>2 1 1 tex<br>2 1 2 helen<br>2 1 3 charles<br>2 1 4 frank<br>2 2 1 david<br>2 2 2 simon<br>2 2 3 lucy<br>2 2 4 lily<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="2">
+<li>在Hive中建表来管理数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table students_tmp (tgrade int, tclass int, tid int, tname string) row format delimited fields terminated by &#x27; &#x27;;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="3">
+<li>加载数据</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">load data local inpath &#x27;/opt/hivedemo/students&#x27; into table students_tmp;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="4">
+<li>抽样数据，以确定数据正确加载</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select * from students_tmp tablesample(5 rows);<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="5">
+<li>建立分区表</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table students (id int, name string) partitioned by (grade int, class int) row format delimited fields terminated by &#x27;\t&#x27;;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="6">
+<li>关闭严格模式</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">set hive.exec.dynamic.partition.mode=nonstrict;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<ol start="7">
+<li>动态分区 - 这次是多字段分区</li>
+</ol>
+<div class="hljs code-wrapper"><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">insert into table students partition(grade, class) select tid, tname, tgrade, tclass from students_tmp distribute by tgrade, tclass;<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h3 id="分桶表"><a href="#分桶表" class="headerlink" title="分桶表"></a>分桶表</h3><ol>
+<li><p>分桶表的作用是对数据进行抽样</p>
+</li>
+<li><p>数据分的桶的数量越多，执行的时候花费的内存越多</p>
+</li>
+<li><p>在Hive中，分桶机制默认不开启，需要开启分桶机制</p>
+</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">set hive.enforce.bucketing = true;<br></code></pre></div></td></tr></table></figure>
+<ol start="4">
+<li>建立分桶表</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">create table cities_bucket (id int, name string) clustered by (name) into 3 buckets row format delimited fields terminated by &#x27;\t&#x27;;<br></code></pre></div></td></tr></table></figure>
+<ol start="5">
+<li>向分桶表中添加信息，但是注意的是，分桶表只能通过insert方式来添加数据不能通过load方式来添加数据</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">insert overwrite table cities_bucket select id, name from cities;<br></code></pre></div></td></tr></table></figure>
+<ol start="6">
+<li>对桶中的数据进行抽样</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">select * from cities_bucket tablesample(bucket 1 out of 2 on name);<br></code></pre></div></td></tr></table></figure>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><ol>
+<li>Hive的目的是对数据进行分析，因此在Hive中，提供了非常丰富的函数，可以通过</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">show functions;<br></code></pre></div></td></tr></table></figure>
+<p>  来查看Hive中所有的函数</p>
+<ol start="2">
+<li>在Hive中，可以通过</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mysql">desc function xxx;<br></code></pre></div></td></tr></table></figure>
+<p>  来描述这个函数的用法</p>
+<ol start="3">
+<li>在Hive中，所有的函数不能单独使用</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/%E5%AE%9E%E8%AE%AD/">实训</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hadoop/">Hadoop</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Hive/">Hive</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/Java/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81unicode%E5%92%8Cutf8%E7%9A%84%E5%85%B3%E7%B3%BB/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">字符编码Unicode和UTF8的关系</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Hackintosh/mac%E5%92%8Cwin%E5%AF%B9%E5%BA%94%E7%9A%84%E5%87%A0%E4%B8%AA%E6%8C%89%E9%94%AE/">
+                        <span class="hidden-mobile">Mac和Win对应的几个按键</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

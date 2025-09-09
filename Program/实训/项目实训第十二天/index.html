@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>项目实训第十二天 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="项目实训第十二天">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-23 09:12" pubdate>
+        2021年7月23日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">项目实训第十二天</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<h1 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h1><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="注意问题"><a href="#注意问题" class="headerlink" title="注意问题"></a>注意问题</h3><ol>
+<li>HBase作为一个数据库，提供了基本的增删改查的能力，但是HBase基于HDFS来进行数据的存储，在HDFS“允许一次写入，多次读取，不允许修改，但是允许追加”的前提下，HBase是怎么实现改操作的？当在HBase中，对数据进行修改的时候，实际上并不是真正去改变HDFS中的数据而是在HDFS的文件后边来追加一条数据，当用户需要获取数据的时候，会从文件中来返回最新的数据，那么此时从用户角度就是将数据进行了修改 - HBase在每条数据之后都会追加一个时间戳用于标记数据的新旧问题，这个时间戳称之为数据的版本(VERSION)</li>
+<li>在HBase中，需要通过行键+列族+列+时间戳&#x2F;版本可以锁定唯一的一条数据，这种结构称之为是一个Cell(单元)</li>
+<li>在HBase中，当表建好之后，这个表的版本数就不能改变了。默认情况下，如果不指定，每一个表只会保留1个版本的数据，同时需要注意，也只允许对外获取1个版本的数据 - 如果需要获取多个版本的数据，那么此时需要在建表的时候指定保留版本数，以及对外获取的时候需要指定获取的版本数量</li>
+<li>在HBase中，删除表之前需要先禁用这个表</li>
+<li>在HBase中，没有database的概念，取而代之的是namespace(名称空间)，可以将表放到不同的名称空间下</li>
+<li>在HBase启动的时候，会自带了两个namespace：default和hbase。在建表的时候如果不指定，那么表默认是放在default空间下的；hbase空间下放的是HBase本身的元数据</li>
+</ol>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>disable ‘person’</td>
+<td>禁用表</td>
+</tr>
+<tr>
+<td>drop ‘person’</td>
+<td>删除表</td>
+</tr>
+<tr>
+<td>create ‘person’, {NAME &#x3D;&gt; ‘basic’, VERSIONS &#x3D;&gt; 4}, {NAME &#x3D;&gt; ‘info’, VERSIONS &#x3D;&gt; 5}</td>
+<td>建立person表，包含2个列族，这2个列族各自保留对应版本数的数据</td>
+</tr>
+<tr>
+<td>get ‘person’, ‘p1’, {COLUMN &#x3D;&gt; ‘basic:age’, VERSIONS &#x3D;&gt; 4}</td>
+<td>获取指定列的多个版本的数据</td>
+</tr>
+<tr>
+<td>scan ‘person’, {COLUMNS &#x3D;&gt; ‘basic’, VERSIONS &#x3D;&gt; 4}</td>
+<td>获取指定列族的多版本数据</td>
+</tr>
+<tr>
+<td>create_namespace ‘demo’</td>
+<td>创建名称空间</td>
+</tr>
+<tr>
+<td>list_namespace</td>
+<td>查看所有的名称空间</td>
+</tr>
+<tr>
+<td>list_namespace_tables ‘default’</td>
+<td>查看指定空间下的表</td>
+</tr>
+<tr>
+<td>create ‘demo:person’, {NAME &#x3D;&gt; ‘basic’, VERSIONS &#x3D;&gt; 5}, {NAME &#x3D;&gt; ‘other’, VERSIONS &#x3D;&gt; 3}</td>
+<td>在指定空间下建表</td>
+</tr>
+<tr>
+<td>put ‘demo:person’, ‘p1’, ‘basic:name’, ‘tom’</td>
+<td>向指定空间指定表中来添加数据</td>
+</tr>
+<tr>
+<td>disable ‘demo:person’</td>
+<td>禁用指定空间下的指定表</td>
+</tr>
+<tr>
+<td>drop ‘demo:person’</td>
+<td>删除指定空间下的指定表</td>
+</tr>
+<tr>
+<td>drop_namespace ‘demo’</td>
+<td>删除指定空间，要求这个空间为空</td>
+</tr>
+<tr>
+<td>count ‘person’</td>
+<td>统计这个表中的行键个数</td>
+</tr>
+<tr>
+<td>get_splits ‘person’</td>
+<td>获取指定表中的HRegion的个数</td>
+</tr>
+<tr>
+<td>truncate ‘person’</td>
+<td>摧毁重建表</td>
+</tr>
+<tr>
+<td>alter ‘person’, {NAME &#x3D;&gt; ‘basic’, VERSIONS &#x3D;&gt; 5}</td>
+<td>修改指定表的属性</td>
+</tr>
+<tr>
+<td>describe ‘person’<br/>或者<br/>desc ‘person’</td>
+<td>描述表信息</td>
+</tr>
+<tr>
+<td>exists ‘person’</td>
+<td>判断表是否存在</td>
+</tr>
+<tr>
+<td>is_disabled ‘person’</td>
+<td>判断表是否被禁用</td>
+</tr>
+<tr>
+<td>is_enabled ‘person’</td>
+<td>判断表是否被启用</td>
+</tr>
+<tr>
+<td>list_regions ‘person’</td>
+<td>列出指定表中的HRegion的信息</td>
+</tr>
+<tr>
+<td>show_filters</td>
+<td>列出所有的过滤器</td>
+</tr>
+<tr>
+<td>list</td>
+<td>获取所有空间下的所有的表</td>
+</tr>
+<tr>
+<td>disable_all ‘demo:.*’</td>
+<td>禁用指定空间下的所有的表，在使用的时候需要给定正则表达式</td>
+</tr>
+<tr>
+<td>drop_all ‘demo:.*’</td>
+<td>删除指定空间下的所有的表</td>
+</tr>
+</tbody></table>
+<h3 id="API操作"><a href="#API操作" class="headerlink" title="API操作"></a>API操作</h3><ol>
+<li><p>Namespache操作</p>
+<ol>
+<li><p>发起连接</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Before</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">connect</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <br>    <span class="hljs-comment">// 获取HBase的配置信息</span><br>    <span class="hljs-type">Configuration</span> <span class="hljs-variable">conf</span> <span class="hljs-operator">=</span> HBaseConfiguration.create();<br>    <span class="hljs-comment">// 指定Zookeeper的连接地址</span><br>    conf.set(<span class="hljs-string">&quot;hbase.zookeeper.quorum&quot;</span>, <span class="hljs-string">&quot;hadoop:2181,hadoop02:2181,hadoop03:2181&quot;</span>);<br>    <span class="hljs-comment">// 获取连接</span><br>    connection = ConnectionFactory.createConnection(conf);<br>    <span class="hljs-comment">// 获取管理权</span><br>    admin = connection.getAdmin();<br><br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>创建名称空间</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createNamespace</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-comment">// 构建一个NamespaceDescriptor - 空间描述器</span><br>    <span class="hljs-type">NamespaceDescriptor</span> <span class="hljs-variable">descriptor</span> <span class="hljs-operator">=</span> NamespaceDescriptor.create(<span class="hljs-string">&quot;demo&quot;</span>).build();<br>    <span class="hljs-comment">// 创建名称空间</span><br>    admin.createNamespace(descriptor);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>查看所有的名称空间</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">listNamespaces</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-comment">// 获取所有的名称空间</span><br>    String[] namespaces = admin.listNamespaces();<br>    <span class="hljs-comment">// 遍历数组</span><br>    <span class="hljs-keyword">for</span> (String namespace : namespaces) &#123;<br>        System.out.println(namespace);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>删除名称空间</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">dropNamespace</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    admin.deleteNamespace(<span class="hljs-string">&quot;demo&quot;</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>关闭连接</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@After</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">close</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-comment">// 关闭管理权</span><br>    admin.close();<br>    <span class="hljs-comment">// 关闭连接</span><br>    connection.close();<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>Table操作</p>
+<ol>
+<li><p>发起连接</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Before</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">connect</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-comment">// 获取HBase的配置</span><br>    <span class="hljs-type">Configuration</span> <span class="hljs-variable">conf</span> <span class="hljs-operator">=</span> HBaseConfiguration.create();<br>    <span class="hljs-comment">// 设置Zookeeper的连接地址</span><br>    conf.set(<span class="hljs-string">&quot;hbase.zookeeper.quorum&quot;</span>, <span class="hljs-string">&quot;hadoop:2181,hadoop02:2181,hadoop03:2181&quot;</span>);<br>    <span class="hljs-comment">// 获取连接</span><br>    connection = ConnectionFactory.createConnection(conf);<br>    <span class="hljs-comment">// 获取管理权</span><br>    admin = connection.getAdmin();<br>    <span class="hljs-comment">// 指定表</span><br>    users = connection.getTable(TableName.valueOf(<span class="hljs-string">&quot;users&quot;</span>));<br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>建表</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">createTable</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-comment">// 构建列族描述器</span><br>    <span class="hljs-type">ColumnFamilyDescriptor</span> <span class="hljs-variable">cf1</span> <span class="hljs-operator">=</span> ColumnFamilyDescriptorBuilder<br>        .newBuilder(<span class="hljs-string">&quot;basic&quot;</span>.getBytes(StandardCharsets.UTF_8)).build();<br>    <span class="hljs-type">ColumnFamilyDescriptor</span> <span class="hljs-variable">cf2</span> <span class="hljs-operator">=</span> ColumnFamilyDescriptorBuilder<br>        .newBuilder(<span class="hljs-string">&quot;info&quot;</span>.getBytes(StandardCharsets.UTF_8)).build();<br>    <span class="hljs-comment">// 构建TableDescriptor - 表描述器</span><br>    <span class="hljs-type">TableDescriptor</span> <span class="hljs-variable">table</span> <span class="hljs-operator">=</span> TableDescriptorBuilder<br>        .newBuilder(TableName.valueOf(<span class="hljs-string">&quot;users&quot;</span>))<br>        .setColumnFamily(cf1).setColumnFamily(cf2).build();<br>    <span class="hljs-comment">// 建表</span><br>    admin.createTable(table);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>添加&#x2F;追加数据</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">appendData</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-comment">// 构建Append对象</span><br>    <span class="hljs-type">Append</span> <span class="hljs-variable">append</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Append</span>(<span class="hljs-string">&quot;u1&quot;</span>.getBytes(StandardCharsets.UTF_8));<br>    <span class="hljs-comment">// 添加数据</span><br>    <span class="hljs-type">byte</span>[] basic = <span class="hljs-string">&quot;basic&quot;</span>.getBytes(StandardCharsets.UTF_8);<br>    <span class="hljs-type">byte</span>[] info = <span class="hljs-string">&quot;info&quot;</span>.getBytes(StandardCharsets.UTF_8);<br>    append.addColumn(basic, <span class="hljs-string">&quot;name&quot;</span>.getBytes(StandardCharsets.UTF_8), <span class="hljs-string">&quot;David&quot;</span>.getBytes(StandardCharsets.UTF_8));<br>    append.addColumn(basic, <span class="hljs-string">&quot;age&quot;</span>.getBytes(StandardCharsets.UTF_8), <span class="hljs-string">&quot;19&quot;</span>.getBytes(StandardCharsets.UTF_8));<br>    append.addColumn(basic, <span class="hljs-string">&quot;gender&quot;</span>.getBytes(StandardCharsets.UTF_8), <span class="hljs-string">&quot;male&quot;</span>.getBytes(StandardCharsets.UTF_8));<br>    append.addColumn(info, <span class="hljs-string">&quot;height&quot;</span>.getBytes(StandardCharsets.UTF_8), <span class="hljs-string">&quot;185.5&quot;</span>.getBytes(StandardCharsets.UTF_8));<br>    append.addColumn(info, <span class="hljs-string">&quot;weight&quot;</span>.getBytes(StandardCharsets.UTF_8), <span class="hljs-string">&quot;70.5&quot;</span>.getBytes(StandardCharsets.UTF_8));<br>    append.addColumn(info,<span class="hljs-string">&quot;address&quot;</span>.getBytes(StandardCharsets.UTF_8), <span class="hljs-string">&quot;chongqing&quot;</span>.getBytes(StandardCharsets.UTF_8));<br>    <span class="hljs-comment">// 追加</span><br>    users.append(append);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>添加&#x2F;修改数据</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">putData</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-comment">// 封装Put对象</span><br>    <span class="hljs-type">Put</span> <span class="hljs-variable">put</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Put</span>(<span class="hljs-string">&quot;u2&quot;</span>.getBytes(StandardCharsets.UTF_8));<br>    <span class="hljs-comment">// 指定数据</span><br>    put.addColumn(<span class="hljs-string">&quot;basic&quot;</span>.getBytes(StandardCharsets.UTF_8),<br>                  <span class="hljs-string">&quot;name&quot;</span>.getBytes(StandardCharsets.UTF_8),<br>                  <span class="hljs-string">&quot;Evan&quot;</span>.getBytes(StandardCharsets.UTF_8));<br>    <span class="hljs-comment">// 修改/添加数据</span><br>    users.put(put);<br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>测试：添加百万条数据</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">putMillionData</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>    <span class="hljs-comment">// 记录起始时间</span><br>    <span class="hljs-type">long</span> <span class="hljs-variable">begin</span> <span class="hljs-operator">=</span> System.currentTimeMillis();<br>    <span class="hljs-comment">// 构建集合，实现批量添加</span><br>    List&lt;Put&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>    <span class="hljs-comment">// 指定列族和列</span><br>    <span class="hljs-type">byte</span>[] basic = <span class="hljs-string">&quot;basic&quot;</span>.getBytes(StandardCharsets.UTF_8);<br>    <span class="hljs-type">byte</span>[] password = <span class="hljs-string">&quot;password&quot;</span>.getBytes(StandardCharsets.UTF_8);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000000</span>; i++) &#123;<br>        <span class="hljs-comment">// 构建Put对象</span><br>        <span class="hljs-type">Put</span> <span class="hljs-variable">put</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Put</span>((<span class="hljs-string">&quot;u&quot;</span> + i).getBytes(StandardCharsets.UTF_8));<br>        <span class="hljs-comment">// 添加数据</span><br>        put.addColumn(basic, password, getPassword());<br>        <span class="hljs-comment">// 将数据放入集合</span><br>        list.add(put);<br>        <span class="hljs-comment">// 每1000条数据写出一次</span><br>        <span class="hljs-keyword">if</span> (list.size() &gt;= <span class="hljs-number">1000</span>) &#123;<br>            users.put(list);<br>            <span class="hljs-comment">// 清空集合</span><br>            list.clear();<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 记录结束时间</span><br>    <span class="hljs-type">long</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> System.currentTimeMillis();<br>    System.out.println(end - begin);<br>&#125;<br><span class="hljs-comment">// 产生初始密码</span><br><span class="hljs-keyword">private</span> <span class="hljs-type">byte</span>[] getPassword() &#123;<br>    <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">sb</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++) &#123;<br>        <span class="hljs-type">char</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> (<span class="hljs-type">char</span>) (Math.random() * <span class="hljs-number">26</span> + <span class="hljs-number">65</span>);<br>        sb.append(c);<br>    &#125;<br>    <span class="hljs-keyword">return</span> sb.toString().getBytes(StandardCharsets.UTF_8);<br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/%E5%AE%9E%E8%AE%AD/">实训</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hadoop/">Hadoop</a>
+                    
+                      <a class="hover-with-bg" href="/tags/HBase/">HBase</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%8D%81%E4%B8%89%E5%A4%A9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">项目实训第十三天</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%8D%81%E4%B8%80%E5%A4%A9/">
+                        <span class="hidden-mobile">项目实训第十一天</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,683 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>华硕Fl8000un_x542un 黑苹果安装 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="华硕Fl8000un_x542un 黑苹果安装">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-16 17:11" pubdate>
+        2021年7月16日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      975 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">华硕Fl8000un_x542un 黑苹果安装</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716141359.jpg" srcset="/img/loading.gif" lazyload></p>
+<h1 id="Hackintosh-fl8000un-x542un"><a href="#Hackintosh-fl8000un-x542un" class="headerlink" title="Hackintosh-fl8000un-x542un"></a>Hackintosh-fl8000un-x542un</h1><p>​	华硕fl8000un 黑苹果OC引导：<a target="_blank" rel="noopener" href="https://github.com/flyingcherryblossoms/Hackintosh-fl8000un-x542un">EFI的Github地址</a></p>
+<p>​	通过fl8000uq的EFI完善给fl8000un</p>
+<blockquote>
+<p>（感谢🙏：<a target="_blank" rel="noopener" href="https://github.com/KKKIIINNN/ASUS-FL8000UQ-Hackintosh%EF%BC%89">https://github.com/KKKIIINNN/ASUS-FL8000UQ-Hackintosh）</a></p>
+</blockquote>
+<p>​	使用前建议先看看，原版的README，我只是加了几个驱动。</p>
+<p>​	折腾了两天，先安装Big Sur，用了黑果小兵的10.4镜像，显示正常，但驱动就很迷幻，有时候有有时候没有，还容易掉盘，无奈选择了Catalina，发现Catalina下驱动就很稳👍。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><table>
+<thead>
+<tr>
+<th>配置</th>
+<th>型号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>处理器</td>
+<td>i7-8550U Kaby Lake</td>
+</tr>
+<tr>
+<td>核显</td>
+<td>Intel Graphics UHD620</td>
+</tr>
+<tr>
+<td>独显</td>
+<td>GeForce MX150</td>
+</tr>
+<tr>
+<td>内存</td>
+<td>4G× DDR4 2400MHz&#x2F;16Gx DDR4 2400MHz</td>
+</tr>
+<tr>
+<td>硬盘</td>
+<td>512G SSD&#x2F;1T HDD</td>
+</tr>
+<tr>
+<td>声卡</td>
+<td>Realtek ALC294</td>
+</tr>
+<tr>
+<td>无线网卡</td>
+<td>AR956x</td>
+</tr>
+</tbody></table>
+<h2 id="哪些工作"><a href="#哪些工作" class="headerlink" title="哪些工作"></a>哪些工作</h2><p>在Catalina上：</p>
+<ul>
+<li><p><input checked="" disabled="" type="checkbox"> 
+触控板</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+声卡</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+有线网卡</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+无线网卡（工作缓慢）</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+蓝牙（开关蓝牙前请先关闭WI-FI，不然会卡住）</p>
+</li>
+<li><p><input checked="" disabled="" type="checkbox"> 
+集成显卡</p>
+</li>
+<li><p><input disabled="" type="checkbox"> 
+独立显卡（无法驱动）</p>
+</li>
+</ul>
+<p>已知问题：休眠出现不亮屏问题</p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><ul>
+<li><p>BIOS关闭<code>VT-d</code></p>
+</li>
+<li><p>BIOS关闭<code>CSM</code></p>
+</li>
+<li><p>BIOS关闭<code>Secure Boot</code></p>
+</li>
+<li><p>BIOS关闭<code>Fast Boot</code></p>
+</li>
+<li><p>解锁<code>CFG Lock</code>：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv6167464/">教程：BIOS华硕官网有</a></p>
+<ol>
+<li><p>将U盘格式化为FAT32格式；</p>
+</li>
+<li><p>打开CFG文件夹，将里面的EFI文件复制到U盘中，重启按ESC键选择U盘启动；</p>
+</li>
+<li><p>输入命令<code>setup_var_3 0x527 0x00</code>即可解锁CFG Lock。</p>
+</li>
+</ol>
+</li>
+<li><p>安装使用安装的EFI：就是fl8000uq的EFI，可以直接去上面的链接下载，仓库里也有</p>
+</li>
+<li><p>安装完成使用配置好驱动的EFI（Catalina文件夹下）</p>
+</li>
+</ul>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><p>HDPI开启（Big Sur不保证成功）：</p>
+<ul>
+<li>关机</li>
+<li>开机进入Open Core选择Recovery模式-&gt;终端-&gt;输入<code>csrutil disable</code>：输出Successful … 则操作成功</li>
+<li>重新开机：下载或者<code>git clone https://github.com/xzhih/one-key-hidpi</code>，进入文件夹打开<code>hdpi.command</code>，开启hdpi</li>
+<li>关机</li>
+<li>开机进入Open Core选择Recovery模式-&gt;终端-&gt;输入<code>csrutil enable</code>：输出Successful … 则操作成功<ul>
+<li>重新开机，输入<code>csrutil status</code>如果显示disable，需要在开机进OC时候，reset nvram（可能会丢失OC引导，需要重新添加引导），在进Recovery<code>csrutil enable</code>，重启，即可开启SIP。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>USB定制请参考黑果小兵的教程：<a target="_blank" rel="noopener" href="https://blog.daliansky.net/Intel-FB-Patcher-USB-Custom-Video.html">Hackintool(Intel FB Patcher) USB定制视频</a></p>
+</li>
+<li><p>蓝牙开关需要先关闭Wi-Fi，不然会卡住。</p>
+</li>
+<li><p>USB网络共享的驱动有一个问题，每次重新连接，网络设置里就多一个选项，要重新恢复到1开始：<br> 终端执行</p>
+ <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo rm /Library/Preferences/SystemConfiguration/N*<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+<h2 id="折腾的过程"><a href="#折腾的过程" class="headerlink" title="折腾的过程"></a>折腾的过程</h2><p>​	Big Sur折腾过程中，触摸板和显示是没有问题的。</p>
+<p>出现的驱动问题如下：</p>
+<ul>
+<li><p>声卡</p>
+</li>
+<li><p>有线网络</p>
+</li>
+<li><p>无线网络</p>
+</li>
+<li><p>蓝牙</p>
+</li>
+</ul>
+<p>​	由于有线网络和无线网络都没有，这就很不方便我们查资料，所以我百度找到安卓手机USB共享网络给Mac的方法，要装一个驱动，开始找的版本因为Bigsur修改了安全机制不能直接安装，因此我直接去<a target="_blank" rel="noopener" href="https://github.com/jwise/HoRNDIS/issues/102#issuecomment-551255547">GitHub issues</a>上找了一个不用权限的修改版本，放仓库了，可以直接用。</p>
+<ol>
+<li><p>首先是声卡没有声音，fl8000un的声卡为ALC294，支持的layout如下（<a target="_blank" rel="noopener" href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs">AppleACL</a>）：</p>
+<table>
+<thead>
+<tr>
+<th>Vendor</th>
+<th>Codec</th>
+<th>Revisions and layouts</th>
+<th>MinKernel</th>
+<th>MaxKernel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Realtek</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/acidanthera/AppleALC/tree/master/Resources/ALC294">ALC294</a></td>
+<td>layout 11, 12, 13, 21, 22, 28, 66</td>
+<td>13 (10.9)</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p>我改成了11，有声音了。</p>
+</li>
+<li><p>接着是有线网卡，也没有驱动，插上去没有反应，于是我找到之前驱动过的Realtek8111驱动给替换上去了，然后解决了这个驱动问题。</p>
+</li>
+<li><p>接下来按照小时光的教程：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.longzc.cn/index.php/archives/330">AR9565 MAC11.0黑苹果WIFI驱动教程</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.longzc.cn/index.php/archives/330">AR9565 MAC11.0黑苹果WIFI驱动教程</a></p>
+</li>
+</ul>
+<p>修复了蓝牙和Wi-Fi驱动</p>
+</li>
+</ol>
+<p>​	BigSur每次重启驱动和磁盘都可能掉，于是装了Catalina还是黑果小兵的镜像，发现声卡正常驱动就没有替换layout，然后剩下的步骤和之前一样，发现驱动完美运行。仓库里放了折腾过程的几个版本，你们可以自己试试Big Sur。要安装还是推荐Catalina。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Hackintosh/">Hackintosh</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hackintosh/">Hackintosh</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Hackintosh/mac%E5%AE%89%E8%A3%85homebrew%E5%8F%8A%E9%95%9C%E5%83%8F%E6%BA%90%E6%9B%B4%E6%8D%A2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Mac安装Homebrew及镜像源更换</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%85%AD%E5%A4%A9/">
+                        <span class="hidden-mobile">项目实训第六天</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>Matlab笔记（二） - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Matlab笔记（二）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-06 10:02" pubdate>
+        2020年4月6日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Matlab笔记（二）</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h3 id="一、MATLAB作图"><a href="#一、MATLAB作图" class="headerlink" title="一、MATLAB作图"></a>一、MATLAB作图</h3><h4 id="（一）曲线图"><a href="#（一）曲线图" class="headerlink" title="（一）曲线图"></a>（一）曲线图</h4><blockquote>
+<p>Matlab作图是通过描点、连线来实现的，故在画一个曲线图形之前，必须先取得该图形上的一系列的点的坐标（即x,y），然后将该点击的坐标传给MATLAB函数画图。 命令为： <code>PLOT(X,Y,S)</code> x,y是向量，分别表示点集的横纵坐标，S表示线的类型 S的类型：</p>
+<figure class="highlight text"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs text">y 黄色  <br>m 洋红  <br>c 蓝绿色 <br>r 红色<br>. 点   <br>- 连线<br>。 圈       <br>: 短虚线<br>x x-符号<br>-.    长短线<br>r 红色<br>+ 加号<br>--    长虚线<br></code></pre></div></td></tr></table></figure>
+
+<p>不加s默认画实线：PLOT(x,y) 将多条线画在一起：PLOT(X,Y<del>1</del>,S<del>1</del>,X,Y<del>2</del>,S<del>2</del>,……,X,Y<del>n</del>,S<del>n</del>)</p>
+</blockquote>
+<h4 id="（二）符号函数（显函数、隐函数和参数方程）画图"><a href="#（二）符号函数（显函数、隐函数和参数方程）画图" class="headerlink" title="（二）符号函数（显函数、隐函数和参数方程）画图"></a>（二）符号函数（显函数、隐函数和参数方程）画图</h4><h5 id="1-ezplot"><a href="#1-ezplot" class="headerlink" title="1.ezplot"></a>1.ezplot</h5><blockquote>
+<ul>
+<li>ezplot(‘f(x)’,[a,b])</li>
+</ul>
+<p> 表示在a&lt;x&lt;b绘制显函数f&#x3D;f(x)的函数图</p>
+<ul>
+<li><p>ezplot(‘f(x,y)’,[xmin,xmax,ymin,ymax]) 表示在区间xmin&lt;x&lt;xmax和ymin&lt;y&lt;ymax绘制隐函数f(x,y)&#x3D;0的函数图</p>
+</li>
+<li><p>ezplot(‘x(t)’,’y(t)’,[tmin,tmax]) 表示在区间tmin&lt;t&lt;tmax绘制参数方程,x&#x3D;x(t),y&#x3D;y(t)的函数图</p>
+</li>
+<li><p>fplot(‘fun’,lims) 表示绘制字符串fun指定的函数在Lims&#x3D;[xmin,xmax]的图形</p>
+<ul>
+<li>fun必须是M文件的函数名或是独立变量为x的字符串</li>
+<li>fplot函数不能画参数方程和隐函数图形，但在一个图上可以画多个图形</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="（三）对数坐标"><a href="#（三）对数坐标" class="headerlink" title="（三）对数坐标"></a>（三）对数坐标</h4><blockquote>
+<ul>
+<li><p>loglog(Y) 表示x,y坐标都是对数坐标系</p>
+</li>
+<li><p>semilogx(Y) 表示x坐标轴是对数坐标系</p>
+</li>
+<li><p>semilogy(…) 表示y坐标轴是对数坐标系</p>
+</li>
+<li><p>plotty 有两个y坐标轴，一个在左边，一个在右边</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="二、空间曲线"><a href="#二、空间曲线" class="headerlink" title="二、空间曲线"></a>二、空间曲线</h3><blockquote>
+<ul>
+<li><p>一条曲线：plot3(x,y,z,s) x,y,z表示横纵坐标和函数值,s表示线的颜色和类型 其中x,y,z都是m*n的矩阵，其对应的每一列表示一条曲线</p>
+</li>
+<li><p>多条曲线：plot3(x,y,z)</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="三、空间曲面"><a href="#三、空间曲面" class="headerlink" title="三、空间曲面"></a>三、空间曲面</h3><blockquote>
+<ul>
+<li><p>surf(x,y,z) x,y,z表示横纵坐标和函数值 画出数据点（x,y,z）表示的曲面</p>
+</li>
+<li><p>mesh(x,y,z) 生成网格线曲面</p>
+</li>
+<li><p>meshz(x,y,z) 生成网格线曲面，带高度z</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="四、处理图像"><a href="#四、处理图像" class="headerlink" title="四、处理图像"></a>四、处理图像</h3><h4 id="（一）在图形上加格栅、图例和标注"><a href="#（一）在图形上加格栅、图例和标注" class="headerlink" title="（一）在图形上加格栅、图例和标注"></a>（一）在图形上加格栅、图例和标注</h4><blockquote>
+<ul>
+<li><p>grid on&#x2F;off 打开&#x2F;关闭 网格背景在图像上</p>
+</li>
+<li><p>hh &#x3D; xlabel(string) 在当前图形的x轴上加图例string</p>
+</li>
+<li><p>hh &#x3D; ylabel(string) 在当前图形的y轴上加图例string</p>
+</li>
+<li><p>hh &#x3D; zlabel(string) 在当前图形的z轴上加图例string</p>
+</li>
+<li><p>hh &#x3D; title(string) 在当前图形的顶部加图例string</p>
+</li>
+<li><p>hh &#x3D; gtex(string) 添加标注区别曲线</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="（二）定制坐标"><a href="#（二）定制坐标" class="headerlink" title="（二）定制坐标"></a>（二）定制坐标</h4><blockquote>
+<ul>
+<li>Axis([xmin xmax ymin ymax zmin zmax])</li>
+</ul>
+<p>定制图形坐标，分别表示x,y,z的最大和最小值</p>
+<ul>
+<li>Axis auto</li>
+</ul>
+<p>还原坐标轴到自动缺省值状态</p>
+</blockquote>
+<h4 id="（三）图形保持"><a href="#（三）图形保持" class="headerlink" title="（三）图形保持"></a>（三）图形保持</h4><blockquote>
+<ul>
+<li><p>hold on 保持当前图形，以便继续画图到当前图上</p>
+</li>
+<li><p>hold off 释放当前图形窗口</p>
+</li>
+<li><p>figure(h) 新建h窗口，激活图形使其可见，并把它置于其它图形之上</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="（四）分割窗口"><a href="#（四）分割窗口" class="headerlink" title="（四）分割窗口"></a>（四）分割窗口</h4><blockquote>
+<ul>
+<li><p>h &#x3D; subplot(marows,ncols,thisplot) 划分整个图形为marows x ncols大小的块（逐行对块进行访问）并激活第thisplot块，其后的作图语句将显示在该块上</p>
+</li>
+<li><p>subplot(mrows,ncols,thisplot) 激活一划分为Mrows x ncols块的屏幕中的第thisplot块，其后的作图语句将图形画在该块上</p>
+</li>
+<li><p>subplot(1,1,1) 将作图窗口返回非分割状态</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="（五）图像缩放"><a href="#（五）图像缩放" class="headerlink" title="（五）图像缩放"></a>（五）图像缩放</h4><blockquote>
+<ul>
+<li><p>zoom on 为当前窗口打开缩放模式，单击鼠标左键，则在当前图形窗口中，以鼠标点中的点为中心的图形放大2倍；单击鼠标右键，则缩小两倍</p>
+</li>
+<li><p>zoom off 关闭缩放模式</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="（六）改变视角"><a href="#（六）改变视角" class="headerlink" title="（六）改变视角"></a>（六）改变视角</h4><blockquote>
+<ul>
+<li><p>view(a,b) 命令view(a,b) 改变视角到(a,b)，a是方位角，b为仰角。缺省值为（-37.5，30）。</p>
+</li>
+<li><p>view([x,y,z])</p>
+<p>view用空间矢量表示的，三个量只关心他们的比例，与数值大小无关，x轴view([1,0,0])，y轴view([0,1,0])，z轴view([0,0,1])。</p>
+</li>
+</ul>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/Matlab/">Matlab</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Matlab/">Matlab</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/Matlab/matlab%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Matlab笔记（一）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/Others/json/">
+                        <span class="hidden-mobile">JSON</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

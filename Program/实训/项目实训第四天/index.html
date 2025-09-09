@@ -1,0 +1,726 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>项目实训第四天 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="项目实训第四天">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-15 20:35" pubdate>
+        2021年7月15日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      31
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">项目实训第四天</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<h1 id="安装Flume"><a href="#安装Flume" class="headerlink" title="安装Flume"></a>安装Flume</h1><ol>
+<li><p>将<code>apache-flume-1.9.0-bin.tar.gz</code>上传至虚拟机的&#x2F;opt文件夹下并解压：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tar -xvf apache-flume-1.9.0-bin.tar.gz<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>修改启动脚本参数</p>
+<p>进入apache-flume-1.9.0-bin&#x2F;conf</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cp flume-env.sh.template flume-env.sh<br><br>vim flume-env.sh<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">添加</span><br>export $JAVA_HOME=/opt/jdk1.8.0_181<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>配置环境变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">vim /etc/profile<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">添加</span><br>export FLUME_HOME=/opt/apache-flume-1.9.0-bin<br>export PATH=$PATH:$FLUME_HOME/bin<br><br>source /etc/profile<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>检测是否安装成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">flume-ng version<br></code></pre></div></td></tr></table></figure>
+
+<p>输出如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">Flume 1.9.0<br>Source code repository: https://git-wip-us.apache.org/repos/asf/flume.git<br>Revision: d4fcab4f501d41597bc616921329a4339f73585e<br>Compiled by fszabo on Mon Dec 17 20:45:25 CET 2018<br>From source with checksum 35db629a3bda49d23e9b3690c80737f9<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+<h1 id="Flume"><a href="#Flume" class="headerlink" title="Flume"></a>Flume</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><h3 id="AVRO-Source"><a href="#AVRO-Source" class="headerlink" title="AVRO Source"></a>AVRO Source</h3><ol>
+<li><p>AVRO是Apache提供的一套序列化反序列化机制，AVRO的序列化机制能够跨平台跨语言</p>
+</li>
+<li><p>AVRO Source实际上是用于接收被AVRO序列化之后的数据，结合AVRO Sink可以实现多级、扇入以及扇出流动</p>
+</li>
+<li><p>配置案例</p>
+<ol>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-comment">#配置一个agent，agent的名称可以自定义（如a1）</span><br><span class="hljs-comment">#指定agent的sources（如s1）、sinks（如k1）、channels（如c1）</span><br><span class="hljs-comment">#分别指定agent的sources，sinks,channels的名称 名称可以自定义</span><br><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1</span><br><span class="hljs-attr">a1.sinks</span> = <span class="hljs-string">k1</span><br><span class="hljs-attr">a1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">#配置source</span><br><span class="hljs-attr">a1.sources.s1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sources.s1.type</span> = <span class="hljs-string">avro</span><br><span class="hljs-attr">a1.sources.s1.bind</span> = <span class="hljs-string">172.16.132.6</span><br><span class="hljs-attr">a1.sources.s1.port</span> = <span class="hljs-string">6666</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">#配置channels</span><br><span class="hljs-attr">a1.channels.c1.type</span> = <span class="hljs-string">memory</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">#配置sinks</span><br><span class="hljs-attr">a1.sinks.k1.channel</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks.k1.type</span> = <span class="hljs-string">logger</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">#为sources和sinks绑定channels</span><br><span class="hljs-attr">a1.sources.s1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks.k1.channel</span> = <span class="hljs-string">c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/conf -f avrosource.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>利用AVRO客户端将文件序列化之后发送给Flume</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng avro-client -H hadoop -p 6666 -F a.txtou<br></code></pre></div></td></tr></table></figure>
+
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210715195231.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210715195131.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="Exec-Source"><a href="#Exec-Source" class="headerlink" title="Exec Source"></a>Exec Source</h3><ol>
+<li><p>Exec Source会监听指定的命令，会将这个命令的执行结果作为日志来进行收集</p>
+</li>
+<li><p>案例：监听文件，如果文件中新添了数据，自动收集文件中新添的数据</p>
+<ol>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1a1.channels = c1a1.sinks = k1# 配置Exec Sourcea1.sources.s1.type = exec# 指定监听的命令a1.sources.s1.command = tail -F /opt/a.txt# 指定命令类型a1.sources.s1.shell = /bin/bash -ca1.channels.c1.type = memorya1.sinks.k1.type = loggera1.sources.s1.channels = c1a1.sinks.k1.channel = c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动Flume</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/conf -f execsource.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="Sequence-Generator-Source"><a href="#Sequence-Generator-Source" class="headerlink" title="Sequence Generator Source"></a>Sequence Generator Source</h3><ol>
+<li><p>Sequence Generator Source是一个序列产生器，会从0开始递增，递增到totalEvents</p>
+</li>
+<li><p>totalEvents如果不指定，则默认是Long.MAX_VALUE，即2^63^-1</p>
+</li>
+<li><p>案例</p>
+<ol>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1a1.channels = c1a1.sinks = k1# 配置Sequence Generator Sourcea1.sources.s1.type = seq# 指定递增的最大值a1.sources.s1.totalEvents = 1000a1.channels.c1.type = memorya1.sinks.k1.type = loggera1.sources.s1.channels = c1a1.sinks.k1.channel = c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/conf -f seqsource.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="Spooling-Directory-Source"><a href="#Spooling-Directory-Source" class="headerlink" title="Spooling Directory Source"></a>Spooling Directory Source</h3><ol>
+<li><p>Spooling Directory Source会监听指定的目录，如果指定的目录下产生了新的文件，那么会将这个新文件中的内容自动的进行按行收集</p>
+</li>
+<li><p>被收集完的文件会自动添加一个后缀.COMPLETED</p>
+</li>
+<li><p>案例</p>
+<ol>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1a1.channels = c1a1.sinks = k1# 配置Spooling Directory Sourcea1.sources.s1.type = spooldir# 要监听的目录a1.sources.s1.spoolDir = /opt/flumedataa1.channels.c1.type = memorya1.sinks.k1.type = loggera1.sources.s1.channels = c1a1.sinks.k1.channel = c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/conf -f spooldirsource.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="HTTP-Source"><a href="#HTTP-Source" class="headerlink" title="HTTP Source"></a>HTTP Source</h3><ol>
+<li><p>HTTP Source监听HTTP请求，只能用于监听GET和POST请求。其中对于GET请求的监听只处于实验阶段，所以实际过程中只用这个Source来监听POST请求</p>
+</li>
+<li><p>案例</p>
+<ol>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1a1.channels = c1a1.sinks = k1# 配置HTTP Sourcea1.sources.s1.type = http# 要监听的端口a1.sources.s1.port = 8090a1.channels.c1.type = memorya1.sinks.k1.type = loggera1.sources.s1.channels = c1a1.sinks.k1.channel = c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/conf -f httpsource.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>发送POST请求</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">curl -X POST -d <span class="hljs-string">&#x27;[&#123;&quot;headers&quot;:&#123;&quot;date&quot;:&quot;2021-07-14&quot;&#125;,&quot;body&quot;:&quot;hello class&quot;&#125;]&#x27;</span> http://hadoop:8090<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="Custom-Source"><a href="#Custom-Source" class="headerlink" title="Custom Source"></a>Custom Source</h3><ol>
+<li><p>在Flume中，如果Flume原生提供的Source不能适用指定场景，那么此时就可以考虑自定义Source</p>
+</li>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1a1.channels = c1a1.sinks = k1# 配置自定义Source - 指定全路径名a1.sources.s1.type = cn.tedu.flume.source.AuthSource# 指定步长a1.sources.s1.step = 5# 指定终止范围a1.sources.s1.end = 100a1.channels.c1.type = memorya1.sinks.k1.type = loggera1.sources.s1.channels = c1a1.sinks.k1.channel = c1</span><br></code></pre></div></td></tr></table></figure></li>
+</ol>
+<h2 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h2><h3 id="Memory-Channel"><a href="#Memory-Channel" class="headerlink" title="Memory Channel"></a>Memory Channel</h3><ol>
+<li><p>Memory Channel将Source收集来的数据临时放到内存的队列中，因此这个Channel的读写速度相对较快但是不可靠</p>
+</li>
+<li><p>通过capacity属性来定义队列的容量。如果队列被放慢，那么后来的数据就会被阻塞。capactiy如果不指定则默认值为为100，实际开发中，一般会将这个值调节为300000~500000</p>
+</li>
+<li><p>属性transactionCapacity表示事务容量，实际上表示了每次发送或者接收的数据量。transactionCapacity默认也是100，实际开发过程中，会考虑将这个值调节为3000~5000</p>
+</li>
+<li><p>案例</p>
+<ol>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1a1.channels = c1a1.sinks = k1a1.sources.s1.type = netcata1.sources.s1.bind = 0.0.0.0a1.sources.s1.port = 8090# 配置Memory Channela1.channels.c1.type = memory# 指定容量a1.channels.c1.capacity = 100000# 指定数据的批量a1.channels.c1.transactionCapacity = 1000a1.sinks.k1.type = loggera1.sources.s1.channels = c1a1.sinks.k1.channel = c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/bin -f memory.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>发送数据</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">nc hadoop 8090<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="File-Channel"><a href="#File-Channel" class="headerlink" title="File Channel"></a>File Channel</h3><ol>
+<li><p>File Channel将Source收集来的数据以文件形式存储到本地磁盘上，所以这个Channel的读写速度慢但是可靠</p>
+</li>
+<li><p>在存储的时候，如果不指定，那么会放在<code>~/.flume/file-channel/data</code>路径下</p>
+</li>
+<li><p>案例</p>
+<ol>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1a1.channels = c1a1.sinks = k1a1.sources.s1.type = netcata1.sources.s1.bind = 0.0.0.0a1.sources.s1.port = 8090# 配置File Channela1.channels.c1.type = file# 指定在磁盘上的临时存储路径a1.channels.c1.dataDirs = /opt/flumedataa1.sinks.k1.type = loggera1.sources.s1.channels = c1a1.sinks.k1.channel = c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/bin -f filechannel.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>发送数据</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">nc hadoop 8090<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="JDBC-Channel"><a href="#JDBC-Channel" class="headerlink" title="JDBC Channel"></a>JDBC Channel</h3><ol>
+<li>JDBC Channel是将Source收集的数据临时存储到数据库中，因为数据库存在索引的问题，所以理论上这个JDBC Channel的效率要高于File Channel但是低于Memory Channel</li>
+<li>JDBC Channel到目前为止仅仅支持Derby(微型数据库、单连接)。正因为采用的是Derby库，所以实际开发中不用这个JDBC Channel</li>
+</ol>
+<h2 id="Sink"><a href="#Sink" class="headerlink" title="Sink"></a>Sink</h2><h3 id="HDFS-Sink"><a href="#HDFS-Sink" class="headerlink" title="HDFS Sink"></a>HDFS Sink</h3><ol>
+<li><p>HDFS Sink将数据写到HDFS上。在写数据的时候，默认是每隔30s在HDFS上生成一个新的文件，那么这会导致HDFS上生成大量的小文件，所以实际过程中需要改变这个值</p>
+</li>
+<li><p>HDFS Sink在讲数据写到HDFS上的时候，还需要考虑文件类型。Flume支持三种文件类型：SequenceFil(序列文件)、DataStream(文本文件)、CompressedStream(压缩文件)</p>
+</li>
+<li><p>案例</p>
+<ol>
+<li><p>启动HDFS</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">start-dfs.sh<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1a1.channels = c1a1.sinks = k1a1.sources.s1.type = netcata1.sources.s1.bind = 0.0.0.0a1.sources.s1.port = 8090a1.channels.c1.type = memorya1.channels.c1.capacity = 10000a1.channels.c1.transactionCapacity = 100# 配置HDFS Sinka1.sinks.k1.type = hdfs# 指定在HDFS上的存储路径a1.sinks.k1.hdfs.path = hdfs://hadoop:9000/flumedata/test# 指定文件的滚动间隔时间a1.sinks.k1.hdfs.rollInterval = 3600# 指定文件的存储类型a1.sinks.k1.hdfs.fileType = DataStreama1.sources.s1.channels = c1a1.sinks.k1.channel = c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/bin -f hdfssink.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>发送数据</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">nc hadoop 8090<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="Logger-Sink"><a href="#Logger-Sink" class="headerlink" title="Logger Sink"></a>Logger Sink</h3><ol>
+<li><p>Logger Sink表示将数据打印到指定位置上，一般是控制台上</p>
+</li>
+<li><p>在打印的时候，为了防止过多的数据将控制台占满，所以默认打印body部分的数据不超过16个字节，可以通过maxBytesToLog来配置</p>
+</li>
+<li><p>Logger Sink在打印数据的时候，对中文支持不好</p>
+</li>
+<li><p>案例</p>
+<ol>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1</span><br><span class="hljs-attr">a1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks</span> = <span class="hljs-string">k1</span><br><br><span class="hljs-attr">a1.sources.s1.type</span> = <span class="hljs-string">netcat</span><br><span class="hljs-attr">a1.sources.s1.bind</span> = <span class="hljs-string">0.0.0.0</span><br><span class="hljs-attr">a1.sources.s1.port</span> = <span class="hljs-string">8090</span><br><br><span class="hljs-attr">a1.channels.c1.type</span> = <span class="hljs-string">memory</span><br><span class="hljs-attr">a1.channels.c1.capacity</span> = <span class="hljs-string">10000</span><br><span class="hljs-attr">a1.channels.c1.transactionCapacity</span> = <span class="hljs-string">1000</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 配置Logger Sink</span><br><span class="hljs-attr">a1.sinks.k1.type</span> = <span class="hljs-string">logger</span><br><span class="hljs-comment"># 指定body部分打印的字节个数</span><br><span class="hljs-attr">a1.sinks.k1.maxBytesToLog</span> = <span class="hljs-string">20</span><br><br><span class="hljs-attr">a1.sources.s1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks.k1.channel</span> = <span class="hljs-string">c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/bin -f loggersink.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>发送数据</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">nc hadoop 8090<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="File-Roll-Sink"><a href="#File-Roll-Sink" class="headerlink" title="File Roll Sink"></a>File Roll Sink</h3><ol>
+<li><p>File Roll Sink将数据最终写到执行的目录下。在写的时候同样是每隔30s会生成一个小文件，所以实际过程中需要调节大小</p>
+</li>
+<li><p>案例</p>
+<ol>
+<li><p>格式文件</p>
+<figure class="highlight properties"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs properties"><span class="hljs-attr">a1.sources</span> = <span class="hljs-string">s1</span><br><span class="hljs-attr">a1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks</span> = <span class="hljs-string">k1</span><br><br><span class="hljs-attr">a1.sources.s1.type</span> = <span class="hljs-string">netcat</span><br><span class="hljs-attr">a1.sources.s1.bind</span> = <span class="hljs-string">0.0.0.0</span><br><span class="hljs-attr">a1.sources.s1.port</span> = <span class="hljs-string">8090</span><br><br><span class="hljs-attr">a1.channels.c1.type</span> = <span class="hljs-string">memory</span><br><span class="hljs-attr">a1.channels.c1.capacity</span> = <span class="hljs-string">10000</span><br><span class="hljs-attr">a1.channels.c1.transactionCapacity</span> = <span class="hljs-string">100</span><br><span class="hljs-comment"></span><br><span class="hljs-comment"># 配置File Roll Sink</span><br><span class="hljs-attr">a1.sinks.k1.type</span> = <span class="hljs-string">file_roll</span><br><span class="hljs-comment"># 指定数据的存储目录</span><br><span class="hljs-attr">a1.sinks.k1.sink.directory</span> = <span class="hljs-string">/opt/flumedata</span><br><span class="hljs-comment"># 指定文件滚动的间隔时间</span><br><span class="hljs-attr">a1.sinks.k1.sink.rollInterval</span> = <span class="hljs-string">3600</span><br><br><span class="hljs-attr">a1.sources.s1.channels</span> = <span class="hljs-string">c1</span><br><span class="hljs-attr">a1.sinks.k1.channel</span> = <span class="hljs-string">c1</span><br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>启动命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">flume-ng agent -n a1 -c <span class="hljs-variable">$FLUME_HOME</span>/bin -f filerollsink.conf -Dflume.root.logger=INFO,console<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>发送数据</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">nc hadoop 8090<br></code></pre></div></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/%E5%AE%9E%E8%AE%AD/">实训</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hadoop/">Hadoop</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Flume/">Flume</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%BA%94%E5%A4%A9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">项目实训第五天</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E4%B8%89%E5%A4%A9/">
+                        <span class="hidden-mobile">项目实训第三天</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

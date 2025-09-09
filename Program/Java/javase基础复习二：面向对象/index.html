@@ -1,0 +1,1031 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>JavaSE基础复习二：面向对象 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="JavaSE基础复习二：面向对象">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-26 22:16" pubdate>
+        2021年7月26日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      32
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">JavaSE基础复习二：面向对象</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<h1 id="JavaSE基础复习二：面向对象"><a href="#JavaSE基础复习二：面向对象" class="headerlink" title="JavaSE基础复习二：面向对象"></a>JavaSE基础复习二：面向对象</h1><h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><ul>
+<li><p>类是Java程序的基本组成单位</p>
+</li>
+<li><p>类是对现实生活中异类具有共同属性和行为的事物的抽象，确定对象将会拥有的属性和行为</p>
+</li>
+<li><p>类的组成：属性和行为</p>
+<ul>
+<li><p>属性：成员变量（实例）</p>
+</li>
+<li><p>行为：成员方法（实例）类方法可以共用</p>
+</li>
+</ul>
+</li>
+<li><p>变量的类型：</p>
+<ul>
+<li><p>类变量（静态变量：static）</p>
+</li>
+<li><p>成员变量（实例变量）：堆中，随对象存在，有初始值</p>
+</li>
+<li><p>局部变量（本地变量）：栈，方法调用结束消失，没有初始值</p>
+</li>
+</ul>
+</li>
+<li><p>this关键字：指向调用的对象</p>
+</li>
+<li><p>封装</p>
+<ul>
+<li><p>原则：隐藏某些信息在类内部，不允许外部程序直接访问，对外提供Setter和Getter方法。</p>
+</li>
+<li><p>优点：提高代码安全性，提高代码复用性</p>
+</li>
+</ul>
+</li>
+<li><p>构造方法：</p>
+<ul>
+<li><p>无参构造：如果没有写构造方法，系统默认提供一个无参构造方法</p>
+</li>
+<li><p>有参构造方法：当存在有参构造，系统不再提供无参构造方法，当需要使用无参构造时，需要自己写一个无参构造方法，因此推荐都手动写一个无参构造方法。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ul>
+<li><p>IDEA：Ctrl+Alt+v，补全返回值声明。例如：<code>nextLine();</code>按快捷键，自动补全为<code>String line = nextLine();</code></p>
+</li>
+<li><p>Java官方提供的API文档：<a target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/11/docs/api/index.html">https://docs.oracle.com/en/java/javase/11/docs/api/index.html</a></p>
+</li>
+</ul>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><ul>
+<li><p>内容不可变，加操作会用StringBuilder操作</p>
+</li>
+<li><p>在<code>java.lang</code>包下，不需要导入</p>
+</li>
+<li><p>所有”被引起来的字符串”最终都被实现为此类的实例</p>
+</li>
+<li><p>创建后值不能被更改，但是可以被共享</p>
+</li>
+<li><p>底层原理是字节数组（byte[]）</p>
+</li>
+<li><p>常见构造方法：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public String()</td>
+<td>创建一个空白字符串对象，不含有任何内容</td>
+</tr>
+<tr>
+<td>public String(char[] args)</td>
+<td>根据字符数组的内容，来创建字符串对象</td>
+</tr>
+<tr>
+<td>public String(byte[] bys)</td>
+<td>根据自己数组的内容，来创建字符串对象</td>
+</tr>
+<tr>
+<td>String str &#x3D; “abc”</td>
+<td>直接赋值**（推荐）**</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>特点：</p>
+<ul>
+<li><p>每次new申请一个新空间，地址值不同</p>
+</li>
+<li><p>直接赋值的方式给出的字符串，只要字符序列相同，无论在程序中出现几次，JVM都只会建立一个String对象，并在字符串池中维护，是同一个对象。</p>
+</li>
+</ul>
+</li>
+<li><p>字符串比较</p>
+<ul>
+<li><p>用<code>==</code>进行比较：</p>
+<ul>
+<li><p>基本类型：比较数据值是否相同</p>
+</li>
+<li><p>引用类型：比较地址值是否相同</p>
+</li>
+</ul>
+</li>
+<li><p>字符串是对象，它比较内容是否相同，是通过一个方法来实现：<code>equals()</code></p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object anObject)</span><br></code></pre></div></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>常用方法：</p>
+<ul>
+<li><p>charAt()</p>
+</li>
+<li><p>length()</p>
+</li>
+<li><p>toChartArray()</p>
+</li>
+<li><p>endsWith()</p>
+</li>
+<li><p>split()</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h2><ul>
+<li><p>构造方法：无参、传入String</p>
+</li>
+<li><p>方法：</p>
+<ul>
+<li><p>append(元素)，返回对象本身</p>
+</li>
+<li><p>reverse()，返回相反的字符序列</p>
+</li>
+<li><p>toString()</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="集合基础：ArrayList"><a href="#集合基础：ArrayList" class="headerlink" title="集合基础：ArrayList"></a>集合基础：ArrayList</h2><ul>
+<li><p>常见使用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>public ArrayList()</td>
+<td>创建空集合</td>
+</tr>
+<tr>
+<td>public boolean add(E e)</td>
+<td>在末尾添加元素，返回添加是否成功</td>
+</tr>
+<tr>
+<td>public void add(int index, E e)</td>
+<td>在索引index处添加元素</td>
+</tr>
+<tr>
+<td>public boolean remove(Object o)</td>
+<td>删除指定的元素，返回删除是否成功</td>
+</tr>
+<tr>
+<td>public E remove(int index)</td>
+<td>删除指定处的元素，返回被修改的元素</td>
+</tr>
+<tr>
+<td>public E get(int index)</td>
+<td>返回指定索引处的元素</td>
+</tr>
+<tr>
+<td>public int size()</td>
+<td>返回集合中的元素个数</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>如果<code>List&lt;Integer&gt; list = new ArrayList&lt;Integer&gt;</code>，要用remove方法删除元素1，那么：<code>list.remove((Object)1)</code></p>
+</li>
+</ul>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li><p>面向对象三大特征：封装、继承、多态</p>
+</li>
+<li><p>子类继承父类属性和方法，再进行属性和方法的扩充</p>
+</li>
+<li><p><code>public class 子类 extends 父类&#123;&#125;</code></p>
+</li>
+<li><p>Java只有单继承<code>extends</code>，接口可以多继承<code>implements</code></p>
+</li>
+<li><p>优缺点</p>
+<ul>
+<li><p>好处：</p>
+<ul>
+<li><p>提高复用性</p>
+</li>
+<li><p>提高维护性</p>
+</li>
+</ul>
+</li>
+<li><p>坏处：</p>
+<ul>
+<li>类之间产生关系，耦合性增强</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>变量使用：优先使用局部变量，如果没有去子类中找，没有去父类找，父类中也没有则报错</p>
+</li>
+<li><p>suger关键字：代表父类存储空间的表示（可以理解为父类对象的引用），用于访问父类的属性或方法。调用构造方法<code>super()</code>，子类自己可以用<code>this()</code></p>
+</li>
+<li><p>子类初始化一定先初始化父类（子类可能会使用父类的属性和方法），子类构造函数第一句话一定是：<code>super()</code>，没写编译器自动添加，如果手动调用super的有参构造，则不会自动添加无参构造。</p>
+</li>
+<li><p>方法重写：</p>
+<ul>
+<li><p>子类中出现了和父类一样的方法声明</p>
+</li>
+<li><p>当子类需要父类的功能，但功能主题子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父亲的功能，又定义了子类特有的内容注解</p>
+</li>
+<li><p>@Override，用来表示重写了父类方法</p>
+</li>
+<li><p>重写了，默认访问子类方法，若没有重写，默认调用父类的方法</p>
+</li>
+<li><p>重写时，方法的访问权限不能更低，但可以更高，私有不可重写</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><ul>
+<li><p>package：包就是文件夹，用于对类进行分类管理</p>
+<ul>
+<li>手动建包，自己手动建立几个文件夹，将java文件编译后的class文件放入建立的包路径下，然后运行时候，在包外，命令行带包运行，例如：<code>java com.quosimodo.HelloWorld</code>即可。可以用<code>javac -d HelloWorld.java</code>，它会自动把class文件放进包里，然后直接运行即可。</li>
+</ul>
+</li>
+<li><p>权限修饰符：</p>
+<ul>
+<li><p><strong>default</strong> (即默认，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。</p>
+</li>
+<li><p><strong>private</strong> : 在同一类内可见。使用对象：变量、方法。 <strong>注意：不能修饰类（外部类）</strong></p>
+</li>
+<li><p><strong>public</strong> : 对所有类可见。使用对象：类、接口、变量、方法</p>
+</li>
+<li><p><strong>protected</strong> : 对同一包内的类和所有子类可见。使用对象：变量、方法。 <strong>注意：不能修饰类（外部类）</strong>。说明：</p>
+<ul>
+<li><p><strong>子类与基类在同一包中</strong>：被声明为 protected 的变量、方法和构造器能被同一个包中的任何其他类访问；</p>
+</li>
+<li><p><strong>子类与基类不在同一包中</strong>：那么在子类中，子类实例可以访问其从基类继承而来的 protected 方法，而不能访问基类实例的protected方法（多态，super等访问）。</p>
+</li>
+</ul>
+</li>
+<li><p>我们可以通过以下表来说明访问权限：</p>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>当前类</th>
+<th>同一包内</th>
+<th>子孙类(同一包)</th>
+<th>子孙类(不同包)</th>
+<th>其他包</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>见上说明</td>
+<td>N</td>
+</tr>
+<tr>
+<td><code>default</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>访问控制和继承</p>
+<p>请注意以下方法继承的规则：</p>
+<ul>
+<li><p>父类中声明为 public 的方法在子类中也必须为 public。</p>
+</li>
+<li><p>父类中声明为 protected 的方法在子类中要么声明为 protected，要么声明为 public，不能声明为 private。</p>
+</li>
+<li><p>父类中声明为 private 的方法，不能够被继承。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>final：可以修饰类和方法和变量</p>
+<ul>
+<li><p>final修饰的类不可被继承</p>
+</li>
+<li><p>final修饰的方法不可被重写</p>
+</li>
+<li><p>final修饰的变量：</p>
+<ul>
+<li><p>修饰基本类型，表示常量，不可改变</p>
+</li>
+<li><p>修饰引用类型，地址不能变，但指向的内存里的值可变（即当调用内部的方法是，内部的值是可以改变的）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>static：说明是静态的，可以修饰成员方法、成员变量</p>
+<ul>
+<li><p>修饰变量：表示类变量，被所有对象共享，可以直接调用（如果权限允许)</p>
+</li>
+<li><p>修饰成员方法：表示类方法，被所有对象共享，可以直接调用</p>
+</li>
+<li><p>JVM加载类时，静态的变量方法会被自动分配空间，不需要new对象就能使用</p>
+</li>
+<li><p>静态方法只能访问静态成员和静态方法，普通方法都静态和普通方法都能访问</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ul>
+<li><p>前提：</p>
+<ul>
+<li><p>有继承&#x2F;实现关系</p>
+</li>
+<li><p>有方法重写</p>
+</li>
+<li><p>有父类引用指向子类对象</p>
+</li>
+</ul>
+</li>
+<li><p>访问特点：</p>
+<ul>
+<li><p>成员变量：编译看左边，执行看左边</p>
+<p>成员方法：编译看左边，执行看右边（因为方法可以重写，而变量不能）</p>
+<p>父类引用指向子类实例：</p>
+<ul>
+<li><p>无法访问父类没有的变量和方法。</p>
+</li>
+<li><p>方法被重写了则调用子类的方法，否则调用父类的方法。</p>
+</li>
+<li><p>变量无论子类是否定义了父类相同的，只要是父类引用调用，一定是父类的，没有则报错。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>向上转型直接赋值，向下转型，强制类型转换</p>
+</li>
+</ul>
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ul>
+<li><p>用<code>abstract</code>修饰的类称为抽象类，修饰方法则该方法为抽象方法</p>
+</li>
+<li><p>一个没有方法体，只有声明的方法应该定义为抽象方法</p>
+</li>
+<li><p>抽象类不能用<code>protected</code>或<code>private</code>或<code>final</code>修饰</p>
+</li>
+<li><p>抽象方法不能被<code>final</code>修饰</p>
+</li>
+<li><p>抽象类中可以没有抽象方法</p>
+</li>
+<li><p>类中有抽象方法，那么该类一定是抽象类</p>
+</li>
+<li><p>抽象类不能创建实例，但可以建立引用（<strong>抽象类多态</strong>，实例化子类）</p>
+</li>
+<li><p>抽象类用于让子类继承，子类必须重写所有抽象方法，不然该类依然是抽象类</p>
+</li>
+<li><p>抽象类的成员特点：</p>
+<ul>
+<li><p>抽象类中可以有变量和常量，静态的常量也可以</p>
+</li>
+<li><p>可以有构造方法，但是不能实例化，用于实例化子类</p>
+</li>
+<li><p>可以有抽象方法和非抽象方法</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><ul>
+<li><p>interface修饰的类，不能实例化，必须被继承（接口多态）</p>
+</li>
+<li><p>所有方法都必须重写</p>
+</li>
+<li><p>用implements继承，类和接口都可以多继承接口，类可以同时继承一个类和多个接口</p>
+</li>
+<li><p>接口的成员特点：</p>
+<ul>
+<li><p>变量默认被<code>static final</code>修饰，所以<strong>只有静态常量</strong></p>
+</li>
+<li><p>方法默认被<code>public abstract</code>修饰，所以<strong>只有抽象方法</strong></p>
+</li>
+<li><p>没有构造方法</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="接口和抽象类的区别"><a href="#接口和抽象类的区别" class="headerlink" title="接口和抽象类的区别"></a>接口和抽象类的区别</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>抽象类</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>成员</td>
+<td>常量、变量、构造方法、普通方法、抽象方法</td>
+<td>常量、抽象方法</td>
+</tr>
+<tr>
+<td>关系</td>
+<td>单继承</td>
+<td>单继承、多继承</td>
+</tr>
+<tr>
+<td><strong>设计概念</strong></td>
+<td><strong>对类抽象，包括行为和属性</strong></td>
+<td><strong>对行为抽象</strong></td>
+</tr>
+</tbody></table>
+<p><strong>一般共有的的属性和方法用抽象类表示，而有些有，有些没有的行为则用接口实现，可以实现灵活的扩充。</strong></p>
+<h2 id="形参和返回值"><a href="#形参和返回值" class="headerlink" title="形参和返回值"></a>形参和返回值</h2><ul>
+<li><p>基本类型做形参和返回值：略</p>
+</li>
+<li><p>引用类型做形参和返回值</p>
+<ul>
+<li><p>类作为形参：传入该类（或子类）对象</p>
+</li>
+<li><p>类做返回值：返回该类（或子类）对象</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><ul>
+<li><p>在类的内部在定义类</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ExternalClass</span> &#123;<br><span class="hljs-comment">// 外部类</span><br>    修饰符 <span class="hljs-keyword">class</span> <span class="hljs-title class_">InternalClass</span> &#123;<br>        <span class="hljs-comment">// 内部类</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p>访问特点</p>
+<ul>
+<li><p>内部类可以访问外部类的所有成员，包括私有</p>
+</li>
+<li><p>外部类要访问内部类的成员，必须创建内部类对象</p>
+</li>
+</ul>
+</li>
+<li><p>分为：</p>
+<ul>
+<li><p>成员内部类：在类的成员位置</p>
+<ul>
+<li><p>在类的成员位置定义</p>
+</li>
+<li><p>使用格式：外部类名.内部类名 对象名 &#x3D; 外部类对象.内部类对象</p>
+</li>
+<li><p>规范：Outer.Inner oi &#x3D; new Outer().new Inner();</p>
+</li>
+<li><p>使用一般定义为private，然后在外部类定义函数对内部类新建对象进行访问</p>
+</li>
+</ul>
+</li>
+<li><p>局部内部类：在方法里定义的类</p>
+<ul>
+<li><p>可以使用局部定义的变量或常量和外部类的成员。</p>
+</li>
+<li><p>匿名内部类：<strong>本质是一个对象</strong></p>
+<ul>
+<li><p>前提：存在一个雷或者接口，这里的类可以是具体类也可以是抽象类</p>
+</li>
+<li><p>本质：一个继承了类或实现了接口的匿名对象</p>
+</li>
+<li><p>目的：省略定义一个类的定义过程，直接重写方法生成该类对象，适合于一次性使用的类</p>
+</li>
+<li><p>使用格式</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">new</span> 类名或接口名() &#123;<br>    重写方法;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
+
+<p>&#x2F;&#x2F; 示例</p>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Inner</span>() &#123;<br>    <span class="hljs-keyword">public</span> viod <span class="hljs-title function_">show</span><span class="hljs-params">()</span> &#123;<br><br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
+</li>
+<li><p><strong>使用方法</strong>：</p>
+<p>在使用一个方法时：</p>
+<ul>
+<li><p>需要传入一个继承了某个类并重写某个方法的类的对象</p>
+</li>
+<li><p>或者需要传入一个实现了某个接口实现了某个方法的对象，这时不需要去创建一个类，再创建一个实例，直接用匿名内部类就可以简写。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/">Program</a>
+                    
+                      <a class="hover-with-bg" href="/categories/Program/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Program/">Program</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/Java/javase%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E4%B8%89%EF%BC%9A%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JavaSE基础复习三：常用工具类</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/Java/javase%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E4%B8%80%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E6%95%B0%E7%BB%84%E3%80%81%E6%96%B9%E6%B3%95/">
+                        <span class="hidden-mobile">JavaSE基础复习一：数据类型、运算符、数组、方法</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

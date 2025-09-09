@@ -1,0 +1,745 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="same-origin" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/avatar.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="卡西莫多的个人博客">
+  <meta name="author" content="Quosimodo">
+  <meta name="keywords" content="Java,C++,Python,黑苹果,大数据,黑苹果,Hadoop,Matlab">
+  
+  <title>中间人攻击以及防范原理：加密、签名和签证 - 卡西莫多の礼物</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":110,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":5},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"c09ebf4b1c4e85a78c41088b03767102","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>卡西莫多の礼物</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                Others
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    标签
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/about/">
+                    <i class="iconfont icon-user-fill"></i>
+                    关于
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-link-fill"></i>
+                    友链
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="中间人攻击以及防范原理：加密、签名和签证">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-25 09:40" pubdate>
+        2021年7月25日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      57
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">中间人攻击以及防范原理：加密、签名和签证</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2023年2月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <hr>
+<blockquote>
+<h3 id="转载自编程指北"><a href="#转载自编程指北" class="headerlink" title="转载自编程指北"></a>转载自<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4NjUxMzg5MA==&mid=2247493978&idx=1&sn=885e57fad88b763535ae29bd422e5c95&chksm=cf9a20d7f8eda9c1e5fe7fd4d96d0c56d1455c6145c624a0f226075da001b4a7e257a7772b9d&mpshare=1&scene=23&srcid=0724YPnajCyovORYzW1aLTQK&sharer_sharetime=1627132559086&sharer_shareid=aa23f6ecbf349681c42d0120cf33ac1e%23rd">编程指北</a></h3></blockquote>
+<p>霸占热搜多日的竹-签大战终于水落石出，北京警方在 7 月 22 晚微博发布的通告中显示，竹-签之间还隐藏着一个神秘玩家：<strong>刘某</strong>，他一直作为一个「中间人」的角色在发起『中间人攻击』。</p>
+<blockquote>
+<p>中间人攻击（英语：Man-in-the-middle attack，缩写：MITM）在密码学和计算机安全领域中是指攻击者与通讯的两端分别创建独立的联系，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方直接对话，但事实上整个会话都被攻击者完全控制。在中间人攻击中，攻击者可以拦截通讯双方的通话并插入新的内容。</p>
+</blockquote>
+<p>一张图就可以吃完整个瓜：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213206.png" srcset="/img/loading.gif" lazyload></p>
+<p>简单来说，就是刘某先冒充被害人之一去和竹套取细节，然后冒充竹去和签索要赔偿，但是错就错在他为了不引起签的注意，特意给了竹的银行卡和自己的银行卡。</p>
+<p>但是呢吴妈只打了 50 w 给竹的银行卡，刘某并没收到钱，于是他又假冒签的律师逼竹签订「和解协议」，否则需要退款，竹认为这个协议对自己不利，所以竹在几天内共向刘退了 18 W（支付宝每天有额度限制）。</p>
+<p>至于竹在微博上发布的各种爆料消息，则是他的好友帮忙编辑，主要意图是想炒作提高知名度。</p>
+<p>实际中，我们平时上网过程中，也是随时面临着 DNS 欺骗、会话劫持等中间人攻击的危险。</p>
+<p>因为计算机之间通过网络连接的，那么在两台计算机通信时就可能被第三方劫持：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213224.png" srcset="/img/loading.gif" lazyload></p>
+<p>有攻必防，要保证安全，一般有两个要求：</p>
+<ol>
+<li>第三方无法窃听</li>
+<li>一旦被中间人篡改，通信双方可以发现</li>
+<li>身份认证</li>
+</ol>
+<p>比如 HTTPS 就能一定程度上解决上网的安全性问题，它通过加密和证书的机制来解决上诉问题：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213254.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213313.png" srcset="/img/loading.gif" lazyload></p>
+<p>整个过程涉及到对称加密&#x2F;非对称加密，数字签名、数字证书等内容，那么今天就单独写一篇文章来详细说明一下这些知识，主要是串起来。</p>
+<p>如果你能清晰的回答出下面这些问题，那么这篇文章就不用看啦：</p>
+<ol>
+<li>非对称加密中公私钥都可以加密，那么什么时候用公钥加密，什么时候用私钥“加密” ？</li>
+<li>什么是数字签名，数字签名的作用是什么？</li>
+<li>为什么要对数据的摘要进行签名，而不是直接计算原始数据的数字签名？</li>
+<li>什么是数字证书，数字证书解决了什么问题？</li>
+</ol>
+<p>下面主要围绕<strong>数字签名</strong>和<strong>数字证书</strong>的原理以及它们的作用展开。</p>
+<p>争取做到让不具备任何密码学基础知识的同学都能听懂，所以在这里需要先对齐一些加密相关的概念 。</p>
+<h2 id="1-什么是加密"><a href="#1-什么是加密" class="headerlink" title="1. 什么是加密"></a>1. 什么是加密</h2><p>加密就是<strong>对明文数据按某种特殊算法进行处理，使其成为不可读的一段代码，通常称为“密文“，</strong> 密文通过”密钥“解密后还原出原来的明文，通过这样的途径可以达到保护数据不被非法人窃取、阅读的目的。</p>
+<p>定义简单吧？那来看个题，考虑以下哪些属于加密方法：</p>
+<ul>
+<li>AES</li>
+<li>RSA</li>
+<li>MD5</li>
+<li>BASE64</li>
+<li>SM4</li>
+</ul>
+<p>这几种都是日常开发中常用的数据编码技术，但是只有 AES、RSA、SM4 才能算是加密方法。</p>
+<p>为什么呢？<strong>一个区分的简单方法就是看编码后的数据是否还能还原，能还原的是加密。</strong></p>
+<p>MD5 实际上是对数据进行有损压缩，无论数据有多长，1KB、1Mb 还是 1G，都会生成固定 128 位的散列值，并且 MD5 理论上是不可能对编码后的数据进行还原的，即不可逆。</p>
+<p>MD5 因为其具有不可逆性、单向恒定性（相同的数据多次计算值不变）被广泛应用于文件完整性验证、口令加密以及接下来会讲到的数字签名中。</p>
+<p>至于 BASE64 是否算做加密方法，仁者见仁。在这里不下结论，因为 BASE64 编码不需要密钥，且编码后的字符串任何人都可以解码出原串，所以一般不认为是加密方法。BASE64 常用来做转码，把二进制字节序列转化为 ASCII 字符序列。</p>
+<h2 id="2-加密算法的分类"><a href="#2-加密算法的分类" class="headerlink" title="2. 加密算法的分类"></a>2. 加密算法的分类</h2><p>加密算法按照加解密使用的密钥是否相同，可分为：</p>
+<ul>
+<li><strong>对称加密（Symmetric Cryptography）</strong></li>
+<li><strong>非对称加密（Asymmetric Cryptography）</strong></li>
+</ul>
+<h4 id="1-对称加密"><a href="#1-对称加密" class="headerlink" title="1. 对称加密"></a>1. 对称加密</h4><p>对称加密是指加密和解密时使用同一个密钥。</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213334.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="2-非对称加密"><a href="#2-非对称加密" class="headerlink" title="2. 非对称加密"></a>2. 非对称加密</h3><p>非对称加密是指加密和解密使用不同的密钥，这两个密钥分别叫做「公钥」、「私钥」。</p>
+<p>公钥是可以公开给所有人的，而私钥需要自己保密的。</p>
+<p>公钥加密的数据只能用私钥解密：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213410.png" srcset="/img/loading.gif" lazyload></p>
+<p>同理，私钥“加密”的数据只能用公钥“解密”：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213424.png" srcset="/img/loading.gif" lazyload></p>
+<p>大家注意到没，我对 <strong>私钥“加密”</strong> 这里打了引号，为什么呢？</p>
+<p>因为私钥不是用来加密的，准确的说法应该是 <strong>「私钥签名，公钥验签」</strong>。</p>
+<p>这个问题很多同学都存在误解，认为公私钥都可以用于加密。</p>
+<p>实际上不是的，至于为什么，后面讲完签名我会解释的。</p>
+<h2 id="3-故事开始"><a href="#3-故事开始" class="headerlink" title="3. 故事开始"></a>3. 故事开始</h2><p>为了讲这个故事，小北请来了密码学中常用的学术情侣，Alice（竹） 和 Bob（签），以及窃听者代表 Eve（刘某）。</p>
+<p>我们从 Alice、Bob 约会的故事展开，来讲讲其中暗藏着哪些危机，又是如何一步步化解的。</p>
+<h3 id="3-1-第一回合"><a href="#3-1-第一回合" class="headerlink" title="3.1 第一回合"></a>3.1 第一回合</h3><p>九月，一个夜黑风高的晚上，Bob 想约 Alice 出来玩，于是给 Alice 发了一封邮件：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213433.png" srcset="/img/loading.gif" lazyload></p>
+<p>但我们都知道网络是不可信的，并且由于消息在网络中是明文传输的，所以黑客可以轻易的截获、篡改甚至冒充  Bob。</p>
+<p>来，我们看看黑客 Eve 是怎么干的：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213441.png" srcset="/img/loading.gif" lazyload alt="黑客窃听伪造"></p>
+<p>瞧，Eve 轻易的拿到了邮件内容 <strong>（窃听）</strong>，并且修改了邮件内容 <strong>（篡改）</strong>，甚至说他可以随时冒充 Bob 给 Alice 发送邮件 <strong>（伪装）</strong>。</p>
+<p>如果上图中 Eve 伪造的内容被 Alice 接收到了，那么后果可想而知。</p>
+<p>现实世界中，我们每天都在通过网络进行聊天、转账、浏览不存在网站。</p>
+<p>如果都是这样明文传输数据，显然毫无安全感。</p>
+<h4 id="3-2-第二回合"><a href="#3-2-第二回合" class="headerlink" title="3.2 第二回合"></a>3.2 第二回合</h4><p>既然我们不能明文传输，那么 Bob 和 Alice 提前商量好密钥，使用对称加密对邮件内容加密不就好了~</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213449.png" srcset="/img/loading.gif" lazyload alt="对称加密"></p>
+<p>现在 Bob 发送的邮件都使用和 Alice 提前商量好的密钥加密后再传输。</p>
+<p>由于没有密钥，Eve 就算截获到数据也无法获取邮件的内容，也没法篡改和冒充 Bob。</p>
+<p>因为篡改后的数据必须使用密钥再次加密 Alice 才能正确解密。</p>
+<p>那么只要 Bob 和 Alice 能够保证 密钥不泄露，整个通信就是安全的。</p>
+<p>如果密钥泄露，被中间人截获，那么就等同于明文通信。</p>
+<p>所以我们不能把安全性寄托在人上面。</p>
+<p>并且这里也存在一个问题，如果两个人不能线下见面， 如何在网上安全的交换密钥呢？</p>
+<p>这似乎是无解的，因为<strong>交换密钥的时候我们必须明文通信，不然对方根本看不懂。但是明文交换即意味着可能泄露。</strong></p>
+<p>但是别忘了我们的密码学工具箱里还有一个好东西— <strong>「非对称加密」</strong>。</p>
+<p>Bob 和 Alice 各自生成一对公私钥，因为公钥本来就是公开的，即可以被任何人获取，所以可以通过网络明文交换公钥。</p>
+<p>然后使用公钥加密邮件内容后发送给对方，接收者使用自己的私钥即可解密。完美~</p>
+<h4 id="3-3-第三回合"><a href="#3-3-第三回合" class="headerlink" title="3.3 第三回合"></a>3.3 第三回合</h4><p>来看看，在非对称加密体系下，Bob 如何给 Alice 发消息的。</p>
+<p>首先 Alice 需要先生成一对公私钥，私钥只能 Alice 自己知道，公钥是可以让任何人都知道的，因此可将公钥直接发送给 Bob，就算被截获也无所谓。</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213456.png" srcset="/img/loading.gif" lazyload alt="非对称加密"></p>
+<p>Bob 使用 Alice 的公钥加密邮件内容，加密后的内容只能由 Alice 的私钥解密，所以就算 Eve 截获也是徒劳。</p>
+<p>反之，如果 Alice 想给 Bob 回信，就需要用 Bob 的公钥加密后发送。</p>
+<p>这就解决了密钥交换问题，也保证了邮件内容不会泄露。也就是说现在可以<strong>防窃听</strong>。</p>
+<h4 id="3-4-如何证明-Bob-是-Bob"><a href="#3-4-如何证明-Bob-是-Bob" class="headerlink" title="3.4 如何证明 Bob 是 Bob"></a>3.4 如何证明 Bob 是 Bob</h4><p>不知道你注意到没有，这里也存在另外一个问题：</p>
+<p><strong>Eve 也可以使用 Alice 的公钥冒充 Bob 给 Alice 发邮件啊，因为 Alice 的公钥本来就是公开的，任何人都可以获得。</strong></p>
+<p>由于 Eve 也可以获得 Alice 公钥，所以没法防止 Eve <strong>伪造</strong>和<strong>篡改</strong>，并且对于 Alice 而言，她无法分辨出邮件到底是 Eve 发的还是 Bob。</p>
+<p>所以这个问题的本质就是 <strong>「Alice 如何确认邮件来自于 Bob」</strong>。</p>
+<p>那么在生活中，我们如何做这件事呢？</p>
+<p>那就是让 Bob 在纸上<strong>签名</strong>并且<strong>按手印</strong>，因为指纹和字迹是 Bob 独有的，其它人很难伪造。</p>
+<p>所以我们需要在计算机中引入类似的机制：</p>
+<p><strong>即只有 Bob 自己能够产生的独一无二的标志，并且其它人能够验证这个标志确实是属于 Bob的。</strong></p>
+<p>这就是我们今天要讲的主题—<strong>「数字签名」。</strong></p>
+<p>还记得什么是 Bob 独有的吗？</p>
+<p>对，就是 Bob 自己的私钥，Bob 用自己的私钥对邮件内容计算一个「签名」，将「签名」和邮件内容一起发送出去，接受者 Alice 可以使用 Bob 的公钥验证这个签名是否正确，这就叫「验签」。</p>
+<p>如果不是 Bob 的私钥计算的签名，那么 Alice 用 Bob 公钥验签将会出错。</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213504.png" srcset="/img/loading.gif" lazyload></p>
+<p>可以看到， Eve 试图使用自己的私钥计算签名然后发送给 Alice， 但是 Alice 使用 Bob的公钥进行验签时将会出错！</p>
+<p>那么 Eve 可能篡改内容并冒充 Bob 的签名吗？不可能！因为内容发生改变时，对应的签名也需要重新计算，而签名的生成依赖于私钥，只要 Bob 的私钥不泄露，签名就不会被冒充。</p>
+<p>啊啥？你说万一私钥泄露了怎么办？那就当我没说……</p>
+<p>所以使用数字签名，我们能够鉴别消息的发送者，也就是说黑客无法伪装发送者进行发送数据，也无法篡改。</p>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p>可以看出我们这里数据是明文传输的，存在窃听风险。但是我们为了阐述数字签名机制是如何运转的，故意将保证信息机密性的机制省略了。</p>
+<p>如果想要保证数据的机密性，我们常见的做法是，通信双方通过非对称加密安全交换对称加密的密钥，后续通信过程的数据都使用对称加密保证数据机密性。</p>
+<p>并且「签名」的作用本身也不是用来保证数据的机密性，而是用于验证数据来源的防止数据被篡改的，也就是确认发送者的身份。</p>
+</blockquote>
+<p>一般而言，我们不会直接对数据本身直接计算数字签名，为什么呢？</p>
+<p>因为数字签名属于非对称加密，非对称加密依赖于复杂的数学运算，包括大数乘法、大数模等等，耗时比较久。</p>
+<p>如果数据量大的时候计算数字签名将会比较耗时，所以一般做法是先将原数据进行 Hash 运算，得到的 Hash 值就叫做「摘要」。</p>
+<p>「摘要」就像人的指纹一样，可以代表一个人，只要内容发生了改变，计算出来的摘要也应该变化。</p>
+<p>「摘要」最好是不可逆转的，一般使用开头提到的 MD5 作为 Hash 函数，MD5 输出的结果固定位 128 位。</p>
+<blockquote>
+<p><strong>为什么「摘要」最好是不可逆转的？</strong></p>
+<p>因为既然 Alice 可以用 Bob 公钥解开签名，那么理论上其它人，比如 Eve 也可以使用 Bob 公钥解开签名拿到数据。</p>
+<p>所以我们最好对数据的「摘要」进行签名，这样，Eve 就算解开签名，拿到的也是「摘要」，如果摘要是不可逆转的，也就是无法从摘要反推出原文，也就达到了保密的作用。</p>
+</blockquote>
+<p>发送者使用私钥对「摘要」计算数字签名。那么接收者如何验证呢？</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213511.png" srcset="/img/loading.gif" lazyload></p>
+<p>接受者 Alice 收到后，取下数字签名，同时用 Bob 的公钥解密，得到「摘要1」，<strong>证明确实是 Bob 发的</strong>。</p>
+<p><em>( 画外音：如果使用 Bob 的公钥验证签名出错，那么签名一定不是 Bob 的私钥生成的）</em></p>
+<p>再对邮件内容使用相同的散列函数计算「摘要2」，与上面得到的「摘要1」进行对比，<strong>两者一致就说明信息未被篡改。</strong></p>
+<p>这样两步分证明发送者身份和保证数据未被篡改。</p>
+<h4 id="3-5-这就够了吗？"><a href="#3-5-这就够了吗？" class="headerlink" title="3.5 这就够了吗？"></a>3.5 这就够了吗？</h4><p>Bob 和 Alice 现在可以依赖于对称加密进行保密通信，也可以依赖于数字签名验证消息是否是对方发送的。</p>
+<p><strong>但是这一切的根基是建立在 Alice 持有的公钥确实是 Bob的，反之亦然。</strong></p>
+<p>什么意思呢？</p>
+<p>试想，**Eve 如果将自己的公钥冒充 Bob 发送给 Alice，然后 Alice 保存了下来，那以后凡是 Bob 发送的消息，反而会验证签名失败，被当做冒充者。**那你可能会问，为什么 Eve 可以将自己的公钥发送给 Alice，而 Alice 毫不知情呢？</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213519.png" srcset="/img/loading.gif" lazyload></p>
+<p>看！我们又回到了最初的起点，只不过这次被篡改的是公钥，之前是消息本身。</p>
+<p>因为 Bob 的公钥是直接通过网络发送给 Alice的，所以 Eve 才可以在这一步做手脚，进行篡改，将自己的公钥冒充 Bob 发送给 Alice，也就是发送公钥这一步没有做到：</p>
+<ul>
+<li>防篡改</li>
+<li>防冒充</li>
+</ul>
+<p>防篡改怎么和防冒充怎么实现的呢？</p>
+<p>我们前面讲了，就是靠数字签名！但是数字签名需要接受者持有发送者公钥，才能进行验签。</p>
+<p><strong>而我们现在处理的是分发公钥这一步，所以…….死锁了。这像是先有鸡还是先有蛋的问题</strong></p>
+<p>现在的问题就是「Bob 无法证明它自己是 Bob」。</p>
+<p>这个是不是似曾相识，以前去办事的时候经常被要求出具「我妈是我妈」这类证明。但是我们自己说“我妈就是我妈”，人家根本不会信呀，需要一个可信第三方出具证明，比如派出所。</p>
+<p>那么「Alice 如何才能确认 Bob 发送给自己的公钥确实是 Bob 的，而没有被篡改？」</p>
+<p>在只有 Alice 和 Bob 两人的情况下是没法验证的。</p>
+<p>所以，我们这里也需要一个第三方帮 Bob证明 「Bob 的公钥就是 Bob 的公钥」，有点绕口令那感觉了~</p>
+<h4 id="3-6-数字证书"><a href="#3-6-数字证书" class="headerlink" title="3.6 数字证书"></a>3.6 数字证书</h4><p>为了解决这个问题，就引入了「数字证书」，什么叫数字证书呢？</p>
+<p>百度百科：</p>
+<blockquote>
+<p>数字证书是指在互联网通讯中标志通讯各方身份信息的一个数字认证，人们可以在网上用它来识别对方的身份。</p>
+<p>因此数字证书又称为数字标识。数字证书对网络用户在交流中的信息和数据等以加密或解密的形式保证了信息和数据的完整性和安全性。</p>
+</blockquote>
+<p>看了这个描述，是不是感觉还是云里雾里，还是我用大白话来说吧~</p>
+<p><strong>只要你理解了前面的数字签名，就能理解这里的数字证书，因为我把数字证书叫做「公钥的数字签名」。</strong></p>
+<p>为什么呢？我们引入数字证书的目的是为了保证公钥不被篡改，即使被篡改了也能识别出来。</p>
+<p>而防篡改的方法就是数字签名，但是这个签名不能我们自己做，原因说过了，因为我们的公钥还没分发出去，别人无法验证。</p>
+<p>所以只能找可信的第三方来帮我们签名，即证书颁布机构（CA），CA 会将：证书的颁布机构、有效期、公钥、持有者(subject)等信息用 CA 的私钥进行签名。</p>
+<p>并且将签名结果和这些信息放在一起，这就叫做「数字证书」。</p>
+<p>这样，Bob 就可以去 CA 申请一个证书，然后将自己的证书发给 Alice，那么 Alice 如何验证这个证书确实是 Bob的呢？</p>
+<p>当然是使用 CA 的公钥进行验签。</p>
+<blockquote>
+<p><strong>注意：</strong></p>
+<p>CA 的公钥也是需要使用证书来分发的，所以 Alice 的电脑必须安装 CA 的证书，证书里包含了 CA 的公钥。</p>
+</blockquote>
+<p>收到 Bob 发过来的数字证书后，Alice 使用 CA 的公钥进行验证，验证通过即证明这确实是 Bob 证书，也就可以使用证书中包含的 Bob 的公钥，按照之前讨论的流程进行通信。</p>
+<p>那么 Eve 是否可以在中途篡改 Bob 的证书呢？</p>
+<p>答案是不行，因为证书的信息使用 CA 的私钥进行签名，只要 Eve 修改了任何一个 Bit 都会导致最后签名验证不通过。</p>
+<p>那 Eve 可不可以修改证书信息后自己重新计算一次证书的数字签名呢？</p>
+<p>也不行，因为证书的数字签名计算依赖于 CA 的私钥，Eve 是拿不到 CA 的私钥的。</p>
+<p>如果拿到了，说明什么？整个世界都是不可信的。</p>
+<h4 id="3-7-数字证书长啥样"><a href="#3-7-数字证书长啥样" class="headerlink" title="3.7 数字证书长啥样"></a>3.7 数字证书长啥样</h4><p>这是我电脑中的自带的证书：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213530.png" srcset="/img/loading.gif" lazyload alt="电脑自带证书"></p>
+<p>可以看到，包含了证书持有人的公钥和证书的签名。</p>
+<p>另外，证书颁发机构是有层级关系的，下级 CA 的证书是需要由上级 CA 签名的。</p>
+<p>换句话说一定存在根证书颁发机构，那么他们的证书是由谁签名的呢？</p>
+<p>答案是自签，自己给自己认证。</p>
+<p>这是我电脑中的一个自签的根证书颁发机构：</p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213536.png" srcset="/img/loading.gif" lazyload alt="自签的根证书机构"></p>
+<p>为什么根证书可以自签，谁来保证安全？</p>
+<p>你把钱存在银行，你会担心吗？我们基于对国家的信任，才信任银行，这就是信任链的基础！我们思考问题应该是分层的，如果不认可一个统一的基础，一直套娃下去，那么问题就无解。</p>
+<p>那还有个问题，如何保证根证书的可靠性？这是操作系统和浏览器预装的，由微软、苹果等操作系统厂商来选择根证书。</p>
+<h4 id="3-8-证书不可信？"><a href="#3-8-证书不可信？" class="headerlink" title="3.8 证书不可信？"></a>3.8 证书不可信？</h4><p>那么什么情况下浏览器会提示 “证书不可信” 呢？</p>
+<p>根据我们上面的分析，下面是可能的原因：</p>
+<ol>
+<li>证书不是权威 CA 颁发</li>
+</ol>
+<p>有些企业为了贪图便宜使用盗版的证书，没有经过 CA 认证。也就是无法使用浏览器内置 CA 公钥进行验证。</p>
+<ol>
+<li>证书过期</li>
+</ol>
+<p>上面说了，证书里有一项就是有效期，一般就是一年或者两年的时间。如果证书过期，那么浏览器就会提示“证书不可信”</p>
+<ol>
+<li>证书部署错误</li>
+</ol>
+<p>可能是服务器证书部署出错，比如证书与域名不匹配，因为证书里有一项是持有人信息的。</p>
+<p>好了，饶了一大圈，Bob 终于可以安全的向 Alice 发出前往红树林的邀请了~</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><h2 id="QA"><a href="#QA" class="headerlink" title="QA"></a>QA</h2><p>现在我们来回答文章开头提出的一些问题：</p>
+<ol>
+<li><p>非对称加密中公私钥都可以加密，那么什么时候用公钥加密，什么时候用私钥“加密” ？</p>
+</li>
+<li><ul>
+<li>加密场景，那么肯定希望只有我才能解密，别人只能加密。即<strong>公钥加密，私钥解密。</strong></li>
+<li>签名场景，既然是签名，就希望只能我才能签名，别人只能验证。即<strong>私钥签名，公钥验签</strong></li>
+</ul>
+</li>
+<li><p>什么是数字签名，数字签名的作用是什么？</p>
+</li>
+<li><ul>
+<li>数字签名就是使用私钥对数据摘要进行签名，并附带和数据一起发送。</li>
+<li>可以起到防篡改、防伪装、防否认的作用。</li>
+</ul>
+</li>
+<li><p>为什么要对数据的摘要进行签名，而不是直接计算原始数据的数字签名？</p>
+</li>
+<li><ul>
+<li>数据可能比较大，签名是使用非对称加密算法，比较耗时</li>
+<li>防止第三方使用公钥解开签名后，拿到原始数据</li>
+</ul>
+</li>
+<li><p>什么是数字证书，数字证书存在解决了什么问题？</p>
+</li>
+<li><ul>
+<li>数字证书就是由 CA 机构使用自己私钥，对证书申请者的公钥进行签名认证。</li>
+<li>数字证书解决了如何安全分发公钥的问题，也奠定了信任链的基础。</li>
+</ul>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Program/Java/javase%E5%9F%BA%E7%A1%80%E5%A4%8D%E4%B9%A0%E4%B8%80%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E6%95%B0%E7%BB%84%E3%80%81%E6%96%B9%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">JavaSE基础复习一：数据类型、运算符、数组、方法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Program/%E5%AE%9E%E8%AE%AD/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD%E7%AC%AC%E5%8D%81%E5%9B%9B%E5%A4%A9/">
+                        <span class="hidden-mobile">项目实训第十四天</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> <div style="text-align: center;">Copyright © by Quosimodo All Rights Reserved.</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c09ebf4b1c4e85a78c41088b03767102";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
