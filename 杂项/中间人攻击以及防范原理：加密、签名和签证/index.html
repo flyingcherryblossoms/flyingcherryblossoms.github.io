@@ -246,7 +246,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023年2月5日 晚上
+                  本文最后更新于：2025年9月10日 上午
                 
               </p>
             
@@ -259,13 +259,13 @@
 <p>中间人攻击（英语：Man-in-the-middle attack，缩写：MITM）在密码学和计算机安全领域中是指攻击者与通讯的两端分别创建独立的联系，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方直接对话，但事实上整个会话都被攻击者完全控制。在中间人攻击中，攻击者可以拦截通讯双方的通话并插入新的内容。</p>
 </blockquote>
 <p>一张图就可以吃完整个瓜：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213206.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213206.png" srcset="/img/loading.gif" lazyload></p>
 <p>简单来说，就是刘某先冒充被害人之一去和竹套取细节，然后冒充竹去和签索要赔偿，但是错就错在他为了不引起签的注意，特意给了竹的银行卡和自己的银行卡。</p>
 <p>但是呢吴妈只打了 50 w 给竹的银行卡，刘某并没收到钱，于是他又假冒签的律师逼竹签订「和解协议」，否则需要退款，竹认为这个协议对自己不利，所以竹在几天内共向刘退了 18 W（支付宝每天有额度限制）。</p>
 <p>至于竹在微博上发布的各种爆料消息，则是他的好友帮忙编辑，主要意图是想炒作提高知名度。</p>
 <p>实际中，我们平时上网过程中，也是随时面临着 DNS 欺骗、会话劫持等中间人攻击的危险。</p>
 <p>因为计算机之间通过网络连接的，那么在两台计算机通信时就可能被第三方劫持：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213224.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213224.png" srcset="/img/loading.gif" lazyload></p>
 <p>有攻必防，要保证安全，一般有两个要求：</p>
 <ol>
 <li>第三方无法窃听</li>
@@ -273,8 +273,8 @@
 <li>身份认证</li>
 </ol>
 <p>比如 HTTPS 就能一定程度上解决上网的安全性问题，它通过加密和证书的机制来解决上诉问题：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213254.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213313.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213254.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213313.png" srcset="/img/loading.gif" lazyload></p>
 <p>整个过程涉及到对称加密&#x2F;非对称加密，数字签名、数字证书等内容，那么今天就单独写一篇文章来详细说明一下这些知识，主要是串起来。</p>
 <p>如果你能清晰的回答出下面这些问题，那么这篇文章就不用看啦：</p>
 <ol>
@@ -305,13 +305,13 @@
 <li><strong>非对称加密（Asymmetric Cryptography）</strong></li>
 </ul>
 <h4 id="1-对称加密"><a href="#1-对称加密" class="headerlink" title="1. 对称加密"></a>1. 对称加密</h4><p>对称加密是指加密和解密时使用同一个密钥。</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213334.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213334.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="2-非对称加密"><a href="#2-非对称加密" class="headerlink" title="2. 非对称加密"></a>2. 非对称加密</h3><p>非对称加密是指加密和解密使用不同的密钥，这两个密钥分别叫做「公钥」、「私钥」。</p>
 <p>公钥是可以公开给所有人的，而私钥需要自己保密的。</p>
 <p>公钥加密的数据只能用私钥解密：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213410.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213410.png" srcset="/img/loading.gif" lazyload></p>
 <p>同理，私钥“加密”的数据只能用公钥“解密”：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213424.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213424.png" srcset="/img/loading.gif" lazyload></p>
 <p>大家注意到没，我对 <strong>私钥“加密”</strong> 这里打了引号，为什么呢？</p>
 <p>因为私钥不是用来加密的，准确的说法应该是 <strong>「私钥签名，公钥验签」</strong>。</p>
 <p>这个问题很多同学都存在误解，认为公私钥都可以用于加密。</p>
@@ -319,16 +319,16 @@
 <h2 id="3-故事开始"><a href="#3-故事开始" class="headerlink" title="3. 故事开始"></a>3. 故事开始</h2><p>为了讲这个故事，小北请来了密码学中常用的学术情侣，Alice（竹） 和 Bob（签），以及窃听者代表 Eve（刘某）。</p>
 <p>我们从 Alice、Bob 约会的故事展开，来讲讲其中暗藏着哪些危机，又是如何一步步化解的。</p>
 <h3 id="3-1-第一回合"><a href="#3-1-第一回合" class="headerlink" title="3.1 第一回合"></a>3.1 第一回合</h3><p>九月，一个夜黑风高的晚上，Bob 想约 Alice 出来玩，于是给 Alice 发了一封邮件：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213433.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213433.png" srcset="/img/loading.gif" lazyload></p>
 <p>但我们都知道网络是不可信的，并且由于消息在网络中是明文传输的，所以黑客可以轻易的截获、篡改甚至冒充  Bob。</p>
 <p>来，我们看看黑客 Eve 是怎么干的：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213441.png" srcset="/img/loading.gif" lazyload alt="黑客窃听伪造"></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213441.png" srcset="/img/loading.gif" lazyload alt="黑客窃听伪造"></p>
 <p>瞧，Eve 轻易的拿到了邮件内容 <strong>（窃听）</strong>，并且修改了邮件内容 <strong>（篡改）</strong>，甚至说他可以随时冒充 Bob 给 Alice 发送邮件 <strong>（伪装）</strong>。</p>
 <p>如果上图中 Eve 伪造的内容被 Alice 接收到了，那么后果可想而知。</p>
 <p>现实世界中，我们每天都在通过网络进行聊天、转账、浏览不存在网站。</p>
 <p>如果都是这样明文传输数据，显然毫无安全感。</p>
 <h4 id="3-2-第二回合"><a href="#3-2-第二回合" class="headerlink" title="3.2 第二回合"></a>3.2 第二回合</h4><p>既然我们不能明文传输，那么 Bob 和 Alice 提前商量好密钥，使用对称加密对邮件内容加密不就好了~</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213449.png" srcset="/img/loading.gif" lazyload alt="对称加密"></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213449.png" srcset="/img/loading.gif" lazyload alt="对称加密"></p>
 <p>现在 Bob 发送的邮件都使用和 Alice 提前商量好的密钥加密后再传输。</p>
 <p>由于没有密钥，Eve 就算截获到数据也无法获取邮件的内容，也没法篡改和冒充 Bob。</p>
 <p>因为篡改后的数据必须使用密钥再次加密 Alice 才能正确解密。</p>
@@ -342,7 +342,7 @@
 <p>然后使用公钥加密邮件内容后发送给对方，接收者使用自己的私钥即可解密。完美~</p>
 <h4 id="3-3-第三回合"><a href="#3-3-第三回合" class="headerlink" title="3.3 第三回合"></a>3.3 第三回合</h4><p>来看看，在非对称加密体系下，Bob 如何给 Alice 发消息的。</p>
 <p>首先 Alice 需要先生成一对公私钥，私钥只能 Alice 自己知道，公钥是可以让任何人都知道的，因此可将公钥直接发送给 Bob，就算被截获也无所谓。</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213456.png" srcset="/img/loading.gif" lazyload alt="非对称加密"></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213456.png" srcset="/img/loading.gif" lazyload alt="非对称加密"></p>
 <p>Bob 使用 Alice 的公钥加密邮件内容，加密后的内容只能由 Alice 的私钥解密，所以就算 Eve 截获也是徒劳。</p>
 <p>反之，如果 Alice 想给 Bob 回信，就需要用 Bob 的公钥加密后发送。</p>
 <p>这就解决了密钥交换问题，也保证了邮件内容不会泄露。也就是说现在可以<strong>防窃听</strong>。</p>
@@ -358,7 +358,7 @@
 <p>还记得什么是 Bob 独有的吗？</p>
 <p>对，就是 Bob 自己的私钥，Bob 用自己的私钥对邮件内容计算一个「签名」，将「签名」和邮件内容一起发送出去，接受者 Alice 可以使用 Bob 的公钥验证这个签名是否正确，这就叫「验签」。</p>
 <p>如果不是 Bob 的私钥计算的签名，那么 Alice 用 Bob 公钥验签将会出错。</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213504.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213504.png" srcset="/img/loading.gif" lazyload></p>
 <p>可以看到， Eve 试图使用自己的私钥计算签名然后发送给 Alice， 但是 Alice 使用 Bob的公钥进行验签时将会出错！</p>
 <p>那么 Eve 可能篡改内容并冒充 Bob 的签名吗？不可能！因为内容发生改变时，对应的签名也需要重新计算，而签名的生成依赖于私钥，只要 Bob 的私钥不泄露，签名就不会被冒充。</p>
 <p>啊啥？你说万一私钥泄露了怎么办？那就当我没说……</p>
@@ -380,7 +380,7 @@
 <p>所以我们最好对数据的「摘要」进行签名，这样，Eve 就算解开签名，拿到的也是「摘要」，如果摘要是不可逆转的，也就是无法从摘要反推出原文，也就达到了保密的作用。</p>
 </blockquote>
 <p>发送者使用私钥对「摘要」计算数字签名。那么接收者如何验证呢？</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213511.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213511.png" srcset="/img/loading.gif" lazyload></p>
 <p>接受者 Alice 收到后，取下数字签名，同时用 Bob 的公钥解密，得到「摘要1」，<strong>证明确实是 Bob 发的</strong>。</p>
 <p><em>( 画外音：如果使用 Bob 的公钥验证签名出错，那么签名一定不是 Bob 的私钥生成的）</em></p>
 <p>再对邮件内容使用相同的散列函数计算「摘要2」，与上面得到的「摘要1」进行对比，<strong>两者一致就说明信息未被篡改。</strong></p>
@@ -389,7 +389,7 @@
 <p><strong>但是这一切的根基是建立在 Alice 持有的公钥确实是 Bob的，反之亦然。</strong></p>
 <p>什么意思呢？</p>
 <p>试想，**Eve 如果将自己的公钥冒充 Bob 发送给 Alice，然后 Alice 保存了下来，那以后凡是 Bob 发送的消息，反而会验证签名失败，被当做冒充者。**那你可能会问，为什么 Eve 可以将自己的公钥发送给 Alice，而 Alice 毫不知情呢？</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213519.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213519.png" srcset="/img/loading.gif" lazyload></p>
 <p>看！我们又回到了最初的起点，只不过这次被篡改的是公钥，之前是消息本身。</p>
 <p>因为 Bob 的公钥是直接通过网络发送给 Alice的，所以 Eve 才可以在这一步做手脚，进行篡改，将自己的公钥冒充 Bob 发送给 Alice，也就是发送公钥这一步没有做到：</p>
 <ul>
@@ -429,13 +429,13 @@
 <p>也不行，因为证书的数字签名计算依赖于 CA 的私钥，Eve 是拿不到 CA 的私钥的。</p>
 <p>如果拿到了，说明什么？整个世界都是不可信的。</p>
 <h4 id="3-7-数字证书长啥样"><a href="#3-7-数字证书长啥样" class="headerlink" title="3.7 数字证书长啥样"></a>3.7 数字证书长啥样</h4><p>这是我电脑中的自带的证书：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213530.png" srcset="/img/loading.gif" lazyload alt="电脑自带证书"></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213530.png" srcset="/img/loading.gif" lazyload alt="电脑自带证书"></p>
 <p>可以看到，包含了证书持有人的公钥和证书的签名。</p>
 <p>另外，证书颁发机构是有层级关系的，下级 CA 的证书是需要由上级 CA 签名的。</p>
 <p>换句话说一定存在根证书颁发机构，那么他们的证书是由谁签名的呢？</p>
 <p>答案是自签，自己给自己认证。</p>
 <p>这是我电脑中的一个自签的根证书颁发机构：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210724213536.png" srcset="/img/loading.gif" lazyload alt="自签的根证书机构"></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210724213536.png" srcset="/img/loading.gif" lazyload alt="自签的根证书机构"></p>
 <p>为什么根证书可以自签，谁来保证安全？</p>
 <p>你把钱存在银行，你会担心吗？我们基于对国家的信任，才信任银行，这就是信任链的基础！我们思考问题应该是分层的，如果不认可一个统一的基础，一直套娃下去，那么问题就无解。</p>
 <p>那还有个问题，如何保证根证书的可靠性？这是操作系统和浏览器预装的，由微软、苹果等操作系统厂商来选择根证书。</p>

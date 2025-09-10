@@ -246,7 +246,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023年2月5日 晚上
+                  本文最后更新于：2025年9月10日 上午
                 
               </p>
             
@@ -382,25 +382,25 @@
 <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">hadoopstart-all.sh</span><br></code></pre></div></td></tr></table></figure></li>
 </ol>
 <p>hadoop分布式集群启动成功</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104603.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104603.png" srcset="/img/loading.gif" lazyload></p>
 <p>上传文件成功</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104611.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104611.png" srcset="/img/loading.gif" lazyload></p>
 <p>idea BigDataTools连接成功</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104629.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104629.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h3><p>显示进入紧急模式</p>
 <p>开始不太清楚问题所在，输入root密码后也可以成功进入系统</p>
 <p>但随后，配置网络始终不生效，显示网卡未在运行（systemctl status network），polkit状态为死亡（systemctl status polkit）</p>
 <p>于是查看系统日志发现，是某个挂载未找到对应内容导致的</p>
 <p>随后在通过vim &#x2F;etc&#x2F;fstab找到，是挂载的共享文件夹没有正常配置，因为VMware在新的虚拟机中会默认关闭这个选项，打开后问题成功解决</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104640.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104640.png" srcset="/img/loading.gif" lazyload></p>
 <p>启用共享文件夹</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104647.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104647.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h3><p>出现的问题如下图：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104705.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104705.png" srcset="/img/loading.gif" lazyload></p>
 <p>开始看到 “要求bash v3.2+” 比较奇怪，不可能bash版本出问题吧</p>
 <p>随后想到了当前终端并不是bash，而是在配置快捷工具的zsh中</p>
 <p>于是执行以下命令，简单解决 。</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104653.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104653.png" srcset="/img/loading.gif" lazyload></p>
 <hr>
 <h2 id="Zookeeper高性能集群"><a href="#Zookeeper高性能集群" class="headerlink" title="Zookeeper高性能集群"></a>Zookeeper高性能集群</h2><h3 id="软件版本："><a href="#软件版本：" class="headerlink" title="软件版本："></a>软件版本：</h3><table>
 <thead>
@@ -426,7 +426,7 @@
 <td>3.6.0</td>
 </tr>
 </tbody></table>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104750.png" srcset="/img/loading.gif" lazyload alt="image-20210715145346435"></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104750.png" srcset="/img/loading.gif" lazyload alt="image-20210715145346435"></p>
 <p>hbase和zookeeper版本对应</p>
 <p><a target="_blank" rel="noopener" href="http://hbase.apache.org/book.html#zookeeper">http://hbase.apache.org/book.html#zookeeper</a></p>
 <p>hbase参考：<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/hbase_doc/hbase_doc-vxnl2k1n.html">https://www.w3cschool.cn/hbase_doc/hbase_doc-vxnl2k1n.html</a></p>
@@ -465,13 +465,13 @@
 
 
 <p>查看版本（错误2）</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104906.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104906.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="zk配置成功"><a href="#zk配置成功" class="headerlink" title="zk配置成功"></a>zk配置成功</h4><p>启动成功</p>
 <p>查看状态，一个leader，两个follower</p>
 <p>查看版本</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104923.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104923.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h4><p>启动失败</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104934.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104934.png" srcset="/img/loading.gif" lazyload></p>
 <p>查看日志logs</p>
 <p>​	错误: 找不到或无法加载主类 org.apache.zookeeper.server.quorum.QuorumPeerMain</p>
 <p>查阅文档发现，-bin的包才是我们需要的，重新下载进行配置</p>
@@ -525,35 +525,35 @@
 
 
 
-<h3 id="运行成功"><a href="#运行成功" class="headerlink" title="运行成功"></a>运行成功</h3><p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104947.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="运行成功"><a href="#运行成功" class="headerlink" title="运行成功"></a>运行成功</h3><p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104947.png" srcset="/img/loading.gif" lazyload></p>
 <p>后台状态运行正常（两个namenode）</p>
 <p>分布式文件系统使用正常</p>
 <p>查看（node1、node2）中namenode状态</p>
 <p>准备杀死node1：active</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716104958.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716104958.png" srcset="/img/loading.gif" lazyload></p>
 <p>可以看到node1中namenode已被杀死</p>
 <p>node2中namenode状态自动转为active</p>
 <p>网页访问</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105008.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716105008.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="错误3"><a href="#错误3" class="headerlink" title="错误3"></a>错误3</h4><p>journaldata中有数据存在使得journalnode格式化失败</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105022.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716105022.png" srcset="/img/loading.gif" lazyload></p>
 <p>修改journaldata存放地址</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105039.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716105039.png" srcset="/img/loading.gif" lazyload></p>
 <p>为：</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105047.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716105047.png" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /opt/hadoop-3.1.3rm -rf data/journaldatamkdir journaldata<br></code></pre></div></td></tr></table></figure>
 
 
 
 <h4 id="错误4"><a href="#错误4" class="headerlink" title="错误4"></a>错误4</h4><p>没有指定HDFS_JOURNALNODE_USER</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105056.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716105056.png" srcset="/img/loading.gif" lazyload></p>
 <p>此时hadoop整体能够运行</p>
 <p>联系第一次配置时分析，应该是需要修改sh文件指定执行者</p>
 <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">cd /opt/hadoop-3.1.3/sbinvim start-dfs.shHDFS_JOURNALNODE_USER=rootHDFS_ZKFC_USER=rootvim stop-dfs.shHDFS_JOURNALNODE_USER=rootHDFS_ZKFC_USER=root<br></code></pre></div></td></tr></table></figure>
 
 <p>子节点同样修改</p>
 <h4 id="错误5"><a href="#错误5" class="headerlink" title="错误5"></a>错误5</h4><p>namenode没有正常关闭</p>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210716105105.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210716105105.png" srcset="/img/loading.gif" lazyload></p>
 <p>查阅资料发现问题是任务的不正常结束</p>
 <p>另外在hadoop2中还发现存在pid文件的不安全问题</p>
 <p>先尝试清理数据文件并重新初始化，成功解决</p>

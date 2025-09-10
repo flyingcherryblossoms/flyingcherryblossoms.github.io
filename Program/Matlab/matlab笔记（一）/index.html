@@ -246,7 +246,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023年2月5日 晚上
+                  本文最后更新于：2025年9月10日 上午
                 
               </p>
             
@@ -279,7 +279,7 @@
 <h4 id="（二）-数学运算符号及标点符号"><a href="#（二）-数学运算符号及标点符号" class="headerlink" title="（二）.数学运算符号及标点符号"></a>（二）.数学运算符号及标点符号</h4><blockquote>
 <p>+，-，*，&#x2F; .*：点乘运算，及矩阵对应元素相乘之后相加 .&#x2F;：点除运算 ^：幂运算 .^：点幂运算 \：左除运算 （1）MATLAB的每条命令后，若为都好或无标点符号则显示命令的结果；若命令后为分号，则禁止显示结果 （2）”%”后面所有文字为注释 （3）”…”表示续行</p>
 </blockquote>
-<h4 id="（三）数学函数"><a href="#（三）数学函数" class="headerlink" title="（三）数学函数"></a>（三）数学函数</h4><p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210711194532.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="（三）数学函数"><a href="#（三）数学函数" class="headerlink" title="（三）数学函数"></a>（三）数学函数</h4><p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210711194532.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="（四）M文件"><a href="#（四）M文件" class="headerlink" title="（四）M文件"></a>（四）M文件</h4><blockquote>
 <p>类似于c++的头文件，用于储存编写的函数，后缀为M的文件，这类文件的第一行必须是特殊字符 <code>function</code> 开始,格式为：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> 因变量名 = 函数名（自变量名）</span><br></code></pre></div></td></tr></table></figure>
@@ -337,7 +337,7 @@
 </li>
 </ul>
 </blockquote>
-<h3 id="四、关系与逻辑运算"><a href="#四、关系与逻辑运算" class="headerlink" title="四、关系与逻辑运算"></a>四、关系与逻辑运算</h3><p> <img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210711195137.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="四、关系与逻辑运算"><a href="#四、关系与逻辑运算" class="headerlink" title="四、关系与逻辑运算"></a>四、关系与逻辑运算</h3><p> <img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210711195137.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="五、控制流"><a href="#五、控制流" class="headerlink" title="五、控制流"></a>五、控制流</h3><p>MATLAB提供三种决策或控制流结构：</p>
 <ul>
 <li>for循环</li>
@@ -368,7 +368,7 @@
 <figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> express<br>&#123;commands&#125;<br> …………<br><span class="hljs-keyword">else</span><br>&#123;commands&#125;<br><span class="hljs-keyword">end</span><br></code></pre></div></td></tr></table></figure></li>
 </ol>
 </blockquote>
-<p><img src="https://gitee.com/quosimodo/ImageHost/raw/master/img/20210711194930.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://gitee.com/quosimodo/ImageHost/raw/main/img/20210711194930.png" srcset="/img/loading.gif" lazyload></p>
 <figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">y</span>=<span class="hljs-title">BubbleSort</span><span class="hljs-params">(x)</span></span><br>x_len=<span class="hljs-built_in">length</span>(x);<br><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span>=<span class="hljs-number">1</span>:x_len<span class="hljs-number">-1</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-built_in">j</span>=<span class="hljs-number">1</span>:x_len-<span class="hljs-built_in">i</span><br>        <span class="hljs-keyword">if</span>(x(<span class="hljs-built_in">j</span>)&gt;x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>))<br>            [x(<span class="hljs-built_in">j</span>),x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>)]=swap(x(<span class="hljs-built_in">j</span>),x(<span class="hljs-built_in">j</span>+<span class="hljs-number">1</span>));<br>        <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-built_in">disp</span>([num2str(<span class="hljs-built_in">i</span>),<span class="hljs-string">&#x27;.Sort:x=&#x27;</span>,num2str(x)]);<br><span class="hljs-keyword">end</span><br>y=x;<br><span class="hljs-keyword">end</span><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[a,b]</span>=<span class="hljs-title">swap</span><span class="hljs-params">(x,y)</span></span><br>a=y;<br>b=x;<br><span class="hljs-keyword">end</span><br><br></code></pre></div></td></tr></table></figure>
 
 <figure class="highlight matlab"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">y</span> = <span class="hljs-title">fun1</span><span class="hljs-params">(x,y)</span></span><br>y = x*x + <span class="hljs-built_in">sin</span>(x*y) + <span class="hljs-number">2</span>*y;<br></code></pre></div></td></tr></table></figure>
